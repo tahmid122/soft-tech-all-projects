@@ -1,0 +1,142 @@
+#services {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#services .services-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: start;
+}
+#services .services-left p {
+  font-size: 18px;
+}
+
+#services .services-list {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  font-size: 18px;
+}
+#services .services-image-container {
+  width: 600px;
+  height: 400px;
+}
+#services img {
+  /* width: 100%; */
+  height: 100%;
+  /* object-fit: contain; */
+  border-radius: 12px;
+}
+.services-list .list-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.services-list .list-item p {
+  font-size: 15px !important;
+  /* color: black !important; */
+  flex: 1;
+}
+.services-list .list-item .list-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.list-icon img {
+  width: 100%;
+  height: 100%;
+}
+.services-bg {
+  background-color: white;
+}
+.fullImage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  transform: scale(0);
+  z-index: 999;
+  transition: transform 0.8s;
+}
+.fullImage img {
+  width: 100%;
+  object-fit: contain;
+}
+.scale {
+  transition: transform 0.8s;
+  transform: scale(1);
+}
+.hideScale {
+  transform: scale(0);
+}
+.closeFullImage {
+  z-index: 9999;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  cursor: pointer;
+}
+/* dark theme */
+#dark .services-bg {
+  background-color: #101828;
+}
+#dark #services h2 {
+  color: white;
+}
+#dark #services p {
+  /* color: #98a2b3 !important; */
+}
+/* dark theme */
+/* Responsive part */
+@media only screen and (max-width: 992px) {
+  #services {
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: start;
+    align-items: start;
+  }
+  #services img {
+    width: 100%;
+  }
+  #services .services-image-container {
+    width: 100%;
+    height: 400px;
+  }
+  .services-image-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #services {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #services img {
+    width: 100%;
+  }
+  #services .services-left p {
+    font-size: 14px;
+  }
+  #services .services-list {
+    gap: 0px;
+  }
+  #services .services-image-container {
+    width: 100%;
+    height: auto;
+  }
+}

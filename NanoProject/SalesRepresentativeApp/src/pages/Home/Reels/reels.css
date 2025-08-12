@@ -1,0 +1,73 @@
+#reels {
+  padding: var(---primaryPadding);
+  background-color: white;
+  display: flex;
+  overflow-x: auto;
+}
+
+/* single reels */
+#singleReels {
+  border: var(---primaryBorder);
+  height: 180px;
+  min-width: 120px;
+  border-radius: 10px;
+  padding: var(---primaryPadding);
+  position: relative;
+  overflow: hidden;
+}
+.reelsTitle {
+  position: absolute;
+  font-size: 14px;
+  bottom: 5px;
+  left: 5px;
+  font-weight: 600;
+  color: white;
+}
+.reelsImage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: var(---primaryBackground);
+}
+.reelsImage img {
+  width: 100%;
+  height: 100%;
+}
+.reelFullView {
+  position: fixed;
+  height: 90vh;
+  width: 95%;
+  padding: var(---primaryPadding);
+  border-radius: var(---primaryBorderRadius);
+  background-color: white;
+  z-index: 60;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: var(---primaryBorder);
+}
+.reelFullView img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.closeReelFullView {
+  cursor: pointer;
+  background-color: gainsboro;
+  display: block;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+@media only screen and (min-width: 992px) {
+  .reelFullView {
+    width: 35%;
+  }
+}

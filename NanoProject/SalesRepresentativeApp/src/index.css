@@ -1,0 +1,89 @@
+/* Google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* root styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  ---primaryColor: #228b22;
+  ---primaryPadding: 10px;
+  ---primaryBackground: #f2f4f7;
+  ---primaryBorderRadius: 5px;
+  ---primaryBorder: 1px solid gainsboro;
+}
+body {
+  background-color: var(---primaryBackground);
+}
+ul li,
+ol li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+/* custom scrollbar */
+/* For Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Light background */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999; /* Gray scroll thumb */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666; /* Darker on hover */
+}
+
+/* Optional: Hide scrollbar if not needed visually */
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+/* Swiper slider style */
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+  color: white;
+}
+/* Default */
+.marginBottom {
+  margin-bottom: 15px;
+}
+section {
+  margin-bottom: 15px;
+}
+.btn {
+  padding: 10px;
+  border: none;
+  background-color: #228b22;
+  border-radius: var(---primaryBorderRadius);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 16px;
+}
+@media only screen and (min-width: 728px) {
+  #mainContainer {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #mainContainer {
+    /* width: 40%; */
+    width: 70%;
+    margin: 0 auto;
+  }
+}

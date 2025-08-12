@@ -1,0 +1,74 @@
+#login {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+#login .form-element {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+#login .form-element input {
+  width: 100%;
+  border: 1px solid gainsboro;
+  outline: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.login-form {
+  margin-top: 20px;
+}
+
+.form-last img {
+  width: 100%;
+  height: auto;
+  margin-left: 70px;
+}
+.login-form p {
+  /* color: black; */
+  margin-top: 20px;
+  font-size: 15px;
+}
+.login-form p a {
+  font-weight: bold;
+  color: #228b22;
+}
+
+/* dark theme */
+#dark .bg-login {
+  background-color: #101828;
+}
+#dark .form-element label {
+  color: #98a2b3;
+}
+#dark #login h2,
+p {
+  /* color: #98a2b3; */
+}
+/* dark theme */
+/* Responsive part */
+@media only screen and (max-width: 992px) {
+  #login {
+    flex-direction: column;
+  }
+
+  .form-last img {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #login {
+    flex-direction: column;
+    min-height: 50vh;
+  }
+  .form-last {
+    display: none;
+  }
+}

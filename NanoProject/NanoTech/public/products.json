@@ -1,0 +1,596 @@
+[
+  {
+    "id": 1,
+    "category": "Television",
+    "name": "Smart LED TV (32 Inch)",
+    "price": 0,
+    "availability": "comingSoon",
+    "image": "https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg",
+    "specifications": [
+      ["Display Size", "32 Inches (81 cm)"],
+      ["Resolution", "HD Ready (1366 x 768 pixels)"],
+      ["Display Technology", "LED Panel with Wide Viewing Angle"],
+      ["Smart OS", "Android Smart TV / WebOS / Custom UI"],
+      ["Processor", "Quad-core Processor"],
+      ["RAM", "1GB / 1.5GB"],
+      ["Storage", "8GB Internal Memory"],
+      ["Refresh Rate", "60Hz"],
+      ["Wi-Fi", "Built-in 2.4GHz Wi-Fi"],
+      ["HDMI Ports", "2x HDMI"],
+      ["USB Ports", "2x USB"],
+      ["AV Input", "Yes"],
+      ["Optical Out", "Yes"],
+      ["Earphone Jack", "Yes"],
+      ["Built-in Apps", "YouTube, Netflix, Prime Video, Facebook Watch & more"],
+      ["Voice Control", "Google Assistant / Alexa Support (Optional)"],
+      ["Screen Mirroring", "Yes"],
+      ["Stereo Speakers", "Surround Sound"],
+      ["Power Efficient Design", "Yes"],
+      ["Ultra Slim Bezels", "Yes"],
+      ["Elegant Finish", "Yes"],
+      ["Wall Mount & Table Stand Included", "Yes"],
+      [
+        "In the Box",
+        "32\" Nano Smart LED TV, Smart Remote with Voice Support, Wall Mount Kit, User Manual & Warranty Card"
+      ],
+      ["Panel Guaranty", "1 Year"],
+      ["Service Warranty", "3 Year"],
+      ["Price (Walton)", "20,490/= (512mb/4gb)"],
+      ["Price (Minister)", "24,900/= (1gb/8gb)"],
+      ["Price (Singer)", "17,850/= (1gb/8gb)"]
+    ]
+  },
+  {
+    "id": 2,
+    "category": "Television",
+    "name": "Smart LED TV (43 Inch)",
+    "price": 0,
+    "availability": "comingSoon",
+    "image": "https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg",
+    "specifications": [
+      ["Display Size", "43 Inches"],
+      ["Resolution", "HD Ready (1920 x 1080 pixels)"],
+      ["Display Technology", "LED Panel with Wide Viewing Angle"],
+      ["Smart OS", "Android Smart TV / WebOS / Custom UI"],
+      ["Processor", "Quad-core Processor"],
+      ["RAM", "1GB / 1.5GB"],
+      ["Storage", "8GB Internal Memory"],
+      ["Refresh Rate", "60Hz"],
+      ["Wi-Fi", "Built-in 2.4GHz Wi-Fi"],
+      ["HDMI Ports", "2x HDMI"],
+      ["USB Ports", "2x USB"],
+      ["AV Input", "Yes"],
+      ["Optical Out", "Yes"],
+      ["Earphone Jack", "Yes"],
+      ["Built-in Apps", "YouTube, Netflix, Prime Video, Facebook Watch & more"],
+      ["Voice Control", "Google Assistant / Alexa Support (Optional)"],
+      ["Screen Mirroring", "Yes"],
+      ["Stereo Speakers", "Surround Sound"],
+      ["Power Efficient Design", "Yes"],
+      ["Ultra Slim Bezels", "Yes"],
+      ["Elegant Finish", "Yes"],
+      ["Wall Mount & Table Stand Included", "Yes"],
+      [
+        "In the Box",
+        "43\" Nano Smart LED TV, Smart Remote with Voice Support, Wall Mount Kit, User Manual & Warranty Card"
+      ],
+      ["Panel Guaranty", "1 Year"],
+      ["Service Warranty", "3 Year"]
+    ]
+  },
+  {
+    "id": 3,
+    "category": "Rice Cooker",
+    "name": "Rice Cooker (1.8L)",
+    "price": 0,
+    "availability": "inStock",
+    "image": "/allProducts/rice cooke1.8 & 2.7 ltr.jpg",
+    "specifications": [
+      ["Capacity", "1.8 liters"],
+      ["Handle", "Convenient bridge handle"],
+      ["Color", "Metallic Silver / Burgundy"],
+      ["Keep Warm Function", "4 hours"],
+      ["Steaming Basket", "Clear steaming basket, Lid holder"],
+      ["Dimensions", "267x267x320 mm"],
+      ["Cooking Pan", "Anchor coated non-stick cooking pan"],
+      ["Warranty", "1 year Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 4,
+    "category": "Rice Cooker",
+    "name": "Rice Cooker (2.8L)",
+    "price": 0,
+    "availability": "inStock",
+    "image": "/allProducts/rice cooke1.8 & 2.7 ltr.jpg",
+    "specifications": [
+      ["Capacity", "2.8 liters"],
+      ["Handle", "Convenient bridge handle"],
+      ["Color", "Metallic Silver / Burgundy"],
+      ["Keep Warm Function", "4 hours"],
+      ["Steaming Basket", "Clear steaming basket, Lid holder"],
+      ["Dimensions", "267x267x320 mm"],
+      ["Cooking Pan", "Anchor coated non-stick cooking pan"],
+      ["Warranty", "1 year Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 5,
+    "category": "Blender",
+    "name": "Blender (Steal Body)",
+    "price": 0,
+    "availability": "inStock",
+    "image": "/allProducts/hand grinder.png",
+    "specifications": [
+      ["Power", "1 HP"],
+      ["Voltage", "220-250 V, A.C 50/60 Hz"],
+      ["R.P.M.", "18,000 RPM (or No Load)"],
+      ["Speed Control", "3 Speed with Incher"],
+      ["Material of Housing", "ABS Plastic"],
+      ["Jars", "3 Stainless Steel Jar"],
+      ["Blade", "S.S Polished"],
+      ["Dome", "Polycarbonate"],
+      ["Warranty", "1 year Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 6,
+    "category": "Blender",
+    "name": "Blender (Plastic Body)",
+    "price": 0,
+    "availability": "inStock",
+    "image": "/allProducts/plastic blender.jpg",
+    "specifications": [
+      ["Package Dimensions", "36.2 x 29.6 x 18.6 cm"],
+      ["Capacity", "1.5 Liters"],
+      ["Voltage", "230 Volts"],
+      ["Material", "Plastic"],
+      ["Special Features", "Portable"],
+      ["Item Weight", "2.26 Kilograms"],
+      ["Warranty", "1 year Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 7,
+    "category": "Curry Cooker",
+    "name": "Curry Cooker",
+    "price": 0,
+    "availability": "inStock",
+    "image": "/allProducts/curry cooker.jpg",
+    "specifications": [
+      ["Capacity", "3L"],
+      ["Cover", "Transparent tempered glass cover"],
+      ["Inner Pot", "Durable inner pot with stainless steel"],
+      ["Heating Plate", "Coating heating plate 550grs, single pot"],
+      ["Handle", "Scald-proof plastic handle"],
+      ["Glass Lid", "Without steamer"],
+      ["Automatic Cooking", "Yes"],
+      ["Warming System", "Yes"],
+      ["Adjustable Temperature Control", "Yes"],
+      ["Indicator Light", "Yes"],
+      ["Waterproof Design", "Yes"],
+      [
+        "Multiple Cooking Functions",
+        "Hot pot, boiling water, cooking noodles, etc."
+      ],
+      ["Warranty", "1 year Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 8,
+    "category": "Multi Cooker",
+    "name": "Multi Cooker",
+    "price": 0,
+    "availability": "inStock",
+    "image": "/allProducts/multi cooker 5litre+.jpg",
+    "specifications": [
+      [
+        "Cooking Functions",
+        "Pressure cook, slow cook, sous vide, sauté, sterilize, cook yogurt and rice, bake, steam, keep warm"
+      ],
+      ["Customizable Smart Programs", "28 one-touch options"],
+      ["Preheat", "20% faster"],
+      ["Cook Faster", "Up to 70% faster"],
+      ["Steam Release", "Gentle steam release switch and diffusing cover"],
+      ["Capacity", "6-quart"],
+      ["Quick Cleanup", "Dishwasher-safe lid and inner pot"],
+      ["Power", "1200 watts, 120 V 60 Hz, UL & ULC Listed"],
+      [
+        "Safety Features",
+        "Easy grip inner pot handles, overheat protection, auto-sealing safety lid lock"
+      ],
+      [
+        "Extras",
+        "Extra sealing ring, stainless steel steamer rack with handles"
+      ],
+      ["Warranty", "1 year Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 9,
+    "category": "Electric Cooker",
+    "name": "Infrared Cooker",
+    "price": 0,
+    "availability": "inStock",
+    "image": "/allProducts/Infrared cooker-1.jpg",
+    "specifications": [
+      ["Color", "Black & Silver"],
+      ["Watt", "2000 W"],
+      ["Number of Burner", "1"],
+      ["Temperature", "80C - 240C"],
+      ["Model", "ALP-DT225"],
+      ["Function", "4 Multiple Cooking Functions"],
+      ["Material", "A-Class Crystal Plate"],
+      ["Power supply", "AC 88V - 280V"],
+      ["Frequency", "50Hz"],
+      ["Safe Protection", "Child Safety Protection"],
+      ["Power Saving", "Save 50% Energy"],
+      ["Display", "Electricity Consumption, Four Digit Display"],
+      ["Control Type", "Touch Sensor Control"],
+      ["Power Levels", "8 Stage Power Sitting"],
+      ["Timer", "Yes"],
+      ["Auto Shut Off", "When Overheats"],
+      ["Heat Resistant", "Super Heat Resistant"],
+      ["Warranty", "1 year Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 10,
+    "category": "Oven",
+    "name": "Electric oven",
+    "price": 0,
+    "availability": "inStock",
+    "image": "/allProducts/oven.jpg",
+    "specifications": [
+      ["Voltage", "220v"],
+      ["Power", "1620w"],
+      ["Energy Saving", "Yes"],
+      ["Capacity", "52 Ltr"],
+      ["Easy Operating", "Yes"],
+      ["Special Feature", "Backing & Cooking"],
+      [
+        "Functions",
+        "Grill, kabab, BBQ, Cake, pizza, Pudding, Bread, breakery Time, Stem, Cooking"
+      ],
+      ["Body", "Non-Stick Inner Body and out body"],
+      [
+        "Accessories",
+        "1 sat backing try, handle, rack, Rotessories Stick and handle"
+      ],
+      ["Manual", "Free Bangla Manual"],
+      ["Auto Time Settings", "Yes"],
+      ["Digital Display", "Yes"],
+      ["Innovative Looks", "Yes"],
+      ["Easy Clean", "Yes"],
+      ["Warranty", "1 year Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 11,
+    "category": "Iron",
+    "name": "Iron",
+    "price": 0,
+    "availability": "inStock",
+    "image": "/allProducts/iron.jpg",
+    "specifications": [
+      ["Special Feature", "Auto Shutoff, Lightweight"],
+      ["Color", "Blue & Black"],
+      ["Wattage", "1200 watts"],
+      ["Recommended Uses", "Travelling, Home"],
+      ["Style", "Portable"],
+      ["Item Weight", "2.36 Pounds"],
+      ["Base Material", "Ceramic"],
+      ["Voltage", "120 Volts"],
+      ["Warranty", "1 year Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 12,
+    "category": "Geyser",
+    "name": "Geyser",
+    "price": 0,
+    "availability": "inStock",
+    "image": "/allProducts/geyser - 30 ltr.jpg",
+    "specifications": [
+      ["Capacity", "30 Liter"],
+      ["Model", "DF-WH20LA"],
+      ["Size", "389X389X307 mm"],
+      ["Installation", "Vertical Wall Mounting"],
+      ["Material of Outer Jacket", "ABS"],
+      ["Material of Inner Jacket", "SPCC (Cold Rolled Steel Sheet)"],
+      ["Enamel Type", "Wet Enamel"],
+      ["Number of Tank Welding Line", "1"],
+      ["Inlet/Outlet Pipe Inside", "Enameled"],
+      ["Protective Anode", "Magnesium"],
+      ["Material of Insulation Layer", "CFC Free Polyurethane Foam"],
+      ["Heating Element", "Incoloy 840 Heating Element"],
+      ["Rated Power", "2,000W"],
+      ["Rated Voltage", "220V~"],
+      ["Rated Current", "9.09A"],
+      ["Thermostat", "Capillary"],
+      ["Temperature Range", "25°C to 75°C"],
+      ["Thermal Cut-off", "Capillary"],
+      ["Thermal Cut-off Range", "93°C +2°C/-5°C"],
+      ["Protection against Humidity", "IPX4"],
+      ["Working Pressure", "0.02MPa ~ 0.8MPa"],
+      ["Plug", "British Plug"],
+      ["Cable Length", "1,500mm"],
+      ["Color", "White"],
+      ["Net Weight", "9.5KG"],
+      ["Gross Weight", "10.5KG"],
+      ["Warranty", "1 year Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 13,
+    "category": "Room Heater",
+    "name": "Room Heater",
+    "price": 0,
+    "availability": "inStock",
+    "image": "/allProducts/room heater -2.webp",
+    "specifications": [
+      ["Power", "1800W"],
+      ["Type", "Desktop standing heater fan"],
+      ["Heating Wire", "Nickel-chromium"],
+      ["Instant Heating", "3S effective & instant heating"],
+      ["Adjustable Temperature", "Yes"],
+      ["Modes", "3"],
+      ["Wind Strength", "Adjustable"],
+      ["Safety", "Over-temperature protection, auto power-off protection"],
+      ["Portable", "Yes"],
+      ["Placement", "Flatwise or standing"],
+      ["Easy to Operate", "Yes"],
+      ["Metal Fence", "Yes"],
+      ["Mute Motor", "Yes"],
+      ["Suitable For", "Bedroom, living room, office, study"],
+      ["Material", "ABS Plastic + PTC"],
+      ["Color", "White"],
+      ["Voltage", "220V"],
+      ["Size", "25x25x12cm"],
+      ["Warranty", "1 year Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 14,
+    "category": "LED Light",
+    "name": "Mosquito Bat",
+    "price": 0,
+    "availability": "inStock",
+    "image": "/allProducts/electric bat.png",
+    "specifications": [
+      ["Power Supply", "5V=1A"],
+      ["Rated Power", "5W"],
+      ["Power Cord", "1000 mm"],
+      ["Rated Voltage", "2500V"],
+      ["Size", "72 x 467 x 205 mm"],
+      ["Battery", "1200mah"],
+      ["Manual Mode Usage", "7 days after fully charged"],
+      ["Insulation Protection", "Two layers of insulation protection nets"],
+      [
+        "Middle Level Grid",
+        "Low-current safe voltage for humans, strong for mosquitoes"
+      ],
+      ["Killing Mode", "Physical mosquito killing mode"],
+      ["Frame Design", "Transparent"],
+      ["Dual Use", "Mosquito Killing Lamp and Swatter"],
+      ["Modes", "Manual Mosquito Killing, Intelligent Mosquito Killing"],
+      ["UV LED", "14 UV LED Beads, 395-400MM wavelength"],
+      ["Warranty", "1 year Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 15,
+    "category": "LED Light",
+    "name": "Electric Kettle",
+    "price": 0,
+    "availability": "inStock",
+    "image": "/allProducts/water heater.png",
+    "specifications": [
+      ["Power", "2000W"],
+      ["Capacity", "1L"],
+      ["Material", "Stainless Steel, High Borosilicate Glass"],
+      ["Gross Weight", "1026g/2.3lb"],
+      ["Frequency", "50/60Hz"],
+      [
+        "Features",
+        "High power polygonal heating, Boiling water fast, Glass body design, Anti scalding hands, Automatic power off"
+      ],
+      ["Warranty", "1 year Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 16,
+    "category": "LED Light",
+    "name": "Massage Gun",
+    "price": 0,
+    "availability": "inStock",
+    "image": "/allProducts/massager.png",
+    "specifications": [
+      ["Type", "Massage gun"],
+      ["Application", "Body"],
+      ["Function", "Timing control"],
+      ["After-sale Service", "Free spare parts"],
+      ["Product Name", "Massager"],
+      ["Usage", "Massage"],
+      ["Color", "Black/Green/Red/Silver"],
+      ["Battery Capacity", "2500mah"],
+      ["Size", "17.4cmx14cmx4.8cm"],
+      ["Material", "ABS"],
+      ["Working Time", "1-3 hours"],
+      [
+        "Features",
+        "Improves blood circulation, Reduces muscle soreness and fatigue, Speeds up muscle recovery after workouts, Effective for relieving neck, back, leg, and joint pain"
+      ],
+      ["Attachments", "Ball head, U-shape, bullet head, flat head"],
+      ["Muscle Relaxation", "Deep tissue massage"],
+      ["Pressure Therapy", "High-speed motor"],
+      ["Portable Design", "Yes"],
+      ["Rechargeable Battery", "Yes"],
+      ["Noise Reduction", "Yes"],
+      ["User-Friendly", "Yes"],
+      ["Adjustable Speed Settings", "Yes"],
+      ["Warranty", "1 year Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 17,
+    "category": "Keyboard",
+    "name": "Key Board (Wire)",
+    "price": 0,
+    "availability": "inStock",
+    "image": "/allProducts/Keyboard (Mechanical Wired).png",
+    "specifications": [
+      ["Type", "Wired Multimedia Keyboard"],
+      ["Wired/Wireless", "Wired (USB)"],
+      ["Keycaps", "A-Shape, Round Edge"],
+      ["Hotkeys", "12 FN Multimedia Hotkeys"],
+      ["Character", "Laser Engraving"],
+      ["Splash Proof", "Yes"],
+      ["Cable Length", "150 cm"],
+      ["Adjustable Keyboard Legs", "Yes"],
+      ["Rating", "5 V / 30 mA"],
+      ["System Requirements", "Windows XP / Vista / 7 / 8 / 8.1 / 10"],
+      ["Color", "Black"],
+      ["Dimensions", "453 × 152 × 28 mm"],
+      ["Weight", "580 g"],
+      ["Warranty", "6 Months Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 18,
+    "category": "Keyboard",
+    "name": "Key Board (Wireless)",
+    "price": 0,
+    "availability": "inStock",
+    "image": "/allProducts/Keyboard (Mechanical Wireless).png",
+    "specifications": [
+      ["Wireless", "Bluetooth / 2.4G"],
+      ["Interface", "Nano USB Receiver"],
+      ["Multi-Device", "4 Devices"],
+      ["Layout", "Windows, Android, Mac, iOS"],
+      ["Battery", "1 AA Alkaline Battery"],
+      ["Battery Life", "about 650H (12 Months)"],
+      ["Receiver", "Nano USB Receiver"],
+      ["System Requirements", "Windows, Android, Mac, iOS"],
+      ["Color", "Black"],
+      ["Dimensions", "396mm x 145mm x 25mm"],
+      ["Warranty", "6 Months Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 19,
+    "category": "Keyboard",
+    "name": "Key Board (Wired Mechanical)",
+    "price": 0,
+    "availability": "comingSoon",
+    "image": "https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg",
+    "specifications": [
+      ["Keyboard Type", "Gaming"],
+      ["Keyboard Technology", "Mechanical"],
+      ["Internet Keys", "98 Key"],
+      ["Custom Button", "Hot Swappable Keys, 3 pin"],
+      ["Connectivity", "Wired USB"],
+      ["Lighting Mode", "RGB"],
+      ["Cable Length", "1.5M"],
+      ["Key Rollover", "N-Key"],
+      ["Switch", "Blue Switch"],
+      ["Keyboard Font", "English, Bangla"],
+      ["Customizable", "Yes"],
+      ["Warranty", "6 Months Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 20,
+    "category": "Keyboard",
+    "name": "Key Board (Wireless Mechanical)",
+    "price": 0,
+    "availability": "comingSoon",
+    "image": "https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg",
+    "specifications": [
+      ["Keyboard Type", "Gaming"],
+      ["Keyboard Technology", "Mechanical"],
+      ["Internet Keys", "98 Key"],
+      ["Custom Button", "Hot Swappable Keys, 3 pin"],
+      ["Connectivity", "Wireless"],
+      ["Battery", "1 AA Alkaline Battery"],
+      ["Battery Life", "about 650H (12 Months)"],
+      ["Lighting Mode", "RGB"],
+      ["Cable Length", "1.5M"],
+      ["Key Rollover", "N-Key"],
+      ["Switch", "Blue Switch"],
+      ["Keyboard Font", "English, Bangla"],
+      ["Customizable", "Yes"],
+      ["Warranty", "6 Months Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 21,
+    "category": "Mouse",
+    "name": "Mouse (Wired)",
+    "price": 0,
+    "availability": "comingSoon",
+    "image": "https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg",
+    "specifications": [
+      ["Number of Keys", "3"],
+      ["Connection Type", "USB Wired"],
+      ["Optical Sensor", "Yes"],
+      ["Resolution", "1200 DPI"],
+      ["Cable Length", "150 cm"],
+      ["System Requirements", "Windows XP / Vista / 7 / 8 / 8.1 / 10"],
+      ["Switch Lifecycle", "5 million clicks"],
+      ["Color", "Black"],
+      ["Dimension", "119 x 62 x 37 mm"],
+      ["Warranty", "6 Months Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 22,
+    "category": "Mouse",
+    "name": "Mouse (Wireless)",
+    "price": 0,
+    "availability": "comingSoon",
+    "image": "https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg",
+    "specifications": [
+      ["Number of Keys", "3"],
+      ["Connection Type", "USB Wired"],
+      ["Optical Sensor", "Yes"],
+      ["Resolution", "1200 DPI"],
+      ["Cable Length", "150 cm"],
+      ["System Requirements", "Windows XP / Vista / 7 / 8 / 8.1 / 10"],
+      ["Switch Lifecycle", "5 million clicks"],
+      ["Battery Life", "1AA Alkaline Battery"],
+      ["Color", "Black"],
+      ["Dimension", "119 x 62 x 37 mm"],
+      ["Warranty", "6 Months Full Service Warranty"]
+    ]
+  },
+  {
+    "id": 23,
+    "category": "Data Cable",
+    "name": "USB Cable",
+    "price": 0,
+    "availability": "comingSoon",
+    "image": "https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg",
+    "specifications": [
+      ["Interface", "USB to Type-C"],
+      ["Cable Length", "1 Meter"],
+      ["Material", "High Quality Plastic"],
+      ["Output", "2.4A MAX"],
+      ["Warranty", "6 Months Warranty"]
+    ]
+  },
+  {
+    "id": 24,
+    "category": "Mobile Charger",
+    "name": "Mobile Charger",
+    "price": 0,
+    "availability": "comingSoon",
+    "image": "https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg",
+    "specifications": [
+      ["Input Power", "100-240V"],
+      ["Output", "USB-C"],
+      ["Output Power", "5V-3A / 9V-2A / 12V-1.5A"],
+      ["Warranty", "6 Months Warranty"]
+    ]
+  }
+]

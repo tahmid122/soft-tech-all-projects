@@ -1,0 +1,46 @@
+#mainNavBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 0 10px;
+  padding-bottom: 5px;
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 50;
+}
+.navbarLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.navbarLinks li {
+  /* border-radius: var(---primaryBorderRadius); */
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbarLinks li a {
+  padding: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbarLinks li a.active {
+  border-bottom: 4px solid var(---primaryColor);
+}
+.navbarLinks li:hover {
+  background-color: var(---primaryBackground);
+}
+.profileNav {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: var(---primaryBorder);
+}

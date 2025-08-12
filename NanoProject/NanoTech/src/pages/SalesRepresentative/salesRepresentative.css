@@ -1,0 +1,158 @@
+.sp-form {
+  padding: 20px;
+  width: 50%;
+  margin: 0 auto;
+}
+.sp-form .margin-top {
+  margin-top: 30px;
+}
+#salesRepresentative .form-element {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+}
+.inner-input {
+  width: 100%;
+}
+.inner-input input,
+select {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: gainsboro;
+}
+.radio-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  margin-top: 10px;
+}
+.radio {
+  width: auto;
+}
+.radio-single {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.formBtn {
+  width: 100%;
+  margin-top: 20px;
+}
+.nidCheck {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nid-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: black;
+}
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+.modal-container .xMark {
+  position: absolute;
+  left: 22%;
+  top: 100px;
+  z-index: 10;
+  cursor: pointer;
+  background-color: gainsboro;
+  border-radius: 999px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#formModal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  /* border: 2px solid gainsboro; */
+  border-radius: 12px;
+  height: 80vh;
+  width: 50%;
+  padding: 20px 80px;
+  overflow-y: auto;
+}
+.formModalBorder {
+  border: 1px solid black;
+  margin: 20px;
+  overflow-x: auto;
+}
+.modalBtn {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+#formModal p {
+  font-size: 12px;
+  line-height: 20px;
+}
+/* dark theme */
+#dark #salesRepresentative {
+  background-color: #101828;
+}
+#dark .sp-form {
+  color: white;
+}
+#dark .nid-checkbox {
+  color: white;
+}
+/* dark theme */
+/* Responsive part */
+@media only screen and (max-width: 992px) {
+  .sp-form {
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  #formModal {
+    width: 95%;
+    height: 90vh;
+    padding: 10px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .sp-form {
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  #salesRepresentative .form-element {
+    gap: 0.5rem;
+  }
+  .element-column {
+    flex-direction: column;
+  }
+  #formModal {
+    width: 95%;
+    height: 90vh;
+    padding: 10px;
+  }
+  .modal-container .xMark {
+    position: absolute;
+    left: 6%;
+    top: 10px;
+    z-index: 10;
+    cursor: pointer;
+  }
+}

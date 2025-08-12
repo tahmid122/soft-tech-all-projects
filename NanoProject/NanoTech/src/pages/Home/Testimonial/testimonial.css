@@ -1,0 +1,104 @@
+.testimonial-card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 0 80px;
+}
+.testimonial-card {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: 280px;
+  overflow: hidden;
+}
+.testimonial-card:hover {
+  box-shadow: #228b22;
+}
+
+.testimonial-card img {
+  width: 128px;
+  height: 128px;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 5px solid white;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.testimonial-card img:hover {
+  transition: transform 0.2s;
+  transform: scale(1.1);
+}
+.t-card-left {
+  position: relative;
+}
+
+#testimonial .quote {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#testimonial .name-company {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 0.7rem;
+  font-size: 18px;
+}
+.slider-css {
+  border-radius: 20px;
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+}
+.mySwiper {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+}
+.swiper-wrapper {
+  width: 100%;
+}
+
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+  color: black;
+}
+.swiper {
+  padding: 0 50px !important;
+}
+/*  dark theme*/
+#dark .testimonial-card {
+  background-color: #101828;
+}
+#dark .testimonial-card p {
+  /* color: #98a2b3; */
+}
+#dark .testimonial-card h3 {
+  color: white;
+}
+#dark .mySwiper .swiper-button-next,
+#dark .mySwiper .swiper-button-prev {
+  color: white;
+}
+/*  dark theme*/
+
+/* Responsive part */
+@media only screen and (max-width: 992px) {
+  .testimonial-card {
+    flex-direction: column;
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .testimonial-card {
+    flex-direction: column;
+    height: 400px;
+  }
+  .swiper {
+    padding: 0 0px !important;
+  }
+}

@@ -1,0 +1,287 @@
+#productsSection {
+  padding: 50px;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+.category-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #228b22;
+  padding: 8px 10px;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.productsSectionTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.searchBox {
+  display: flex;
+  align-items: center;
+}
+.searchBox input {
+  padding: 8px 10px;
+  height: 50px;
+  outline: none;
+  font-size: 15px;
+  border: none;
+  border-left: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+  border-top: 1px solid gainsboro;
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+  width: 300px;
+}
+.searchBox button {
+  padding: 8px 10px;
+  height: 50px;
+  width: 100px;
+  outline: none;
+  font-size: 15px;
+  border: none;
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+  background-color: #228b22;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+.wishCart {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.wishCart div {
+  width: 40px;
+  height: 40px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  cursor: pointer;
+  background-color: #228b22;
+  transition: all 0.2s;
+}
+.wishCart div:hover {
+  transition: all 0.2s;
+  background-color: #166916;
+}
+.wishCart2 {
+  display: none;
+  align-items: center;
+  gap: 15px;
+}
+.wishCart2 div {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  cursor: pointer;
+  background-color: #228b22;
+  transition: all 0.2s;
+  color: white;
+}
+.wishCart2 div:hover {
+  transition: all 0.2s;
+  background-color: #166916;
+}
+.productMainSection {
+  margin-top: 50px;
+  display: flex;
+  gap: 20px;
+}
+.pmsLeft {
+  min-width: 300px;
+  height: 650px;
+  padding: 20px;
+  border-radius: 3px;
+  border: 1px solid gainsboro;
+  position: sticky;
+  top: 10px;
+}
+#catBtnLarge {
+  min-width: 300px;
+}
+.pmsLeft button {
+  margin-top: 10px;
+}
+.pmsRight {
+  padding: 20px;
+  border-radius: 3px;
+  border: 1px solid gainsboro;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.pmsLeft-title {
+  margin-bottom: 10px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+}
+.categories li {
+  display: flex;
+  gap: 5px;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.categories li input {
+  width: 18px;
+}
+.animatedSearchBox {
+  width: 100%;
+  flex: 1;
+  display: none;
+  align-items: center;
+  justify-content: end;
+  transform: translateX(150%);
+  transition: transform 1s;
+}
+.animatedSearchBoxAnimation {
+  transition: transform 1s;
+  transform: translateX(0%);
+}
+.animatedSearchBox input {
+  width: 100%;
+}
+.animatedSearchBox input,
+button {
+  padding: 5px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border: 1px solid gainsboro;
+}
+
+.animatedSearchBox input {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.animatedSearchBox button {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #228b22;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+}
+.searchIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid gainsboro;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+/* dark theme */
+#dark .productionSectionBg {
+  background-color: #101828;
+  color: white;
+}
+#dark .pmsLeft-title {
+  color: white;
+}
+#dark .searchBox input {
+  background-color: gainsboro;
+}
+#dark .pmsLeft {
+  border: 1px solid rgba(220, 220, 220, 0.2);
+}
+#dark .pmsRight {
+  border: 1px solid rgba(220, 220, 220, 0.2);
+}
+#dark .wishCart div {
+  border: 1px solid rgba(220, 220, 220, 0.2);
+}
+#dark .wishCart2 div {
+  border: 1px solid rgba(220, 220, 220, 0.2);
+  color: white;
+}
+
+/* dark theme */
+
+/* Responsive part */
+@media only screen and (max-width: 1300px) {
+  #productsSection {
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 992px) {
+  #productsSection {
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .productsSectionTop {
+    flex-direction: row;
+    gap: 10px;
+  }
+  .productMainSection {
+    flex-direction: column;
+  }
+  .pmsLeft {
+    position: static;
+    height: auto;
+  }
+  .pmsRight {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .wishCart2 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #productsSection {
+    padding: 10px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .productsSectionTop {
+    flex-direction: row;
+    gap: 10px;
+  }
+  .searchBox {
+    display: none;
+  }
+  .productMainSection {
+    flex-direction: column;
+  }
+  .pmsLeft {
+    position: static;
+    min-width: auto;
+  }
+  .pmsRight {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 5px;
+  }
+  .searchBox input {
+    width: 100%;
+  }
+  .animatedSearchBox {
+    display: flex;
+  }
+  .searchIcon {
+    display: flex;
+  }
+}

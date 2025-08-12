@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dashboardStyle.css" />
+    <!-- fontawesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>ড্যাশবোর্ড</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <!-- Dashboard Sidebar -->
+      <aside id="sidebar">
+        <ul>
+          <li
+            class="menuItem active"
+            onclick="showContent('dashboard')"
+            id="dashboardBtn"
+          >
+            <i class="fas fa-tachometer-alt"></i> ড্যাশবোর্ড
+          </li>
+          <li
+            class="menuItem"
+            onclick="showContent('institutionUpdate')"
+            id="institutionUpdateBtn"
+          >
+            <i class="fas fa-image"></i> প্রতিষ্ঠান আপডেট
+          </li>
+          <li
+            class="menuItem"
+            onclick="showContent('latestNotice')"
+            id="latestNoticeBtn"
+          >
+            <i class="fas fa-bullhorn"></i> সর্বশেষ নোটিশ
+          </li>
+          <li class="menuItem" onclick="showContent('result')" id="resultBtn">
+            <i class="fas fa-file-alt"></i> ফলাফল
+          </li>
+          <li
+            class="menuItem"
+            onclick="showContent('teacherStudent')"
+            id="teacherStudentBtn"
+          >
+            <i class="fas fa-users"></i>বর্ষ সেরা ছাত্র-শিক্ষক
+          </li>
+          <li
+            class="menuItem"
+            onclick="showContent('mapUpdate')"
+            id="mapUpdateBtn"
+          >
+            <i class="fas fa-map-marker-alt"></i> ম্যাপ আপডেট
+          </li>
+          <li
+            class="menuItem"
+            onclick="showContent('principleSpeech')"
+            id="principleSpeechBtn"
+          >
+            <i class="fas fa-chalkboard-teacher"></i> প্রধান শিক্ষকের বাণী
+          </li>
+          <li
+            class="menuItem"
+            onclick="showContent('presidentSpeech')"
+            id="presidentSpeechBtn"
+          >
+            <i class="fas fa-user-tie"></i> সভাপতির বাণী
+          </li>
+          <li
+            class="menuItem"
+            onclick="showContent('socialMedia')"
+            id="socialMediaBtn"
+          >
+            <i class="fas fa-share-alt"></i> সামাজিক যোগাযোগ
+          </li>
+          <li
+            class="menuItem"
+            onclick="showContent('addStudent')"
+            id="addStudentBtn"
+          >
+            <i class="fas fa-user-plus"></i> ছাত্র যোগ করুন
+          </li>
+
+          <li
+            class="menuItem"
+            onclick="showContent('addTeacher')"
+            id="addTeacherBtn"
+          >
+            <i class="fas fa-chalkboard-teacher"></i> শিক্ষক যোগ করুন
+          </li>
+        </ul>
+      </aside>
+      <!-- Main section -->
+      <section id="mainSection">
+        <div
+          id="runningLastNotice"
+          style="display: flex; align-items: center; justify-content: center"
+        >
+          <h3>চলমান সর্বশেষ নোটিশঃ</h3>
+          <marquee
+            class="marquee"
+            behavior="smooth"
+            direction="left"
+            scrollamount="3"
+            scrolldelay="85"
+            style="flex: 1; width: 100%"
+            >২০২৫-২০২৬ শিক্ষাবর্ষে দশম শ্রেণির ভর্তির জন্য অনলাইনে আবেদন
+            সংক্রান্ত</marquee
+          >
+        </div>
+        <!-- dashboard section -->
+        <!-- left side -->
+        <div id="dashboard">
+          <div>
+            <div class="">
+              <h2 class="headingStyle">শিক্ষা প্রতিষ্ঠানের বিস্তারিত</h2>
+              <div class="shadowStyle">
+                <table
+                  id="institutionDetailsTable"
+                  class="bsc-description-table"
+                >
+                  <tr>
+                    <th>প্রতিষ্ঠানের নাম</th>
+                    <td>উমুক সরকারী বিদ্যালয়</td>
+                  </tr>
+                  <tr>
+                    <th>ঠিকানা</th>
+                    <td>মনিহার, সদর, যশোর।</td>
+                  </tr>
+                  <tr>
+                    <th>ইআইআইএন</th>
+                    <td>৪২৫৬৭৩</td>
+                  </tr>
+                  <tr>
+                    <th>এমপিও</th>
+                    <td>৭৬২৪</td>
+                  </tr>
+                  <tr>
+                    <th>যোগাযোগ</th>
+                    <td><a href="tel:+8801318195591">০১৩১৮১৯৫৫৯১</a></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <!-- speech -->
+
+            <!-- about -->
+            <div class="dashboardAboutUs">
+              <h4 class="headingStyle">আমাদের সম্পর্কে</h4>
+              <div class="shadowStyle">
+                <p>
+                  আমাদের বিদ্যালয় একটি স্বনামধন্য শিক্ষা প্রতিষ্ঠান, যেখানে
+                  শিক্ষার্থীদের নৈতিকতা, মূল্যবোধ ও আধুনিক শিক্ষার সমন্বয়ে গড়ে
+                  তোলা হয় ভবিষ্যতের যোগ্য নাগরিক। আমাদের লক্ষ্য হল
+                  ছাত্রছাত্রীদের সৃজনশীল চিন্তা, শৃঙ্খলা, এবং নৈতিক গুণাবলি
+                  বিকাশের মাধ্যমে তাদের সামগ্রিক উন্নয়ন নিশ্চিত করা। শিক্ষার
+                  পাশাপাশি সহশিক্ষা কার্যক্রমেও আমরা সমান গুরুত্ব দিই, যাতে
+                  শিক্ষার্থীরা শারীরিক, মানসিক ও সামাজিক দক্ষতায় পরিপূর্ণভাবে
+                  গড়ে উঠতে পারে। <br />
+                  <br />
+                  আমাদের অভিজ্ঞ ও যত্নশীল শিক্ষক মণ্ডলী প্রতিটি শিক্ষার্থীর
+                  প্রতি ব্যক্তিগত মনোযোগ দিয়ে তাদের উন্নত ভবিষ্যতের পথে পরিচালিত
+                  করেন। বিদ্যালয়টি একটি নিরাপদ, আধুনিক ও প্রযুক্তিনির্ভর পরিবেশে
+                  পরিচালিত হয়, যেখানে প্রতিটি শিশুর জন্য রয়েছে শেখার আনন্দদায়ক
+                  অভিজ্ঞতা। <br />
+                  <br />
+                  আমরা বিশ্বাস করি, সঠিক দিকনির্দেশনা ও অনুপ্রেরণাই একজন
+                  শিক্ষার্থীর জীবনে সবচেয়ে বড় সম্পদ।
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- right side -->
+          <!-- statistics -->
+          <div>
+            <div>
+              <h2>পরিসংখ্যান</h2>
+              <div class="statististicsDetails">
+                <div>
+                  <h4>৫১২</h4>
+                  <p>মোট শিক্ষার্থী</p>
+                </div>
+                <div>
+                  <h4>২৪</h4>
+                  <p>মোট শিক্ষক</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <section id="bestStudentTeacher">
+                <div class="bestStudent">
+                  <h4>বর্ষ সেরা ছাত্র</h4>
+                  <div class="bs-container">
+                    <div class="bsc-image">
+                      <img
+                        src="https://plus.unsplash.com/premium_photo-1682091992663-2e4f4a5534ba?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWFsZSUyMHN0dWRlbnR8ZW58MHx8MHx8fDA%3D"
+                        alt=""
+                      />
+                    </div>
+                    <table class="bsc-description-table">
+                      <tr>
+                        <th>নামঃ</th>
+                        <td>আবুল হোসেন</td>
+                      </tr>
+                      <tr>
+                        <th>পিতাঃ</th>
+                        <td>কবির হোসেন</td>
+                      </tr>
+                      <tr>
+                        <th>রোলঃ</th>
+                        <td>০১</td>
+                      </tr>
+                      <tr>
+                        <th>শ্রেণীঃ</th>
+                        <td>৯ম</td>
+                      </tr>
+                      <tr>
+                        <th>শাখাঃ</th>
+                        <td>ক</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="bestStudent">
+                  <h4>বর্ষ সেরা শিক্ষক</h4>
+                  <div class="bs-container">
+                    <div class="bsc-image">
+                      <img
+                        src="https://plus.unsplash.com/premium_photo-1664300900349-afd61c20f8b8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D"
+                        alt=""
+                      />
+                    </div>
+                    <table class="bsc-description-table">
+                      <tr>
+                        <th>নামঃ</th>
+                        <td>আবুল হোসেন</td>
+                      </tr>
+                      <tr>
+                        <th>পদবীঃ</th>
+                        <td>সহকারী শিক্ষক</td>
+                      </tr>
+                      <tr>
+                        <th>বিষয়ঃ</th>
+                        <td>বাংলা</td>
+                      </tr>
+                      <tr>
+                        <th>মোবাইলঃ</th>
+                        <td><a href="tel:013xxxxxxxx">০১৩১৫৪৮৪৬৪৫৮</a></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </section>
+              <!-- speech section -->
+              <div class="dashboardSpeech">
+                <!-- principle speech -->
+                <div class="principleSpeech">
+                  <h4 class="sideTitle">প্রধান শিক্ষকের বাণী</h4>
+                  <div style="padding: 5px; padding-top: 0">
+                    <div class="principleSpeechContainer">
+                      <div class="psc-top">
+                        <img
+                          src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFsZSUyMHRlYWNoZXJ8ZW58MHx8MHx8fDA%3D"
+                          alt=""
+                        />
+                        <div class="speechInfo">
+                          <p>আবুল হোসেন</p>
+                          <p>০৩/১২/২০১২ থেকে চলমান</p>
+                          <p><a href="tel:01318195547">০১৩১৮৪৫৯৯৬৫</a></p>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="speech">
+                      প্রধান শিক্ষকের বাণী',' আমরা আমাদের প্রতিষ্ঠানে একটি
+                      নিরাপদ, সহানুভূতিশীল এবং প্রগতিশীল শিক্ষাব্যবস্থা নিশ্চিত
+                      করার লক্ষ্যে কাজ করছি, যেখানে প্রতিটি শিক্ষার্থী নিজের
+                      সেরা সম্ভাবনাটি বিকশিত করার সুযোগ পায়। আমাদের অভিজ্ঞ
+                      শিক্ষকবৃন্দ ও আধুনিক শিক্ষাসুযোগের মাধ্যমে আমরা
+                      শিক্ষার্থীদের মানসিক, বৌদ্ধিক ও সামাজিক উন্নয়নে বিশ্বাসী।
+                      একজন শিক্ষা প্রতিষ্ঠানের প্রধান হিসেবে আমি সব সময় বিশ্বাস
+                      করি— সঠিক দিকনির্দেশনা ও ইতিবাচক পরিবেশ একজন শিক্ষার্থীকে
+                      একজন ভালো মানুষ হিসেবে গড়ে তুলতে পারে। আমরা চাই আমাদের
+                      প্রতিটি শিক্ষার্থী ভবিষ্যতের জন্য প্রস্তুত হয়ে উঠুক — সৎ,
+                      সাহসী ও সচেতন নাগরিক হিসেবে।
+                    </p>
+                  </div>
+                </div>
+                <!-- President Speech -->
+                <div class="principleSpeech">
+                  <h4 class="sideTitle">সভাপতির বাণী</h4>
+                  <div style="padding: 5px; padding-top: 0">
+                    <div class="principleSpeechContainer">
+                      <div class="psc-top">
+                        <img
+                          src="https://images.unsplash.com/photo-1601655781320-205e34c94eb1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1hbGUlMjB0ZWFjaGVyfGVufDB8fDB8fHww"
+                          alt=""
+                        />
+                        <div class="speechInfo">
+                          <p>আবুল হোসেন</p>
+                          <p>০৩/১২/২০১২ থেকে চলমান</p>
+                          <p><a href="tel:01318195547">০১৩১৮৪৫৯৯৬৫</a></p>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="speech">
+                      সভাপতির বাণী','সম্মানিত অভিভাবক, শিক্ষক, শিক্ষার্থী এবং
+                      শুভানুধ্যায়ীগণ, আসসালামু আলাইকুম ও শুভেচ্ছা। আমাদের
+                      শিক্ষা প্রতিষ্ঠান একটি আলোকবর্তিকা, যা আগামী প্রজন্মকে
+                      জ্ঞান, নৈতিকতা ও নেতৃত্বের আলোয় আলোকিত করতে নিরলসভাবে কাজ
+                      করে যাচ্ছে। আমি এই প্রতিষ্ঠানের সভাপতি হিসেবে অত্যন্ত
+                      গর্বিত এবং আনন্দিত যে, আমরা একটি গঠনমূলক, মানবিক ও
+                      মানসম্পন্ন শিক্ষার পরিবেশ গড়ে তুলতে পেরেছি। একটি
+                      প্রতিষ্ঠানের সাফল্য নির্ভর করে তার সকল অংশীদারদের সম্মিলিত
+                      প্রচেষ্টার ওপর। আমাদের মেধাবী শিক্ষকগণ, পরিশ্রমী
+                      শিক্ষার্থীরা, সহযোগী অভিভাবকবৃন্দ এবং দক্ষ পরিচালনা
+                      পরিষদের মধ্যে রয়েছে একটি চমৎকার সমন্বয়, যা আমাদের এগিয়ে
+                      নিতে সাহায্য করছে। আমি বিশ্বাস করি, শিক্ষা শুধু একটি সনদ
+                      অর্জনের মাধ্যম নয় — এটি একটি জীবন গঠনের প্রক্রিয়া।
+                      আমাদের লক্ষ্য এমন শিক্ষার্থী তৈরি করা, যারা জ্ঞান, নৈতিকতা
+                      ও সামাজিক দায়িত্ববোধে পরিপূর্ণ হয়ে দেশ ও জাতির কল্যাণে
+                      অবদান রাখতে পারবে। আপনাদের সকলের সহযোগিতা ও প্রার্থনা
+                      কামনা করছি।
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- institution update section -->
+        <div id="institutionUpdate" style="display: none">
+          <div class="flex">
+            <h2>প্রতিষ্ঠান আপডেট</h2>
+            <div class="formContainer">
+              <form action="#" method="post">
+                <div class="formElement">
+                  <label for="institutionName">প্রতিষ্ঠানের নামঃ</label>
+                  <input
+                    type="text"
+                    name="institutionName"
+                    placeholder="প্রতিষ্ঠানের নাম লিখুন"
+                    required
+                  />
+                </div>
+                <div class="formElement">
+                  <label for="instituteLogo">প্রতিষ্ঠান লোগো</label>
+                  <input type="file" name="instituteLogo" required />
+                </div>
+                <div class="formElement">
+                  <label for="institutionEstablishmentPeriod"
+                    >প্রতিষ্ঠাকালঃ</label
+                  >
+                  <input
+                    type="date"
+                    name="institutionEstablishmentPeriod"
+                    placeholder="প্রতিষ্ঠাকাল লিখুন"
+                    required
+                  />
+                </div>
+                <div class="inputFlex">
+                  <div class="formElement">
+                    <label for="institutionEiinNumber"
+                      >ই আই আই এন নাম্বারঃ</label
+                    >
+                    <input
+                      type="text"
+                      name="institutionEiinNumber"
+                      placeholder="ই আই আই এন লিখুন"
+                      required
+                    />
+                  </div>
+                  <div class="formElement">
+                    <label for="institutionMpoCode">এম পি ও কোডঃ</label>
+                    <input
+                      type="text"
+                      name="institutionMpoCode"
+                      placeholder="এম পি ও কোড লিখুন"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="inputFlex">
+                  <div class="formElement">
+                    <label for="bannerImageOne">ব্যানার ছবি ১</label>
+                    <input type="file" name="bannerImageOne" required />
+                  </div>
+                  <div class="formElement">
+                    <label for="bannerImageTwo">ব্যানার ছবি ২</label>
+                    <input type="file" name="bannerImageTwo" required />
+                  </div>
+                </div>
+                <div class="formElement">
+                  <label for="bannerImageThree">ব্যানার ছবি ৩</label>
+                  <input type="file" name="bannerImageThree" />
+                </div>
+                <div class="formElement">
+                  <label for="institutionAbout">প্রতিষ্ঠান সম্পর্কেঃ</label>
+                  <textarea
+                    style="height: 300px"
+                    name="institutionAbout"
+                    placeholder="প্রতিষ্ঠান সম্পর্কে লিখুন"
+                    required
+                  ></textarea>
+                </div>
+                <div class="formElement">
+                  <button type="submit">জমা দিন</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- latest notice section -->
+        <div id="latestNotice" style="display: none">
+          <div class="flex">
+            <h2>সর্বশেষ নোটিশ</h2>
+            <div class="formContainer">
+              <form action="#" method="post">
+                <div class="formElement">
+                  <label for="noticeSubject">নোটিশের বিষয়ঃ</label>
+                  <input
+                    type="text"
+                    name="noticeSubject"
+                    placeholder="নোটিশের বিষয় লিখুন"
+                    required
+                  />
+                </div>
+                <div class="formElement">
+                  <label for="noticeImage">নোটিশের ছবি</label>
+                  <input type="file" name="noticeImage" required />
+                </div>
+                <div class="formElement">
+                  <button type="submit">আপডেট করুন</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- all notice table -->
+          <div class="studentDetailsTable">
+            <table>
+              <thead>
+                <tr>
+                  <th>ক্রমিক নং</th>
+                  <th>তারিখ</th>
+                  <th>বিবরণ</th>
+                  <th>একশন</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- result details row -->
+                <tr>
+                  <td>০১</td>
+                  <td>১২/১২/২০২৫</td>
+                  <td>
+                    ২০২৫-২০২৬ শিক্ষাবর্ষে দশম শ্রেণির ভর্তির জন্য অনলাইনে আবেদন
+                    সংক্রান্ত
+                  </td>
+                  <td class="action">
+                    <button style="background-color: red">ডিলিট</button>
+                  </td>
+                </tr>
+                <!-- result details row -->
+                <tr>
+                  <td>০২</td>
+                  <td>০৩/০৮/২০২৫</td>
+                  <td>
+                    ২০২৫-২০২৬ শিক্ষাবর্ষে দশম শ্রেণির ভর্তির জন্য অনলাইনে আবেদন
+                    সংক্রান্ত
+                  </td>
+                  <td class="action">
+                    <button style="background-color: red">ডিলিট</button>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot></tfoot>
+            </table>
+          </div>
+        </div>
+        <!-- result section -->
+        <div id="result" style="display: none">
+          <div class="flex">
+            <h2>ফলাফল</h2>
+            <div class="formContainer">
+              <form action="#" method="post">
+                <div class="formElement">
+                  <label for="classResult">শ্রেণী নির্বাচন করুনঃ</label>
+                  <select name="classResult" id="classSelector">
+                    <option value="">-- একটি শ্রেণী নির্বাচন করুন --</option>
+                    <option value="sixth">৬ষ্ঠ শ্রেনী</option>
+                    <option value="seventh">৭ম শ্রেনী</option>
+                    <option value="eighth">৮ম শ্রেনী</option>
+                    <option value="nineth">৯ম শ্রেনী</option>
+                    <option value="pretest">প্রি-টেস্ট</option>
+                    <option value="test">টেস্ট</option>
+                    <option value="ssc">এস.এস.সি</option>
+                  </select>
+                </div>
+                <div class="formElement">
+                  <input type="file" name="result" />
+                </div>
+                <div class="formElement">
+                  <button type="submit">আপডেট করুন</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- result table -->
+          <div class="studentDetailsTable">
+            <table>
+              <thead>
+                <tr>
+                  <th>ক্রমিক নং</th>
+                  <th>তারিখ</th>
+                  <th>শ্রেনী</th>
+                  <th>একশন</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- result details row -->
+                <tr>
+                  <td>০১</td>
+                  <td>১২/১২/২০২৫</td>
+                  <td>১০ম</td>
+                  <td class="action">
+                    <button style="background-color: red">ডিলিট</button>
+                  </td>
+                </tr>
+                <!-- result details row -->
+                <tr>
+                  <td>০২</td>
+                  <td>০৩/০৮/২০২৫</td>
+                  <td>৯ম</td>
+                  <td class="action">
+                    <button style="background-color: red">ডিলিট</button>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot></tfoot>
+            </table>
+          </div>
+        </div>
+        <!-- teacher and student of the year section -->
+        <div id="teacherStudent" style="display: none">
+          <div class="flex">
+            <h2>বর্ষ সেরা ছাত্র-শিক্ষক</h2>
+            <div
+              style="
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <div class="formContainer">
+                <form action="#" method="post">
+                  <h3 style="margin-bottom: 10px">বর্ষ সেরা ছাত্র</h3>
+                  <div class="inputFlex">
+                    <div class="formElement">
+                      <label for="studentName">নামঃ</label>
+                      <input
+                        type="text"
+                        name="studentName"
+                        placeholder="ছাত্রের নাম লিখুন"
+                        required
+                      />
+                    </div>
+                    <div class="formElement">
+                      <label for="studentClass">শ্রেনীঃ</label>
+                      <input
+                        type="text"
+                        name="studentClass"
+                        placeholder="ছাত্রের শ্রেনী লিখুন"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="formElement">
+                    <label for="studentsFather">পিতাঃ</label>
+                    <input
+                      type="text"
+                      name="studentsFather"
+                      placeholder="ছাত্রের পিতার নাম লিখুন"
+                      required
+                    />
+                  </div>
+
+                  <div class="inputFlex">
+                    <div class="formElement">
+                      <label for="studentRoll">রোলঃ</label>
+                      <input
+                        type="text"
+                        name="studentRoll"
+                        placeholder="ছাত্রের রোল লিখুন"
+                        required
+                      />
+                    </div>
+
+                    <div class="formElement">
+                      <label for="studentSection">শাখাঃ</label>
+                      <input
+                        type="text"
+                        name="studentSection"
+                        placeholder="ছাত্রের শাখা লিখুন"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="formElement">
+                    <label for="studentImage">ছবি</label>
+                    <input type="file" name="studentImage" required />
+                  </div>
+                  <div class="formElement">
+                    <button type="submit">আপডেট করুন</button>
+                  </div>
+                </form>
+              </div>
+              <div class="formContainer">
+                <form action="#" method="post">
+                  <h3 style="margin-bottom: 10px">বর্ষ সেরা শিক্ষক</h3>
+                  <div class="formElement">
+                    <label for="teacherName">নামঃ</label>
+                    <input
+                      type="text"
+                      name="teacherName"
+                      placeholder="শিক্ষকের নাম লিখুন"
+                      required
+                    />
+                  </div>
+                  <div class="inputFlex">
+                    <div class="formElement">
+                      <label for="teacherTitle">পদবী</label>
+                      <input
+                        type="text"
+                        name="teacherTitle"
+                        placeholder="শিক্ষকের পদবী লিখুন"
+                        required
+                      />
+                    </div>
+                    <div class="formElement">
+                      <label for="teacherSubject">বিষয়ঃ</label>
+                      <input
+                        type="text"
+                        name="teacherSubject"
+                        placeholder="শিক্ষকের বিষয় লিখুন"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="formElement">
+                    <label for="teacherContactNumber">যোগাযোগঃ</label>
+                    <input
+                      type="text"
+                      name="teacherContactNumber"
+                      placeholder="শিক্ষকের যোগাযোগ নাম্বার লিখুন"
+                      required
+                    />
+                  </div>
+                  <div class="formElement">
+                    <label for="teacherImage">ছবি</label>
+                    <input type="file" name="teacherImage" required />
+                  </div>
+                  <div class="formElement">
+                    <button type="submit">আপডেট করুন</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- map update section -->
+        <div id="mapUpdate" style="display: none">
+          <div class="flex">
+            <h2>ম্যাপ আপডেট</h2>
+            <div class="formContainer">
+              <form action="#" method="post">
+                <div class="formElement">
+                  <label for="mapLink">ম্যাপ এম্বেডেড লিঙ্কঃ</label>
+                  <input
+                    type="text"
+                    name="mapLink"
+                    placeholder="ম্যাপের এম্বেডেড লিঙ্ক দিন"
+                    required
+                  />
+                </div>
+                <div class="formElement">
+                  <button type="submit">আপডেট করুন</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- principle speech section -->
+        <div id="principleSpeech" style="display: none">
+          <div class="flex">
+            <h2>প্রধান শিক্ষকের বাণী</h2>
+            <div class="formContainer">
+              <form action="#" method="post">
+                <div class="formElement">
+                  <label for="principleName">প্রধান শিক্ষকের নামঃ</label>
+                  <input
+                    type="text"
+                    name="principleName"
+                    placeholder="প্রধান শিক্ষকের নাম লিখুন"
+                    required
+                  />
+                </div>
+                <div class="formElement">
+                  <label for="principleJoiningDate">জয়েনিং তারিখঃ</label>
+                  <input
+                    type="date"
+                    name="principleJoiningDate"
+                    placeholder="প্রধান শিক্ষকের নাম লিখুন"
+                    required
+                  />
+                </div>
+                <div class="formElement">
+                  <label for="principleContactNumber">যোগাযোগঃ</label>
+                  <input
+                    type="text"
+                    name="principleContactNumber"
+                    placeholder="প্রধান শিক্ষকের যোগাযোগ নাম্বার লিখুন"
+                    required
+                  />
+                </div>
+                <div class="formElement">
+                  <label for="principleImage">প্রধান শিক্ষকের ছবিঃ</label>
+                  <input type="file" name="principleImage" required />
+                </div>
+                <div class="formElement">
+                  <label for="principleSpeech">প্রধান শিক্ষকের বাণী</label>
+                  <textarea
+                    name="principleSpeech"
+                    placeholder="প্রধান শিক্ষকের বাণী লিখুন"
+                    required
+                  ></textarea>
+                </div>
+                <div class="formElement">
+                  <button type="submit">আপডেট করুন</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- president speech section -->
+        <div id="presidentSpeech" style="display: none">
+          <div class="flex">
+            <h2>সভাপতির বাণী</h2>
+            <div class="formContainer">
+              <form action="#" method="post">
+                <div class="formElement">
+                  <label for="presidentName">সভাপতির নামঃ</label>
+                  <input
+                    type="text"
+                    name="presidentName"
+                    placeholder="সভাপতির নাম লিখুন"
+                    required
+                  />
+                </div>
+                <div class="formElement">
+                  <label for="presidentJoiningDate">জয়েনিং তারিখঃ</label>
+                  <input
+                    type="date"
+                    name="presidentJoiningDate"
+                    placeholder="সভাপতির নাম লিখুন"
+                    required
+                  />
+                </div>
+                <div class="formElement">
+                  <label for="presidentContactNumber">যোগাযোগঃ</label>
+                  <input
+                    type="text"
+                    name="presidentContactNumber"
+                    placeholder="সভাপতির যোগাযোগ নাম্বার লিখুন"
+                    required
+                  />
+                </div>
+                <div class="formElement">
+                  <label for="presidentImage">সভাপতির ছবিঃ</label>
+                  <input type="file" name="presidentImage" required />
+                </div>
+                <div class="formElement">
+                  <label for="presidentSpeech">সভাপতির বাণী</label>
+                  <textarea
+                    name="presidentSpeech"
+                    placeholder="সভাপতির বাণী লিখুন"
+                    required
+                  ></textarea>
+                </div>
+                <div class="formElement">
+                  <button type="submit">আপডেট করুন</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- social media section -->
+        <div id="socialMedia" style="display: none">
+          <div class="flex">
+            <h2>সামাজিক যোগাযোগ মাধ্যম</h2>
+
+            <div class="formContainer">
+              <form action="#" method="post">
+                <div class="formElement">
+                  <label for="classResult">মাধ্যম নির্বাচন করুনঃ</label>
+                  <select name="classResult" id="classSelector">
+                    <option value="">-- একটি মাধ্যম নির্বাচন করুন --</option>
+                    <option value="mobile">মোবাইল নাম্বার</option>
+                    <option value="whatsapp">হোয়াটসঅ্যাপ</option>
+                    <option value="facebook">ফেসবুক</option>
+                    <option value="gmail">জিমেইল</option>
+                  </select>
+                </div>
+                <div class="formElement">
+                  <input
+                    type="text"
+                    name="socialMedia"
+                    placeholder="এখানে লিঙ্ক/নাম্বার দিন"
+                  />
+                </div>
+                <div class="formElement">
+                  <button type="submit">আপডেট করুন</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- add student section -->
+        <div id="addStudent" style="display: none">
+          <div class="flex">
+            <h2>ছাত্র যোগ করুন</h2>
+            <div class="formContainer">
+              <form action="#" method="post">
+                <div class="formElement">
+                  <label for="studentName">নামঃ</label>
+                  <input
+                    type="text"
+                    name="studentName"
+                    placeholder="ছাত্রের নাম লিখুন"
+                    required
+                  />
+                </div>
+                <div class="inputFlex">
+                  <div class="formElement">
+                    <label for="studentClass">শ্রেনীঃ</label>
+                    <input
+                      type="text"
+                      name="studentClass"
+                      placeholder="ছাত্রের শ্রেনী লিখুন"
+                      required
+                    />
+                  </div>
+                  <div class="formElement">
+                    <label for="studentRoll">রোলঃ</label>
+                    <input
+                      type="text"
+                      name="studentRoll"
+                      placeholder="ছাত্রের রোল লিখুন"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="inputFlex">
+                  <div class="formElement">
+                    <label for="studentGurdianName">অভিভাবকের নামঃ</label>
+                    <input
+                      type="text"
+                      name="studentGurdianName"
+                      placeholder="অভিভাবকের নাম লিখুন"
+                      required
+                    />
+                  </div>
+                  <div class="formElement">
+                    <label for="studentGurdianNumber">অভিভাবকের নাম্বারঃ</label>
+                    <input
+                      type="text"
+                      name="studentGurdianNumber"
+                      placeholder="অভিভাবকের নাম্বার লিখুন"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="formElement">
+                  <label for="studentDateOfBirthNumber"
+                    >জন্মনিন্ধন নাম্বারঃ</label
+                  >
+                  <input
+                    type="text"
+                    name="studentDateOfBirthNumber"
+                    placeholder="ছাত্রের জন্মনিন্ধন নাম্বার লিখুন"
+                    required
+                  />
+                </div>
+                <div class="formElement">
+                  <label for="studentDateOfBirthImage">জন্মনিন্ধনের ছবি</label>
+                  <input type="file" name="studentDateOfBirthImage" required />
+                </div>
+
+                <div class="formElement">
+                  <label for="studentImage">ছাত্রের ছবি</label>
+                  <input type="file" name="studentImage" required />
+                </div>
+                <div class="formElement">
+                  <button type="submit">যোগ করুন</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- all student details table -->
+          <div class="studentDetailsTable">
+            <table>
+              <thead>
+                <tr>
+                  <th>নাম</th>
+                  <th>শ্রেনী</th>
+                  <th>রোল</th>
+                  <th>অভিভাবক</th>
+                  <th>মোবাইল</th>
+                  <th>জন্মনিন্ধন</th>
+                  <th>একশন</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- student details row -->
+                <tr>
+                  <td>তাহমিদ আলম</td>
+                  <td>১০ম</td>
+                  <td>০১</td>
+                  <td>আব্দুল হাই</td>
+                  <td>০১৩১৮১৯৫৫৯১</td>
+                  <td>
+                    ৫২৩৬৫৪৭৮৯৫৬৫২৪ |
+                    <button style="background-color: green">ডাউনলোড</button>
+                  </td>
+                  <td class="action">
+                    <button style="background-color: #a4d84f; color: black">
+                      আপডেট
+                    </button>
+                    <button style="background-color: red">ডিলিট</button>
+                  </td>
+                </tr>
+                <!-- student details row -->
+                <tr>
+                  <td>তাহমিদ আলম</td>
+                  <td>১০ম</td>
+                  <td>০১</td>
+                  <td>আব্দুল হাই</td>
+                  <td>০১৩১৮১৯৫৫৯১</td>
+                  <td>
+                    ৫২৩৬৫৪৭৮৯৫৬৫২৪ |
+                    <button style="background-color: green">ডাউনলোড</button>
+                  </td>
+                  <td class="action">
+                    <button style="background-color: #a4d84f; color: black">
+                      আপডেট
+                    </button>
+                    <button style="background-color: red">ডিলিট</button>
+                  </td>
+                </tr>
+                <!-- student details row -->
+                <tr>
+                  <td>তাহমিদ আলম</td>
+                  <td>১০ম</td>
+                  <td>০১</td>
+                  <td>আব্দুল হাই</td>
+                  <td>০১৩১৮১৯৫৫৯১</td>
+                  <td>
+                    ৫২৩৬৫৪৭৮৯৫৬৫২৪ |
+                    <button style="background-color: green">ডাউনলোড</button>
+                  </td>
+                  <td class="action">
+                    <button style="background-color: #a4d84f; color: black">
+                      আপডেট
+                    </button>
+                    <button style="background-color: red">ডিলিট</button>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot></tfoot>
+            </table>
+          </div>
+        </div>
+        <!-- add teacher section -->
+        <div id="addTeacher" style="display: none">
+          <div class="flex">
+            <h2>শিক্ষক যোগ করুন</h2>
+            <div class="formContainer">
+              <form action="#" method="post">
+                <div class="formElement">
+                  <label for="teacherName">নামঃ</label>
+                  <input
+                    type="text"
+                    name="teacherName"
+                    placeholder="শিক্ষকের নাম লিখুন"
+                    required
+                  />
+                </div>
+                <div class="inputFlex">
+                  <div class="formElement">
+                    <label for="teacherTitle">পদবীঃ</label>
+                    <input
+                      type="text"
+                      name="teacherTitle"
+                      placeholder="শিক্ষকের পদবী লিখুন"
+                      required
+                    />
+                  </div>
+                  <div class="formElement">
+                    <label for="teacherSubject">বিষয়ঃ</label>
+                    <input
+                      type="text"
+                      name="studentRoll"
+                      placeholder="শিক্ষকের বিষয় লিখুন"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="formElement">
+                  <label for="teacherContactNumber">যোগাযোগঃ</label>
+                  <input
+                    type="text"
+                    name="teacherContactNumber"
+                    placeholder="যোগাযোগ নাম্বার লিখুন"
+                    required
+                  />
+                </div>
+                <div class="formElement">
+                  <label for="teacherJoiningDate">জয়েনিং তারিখঃ</label>
+                  <input
+                    style="width: 100%"
+                    type="date"
+                    name="teacherJoiningDate"
+                    required
+                  />
+                </div>
+
+                <div class="formElement">
+                  <label for="teacherImage">শিক্ষকের ছবি</label>
+                  <input type="file" name="teacherImage" required />
+                </div>
+                <div class="formElement">
+                  <button type="submit">যোগ করুন</button>
+                </div>
+              </form>
+            </div>
+            <!-- teacher table -->
+            <div class="studentDetailsTable">
+              <table>
+                <thead>
+                  <tr>
+                    <th>নাম</th>
+                    <th>পদবী</th>
+                    <th>বিষয়</th>
+                    <th>যোগাযোগ</th>
+                    <th>জয়েনিং তারিখ</th>
+                    <th>একশন</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- teacher details row -->
+                  <tr>
+                    <td>সালমান খান</td>
+                    <td>সহকারী শিক্ষক</td>
+                    <td>বাংলা</td>
+                    <td>০১৩১৪১৫২২৬২</td>
+                    <td>১২/১২/২০১২</td>
+                    <td class="action">
+                      <button style="background-color: #a4d84f; color: black">
+                        আপডেট
+                      </button>
+                      <button style="background-color: red">ডিলিট</button>
+                    </td>
+                  </tr>
+                  <!-- teacher details row -->
+                  <tr>
+                    <td>আব্দুর রহিম</td>
+                    <td>সহকারী শিক্ষক</td>
+                    <td>ইংরেজি</td>
+                    <td>০১৩১৪১৫২২৬২</td>
+                    <td>১২/১২/২০১২</td>
+                    <td class="action">
+                      <button style="background-color: #a4d84f; color: black">
+                        আপডেট
+                      </button>
+                      <button style="background-color: red">ডিলিট</button>
+                    </td>
+                  </tr>
+                  <!-- teacher details row -->
+                  <tr>
+                    <td>সেলিনা বেগম</td>
+                    <td>সহকারী শিক্ষক</td>
+                    <td>গনিত</td>
+                    <td>০১৩১৪১৫২২৬২</td>
+                    <td>১২/১২/২০১২</td>
+                    <td class="action">
+                      <button style="background-color: #a4d84f; color: black">
+                        আপডেট
+                      </button>
+                      <button style="background-color: red">ডিলিট</button>
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot></tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+/* default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* default styles */
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#login .imageContainer {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 999px;
+  border: 1px solid gainsboro;
+  margin-bottom: 20px;
+}
+#login .imageContainer img {
+  width: 100%;
+}
+#login h3 {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+#loginForm {
+  border: 1px solid gainsboro;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+  padding: 20px;
+  width: 396px;
+}
+.formElement {
+  width: 100%;
+}
+.formElement input {
+  width: 100%;
+  font-size: 17px;
+  padding: 14px 16px;
+  outline: none;
+  border: 1px solid gainsboro;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.btn {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: #228b22;
+  font-size: 20px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn:hover {
+  transition: all 0.2s;
+  background-color: #1d801d;
+}
+.eyeBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  cursor: pointer;
+}
+#loginForm .forgetPass {
+  color: #228b22;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Popup */
+#popUp {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popUpContainer {
+  border: 1px solid gainsboro;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+  padding: 20px;
+  width: 396px;
+  background-color: white;
+  position: relative;
+}
+.popUpContainer h4 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+.xMark {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.popUpContainer .resentContainer {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.resentContainer .resent {
+  font-size: 14px;
+  cursor: pointer;
+  color: #228b22;
+  font-weight: 500;
+}
+.resend {
+  font-size: 14px;
+  color: #228b22;
+}

@@ -1,0 +1,89 @@
+#signUp {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+.signUp-form {
+  margin-top: 20px;
+}
+
+#signUp .form-element {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+#signUp .form-element input {
+  width: 100%;
+  border: 1px solid gainsboro;
+  outline: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+#signUp .form-element select,
+input {
+  border: 1px solid gainsboro;
+  background-color: white;
+  width: 100%;
+}
+.signUpImage img {
+  width: 100%;
+}
+.signUp-form p {
+  /* color: black; */
+  margin-top: 20px;
+  font-size: 15px;
+}
+.signUp-form p a {
+  font-weight: bold;
+  color: #228b22;
+}
+.mobileFlex {
+  display: flex;
+  gap: 15px;
+}
+
+/* dark theme */
+#dark .bg-signUp {
+  background-color: #101828;
+}
+#dark .form-element label {
+  /* color: #98a2b3; */
+}
+
+.passwordInput {
+  position: relative;
+}
+.eyeBtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+/* dark theme */
+#dark .optional {
+  color: #98a2b3 !important;
+}
+/* Responsive part */
+@media only screen and (max-width: 992px) {
+  #signUp {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #signUp {
+    flex-direction: column-reverse;
+  }
+  .signUpImage {
+    display: none;
+  }
+  .mobileFlex {
+    flex-direction: column;
+    gap: 0;
+  }
+}

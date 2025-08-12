@@ -1,0 +1,67 @@
+.marketCategory {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 0 10px;
+}
+.marketCategory select {
+  width: 100%;
+  border: var(---primaryBorder);
+  padding: var(---primaryPadding);
+  border-radius: var(---primaryBorderRadius);
+  outline: none;
+  font-size: 15px;
+}
+.allMarketProducts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.singleMarketProduct {
+  background-color: white;
+}
+.productImage {
+  width: 100%;
+  height: 150px !important;
+}
+.productImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+}
+.productDescription {
+  padding: var(---primaryPadding);
+  text-align: center;
+}
+.actionButtons {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.actionButtons button {
+  padding: 7px 10px;
+  border: none;
+  background-color: #228b22;
+  border-radius: var(---primaryBorderRadius);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+@media only screen and (min-width: 728px) {
+  .allMarketProducts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .allMarketProducts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}

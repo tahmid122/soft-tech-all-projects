@@ -1,0 +1,50 @@
+.coverImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  position: relative;
+}
+.profileDescription {
+  position: relative;
+  padding: var(---primaryPadding);
+  transform: translateY(-60px);
+}
+.profileDescriptionImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+}
+.profileMain h1 {
+  text-align: center;
+  margin-top: -50px;
+}
+.detailsCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: var(---primaryPadding);
+  background-color: var(---primaryBackground);
+}
+.detailsCard {
+  padding: var(---primaryPadding);
+  border: var(---primaryBorder);
+  border-radius: var(---primaryBorderRadius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.detailsCard h4 {
+  font-size: 16px;
+  font-weight: 400;
+}
+.detailsCard h3 {
+  font-size: 18px;
+  font-weight: 600;
+}

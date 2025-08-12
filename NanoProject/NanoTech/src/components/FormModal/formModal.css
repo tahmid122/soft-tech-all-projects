@@ -1,0 +1,9 @@
+.dateIdTable {
+  width: 100% !important;
+}
+.signature {
+  height: 30px;
+  width: 100px;
+  object-fit: cover;
+  margin: 0 auto;
+}

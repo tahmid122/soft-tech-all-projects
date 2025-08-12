@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- daisyUI cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Swiper slider cdn -->
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <title>Landing Page</title>
+    <!-- Default styles -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        /* overflow-x: hidden; */
+        position: relative;
+      }
+      .slider {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      .slide {
+        width: 100%;
+        height: 100%;
+        display: none;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .slide.active {
+        display: block;
+        animation: fade 1s ease-in-out;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white relative">
+    <!-- header section -->
+    <!-- Top Bar -->
+    <div
+      class="flex items-center justify-between py-2 px-4 bg-green-700 text-white text-sm flex-col gap-1 lg:flex-row w-full lg:w-10/12 mx-auto"
+    >
+      <div class="space-x-4">
+        <span
+          >Email:
+          <a href="mailto:softtechtechnology12@gmail.com"
+            >softtechtechnology12@gmail.com
+          </a>
+        </span>
+        <span>Phone: <a href="tel:+8801329-636890">+8801329-636890</a></span>
+      </div>
+      <span><a href="./login.html">Admin Login</a></span>
+    </div>
+    <header class="sticky left-0 top-0 z-40 w-full lg:w-10/12 mx-auto">
+      <!-- ddddd Nav Bar -->
+      <div class="bg-red-50">
+        <div class="navbar bg-white border-b border-b-slate-200 py-2 px-4">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div
+                tabindex="0"
+                role="button"
+                class="lg:hidden p-2 mr-4 cursor-pointer"
+              >
+                <i class="fa-solid fa-bars"></i>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              >
+                <li>
+                  <a
+                    href="#banner"
+                    class="hover:text-green-700 hover:transition-all duration-200"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#product"
+                    class="hover:text-green-700 hover:transition-all duration-200"
+                    >Product</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#review"
+                    class="hover:text-green-700 hover:transition-all duration-200"
+                    >Reviews</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#order"
+                    class="bg-green-700 px-4 py-2 rounded text-white hover:bg-green-800 transition-all duration-200"
+                    >Buy Now</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- logo -->
+            <a href="#"
+              ><img
+                class="h-14 w-24 object-cover"
+                src="https://i.ibb.co.com/zTL9ZmK8/362918150-181948424882166-2378319334321616290-n-1.jpg"
+                alt="logo"
+            /></a>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul
+              class="menu menu-horizontal px-1 flex items-center justify-center gap-4 uppercase font-semibold"
+            >
+              <li>
+                <a
+                  href="#banner"
+                  class="hover:text-green-700 hover:transition-all duration-200"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#product"
+                  class="hover:text-green-700 hover:transition-all duration-200"
+                  >Product</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#review"
+                  class="hover:text-green-700 hover:transition-all duration-200"
+                  >Reviews</a
+                >
+              </li>
+
+              <li>
+                <a
+                  href="#order"
+                  class="bg-green-700 px-4 py-2 rounded text-white hover:bg-green-800 transition-all duration-200"
+                  >Buy Now</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <!-- Profile Image -->
+            <a href="#">
+              <img
+                class="h-12 w-12 rounded-full object-cover"
+                src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+                alt="profile image"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- main section -->
+    <main>
+      <!-- Banner section -->
+      <div id="banner" class="h-[50vh] w-full lg:w-10/12 mx-auto mb-14">
+        <div class="slider">
+          <img
+            src="https://cdn.dribbble.com/userupload/4058887/file/original-179774667e02f4ce746dd8893fc5a409.jpg?resize=1024x768&vertical=center"
+            class="slide"
+            style="display: block"
+          />
+          <img
+            src="https://cdn.dribbble.com/userupload/2621793/file/original-b4a0c7e425e52546359d3e34d716f333.jpg?resize=812x591&vertical=center"
+            class="slide"
+          />
+          <img
+            src="https://cdn.dribbble.com/userupload/2621793/file/original-b4a0c7e425e52546359d3e34d716f333.jpg?resize=812x591&vertical=center"
+            class="slide"
+          />
+        </div>
+      </div>
+      <!-- Product Section -->
+      <div id="product" class="w-11/12 lg:w-10/12 mx-auto my-14">
+        <h1 class="text-3xl lg:text-4xl font-bold text-center mb-10">
+          Our Product
+        </h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <!-- product image -->
+          <div
+            data-aos="fade-right"
+            data-aos-duration="2000"
+            class="w-full h-full"
+          >
+            <img
+              class="w-full h-[460px]"
+              src="https://cdn.dribbble.com/userupload/4058887/file/original-179774667e02f4ce746dd8893fc5a409.jpg?resize=1024x768&vertical=center"
+              alt="productImage"
+            />
+          </div>
+          <!-- product description -->
+          <div data-aos="fade-left" data-aos-duration="2000">
+            <h2 class="text-2xl lg:text-3xl font-bold mb-4">
+              SmartBiz – Your All-in-One Business Website
+            </h2>
+            <p class="text-gray-600 mb-6">
+              Take your business online instantly with
+              <span class="font-semibold text-green-800">SmartBiz</span>, a
+              ready-made, professional website designed to impress and convert
+              visitors into customers. Built with the latest web technologies,
+              it’s <strong>fast, secure, and fully responsive</strong> — looking
+              perfect on mobile, tablet, and desktop.
+            </p>
+            <ul class="space-y-2 mb-6 text-gray-700">
+              <li>
+                ⚡ <strong>Lightning-fast loading</strong> for a smooth user
+                experience
+              </li>
+              <li>📱 <strong>100% mobile-friendly</strong> design</li>
+              <li>🎨 Easy to customize colors, fonts, and layout</li>
+              <li>🔒 Secure contact form with spam protection</li>
+              <li>🛠 No coding required — launch within minutes</li>
+              <li>🌐 SEO-optimized for better search rankings</li>
+            </ul>
+            <p class="text-gray-600 mb-6">
+              Whether you’re running a
+              <strong>small business, startup, or personal brand</strong>,
+              SmartBiz gives you a professional online presence without the high
+              cost of custom development.
+            </p>
+            <a
+              href="#order"
+              class="bg-green-700 px-4 py-2 rounded text-white hover:bg-green-800 transition-all duration-200 font-semibold"
+              >Buy Now</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Review Section -->
+
+      <section id="review" class="w-11/12 lg:w-10/12 mx-auto my-14 bg">
+        <h1 class="text-3xl lg:text-4xl font-bold text-center mb-10">
+          What our customers say
+        </h1>
+        <div class="swiper w-full lg:w-10/12">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <!-- single review -->
+              <div
+                class="border border-slate-200 p-5 text-center space-y-3 rounded shadow-lg h-[300px] overflow-y-auto"
+              >
+                <img
+                  class="h-20 w-20 mx-auto rounded-full object-cover border-2 border-white shadow-lg"
+                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+                  alt=""
+                />
+                <p class="text-sm">
+                  1 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Animi sed deleniti beatae eaque in laudantium placeat quo
+                  sequi nesciunt quis repudiandae atque earum esse, id veniam,
+                  reprehenderit tenetur quidem doloremque.
+                </p>
+              </div>
+            </div>
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <!-- single review -->
+              <div
+                class="border border-slate-200 p-5 text-center space-y-3 rounded shadow-lg h-[300px] overflow-y-auto"
+              >
+                <img
+                  class="h-20 w-20 mx-auto rounded-full object-cover border-2 border-white shadow-lg"
+                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+                  alt=""
+                />
+                <p class="text-sm">
+                  1 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Animi sed deleniti beatae eaque in laudantium placeat quo
+                  sequi nesciunt quis repudiandae atque earum esse, id veniam,
+                  reprehenderit tenetur quidem doloremque.
+                </p>
+              </div>
+            </div>
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <!-- single review -->
+              <div
+                class="border border-slate-200 p-5 text-center space-y-3 rounded shadow-lg h-[300px] overflow-y-auto"
+              >
+                <img
+                  class="h-20 w-20 mx-auto rounded-full object-cover border-2 border-white shadow-lg"
+                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+                  alt=""
+                />
+                <p class="text-sm">
+                  1 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Animi sed deleniti beatae eaque in laudantium placeat quo
+                  sequi nesciunt quis repudiandae atque earum esse, id veniam,
+                  reprehenderit tenetur quidem doloremque.
+                </p>
+              </div>
+            </div>
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <!-- single review -->
+              <div
+                class="border border-slate-200 p-5 text-center space-y-3 rounded shadow-lg h-[300px] overflow-y-auto"
+              >
+                <img
+                  class="h-20 w-20 mx-auto rounded-full object-cover border-2 border-white shadow-lg"
+                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+                  alt=""
+                />
+                <p class="text-sm">
+                  1 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Animi sed deleniti beatae eaque in laudantium placeat quo
+                  sequi nesciunt quis repudiandae atque earum esse, id veniam,
+                  reprehenderit tenetur quidem doloremque.
+                </p>
+              </div>
+            </div>
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <!-- single review -->
+              <div
+                class="border border-slate-200 p-5 text-center space-y-3 rounded shadow-lg h-[300px] overflow-y-auto"
+              >
+                <img
+                  class="h-20 w-20 mx-auto rounded-full object-cover border-2 border-white shadow-lg"
+                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+                  alt=""
+                />
+                <p class="text-sm">
+                  1 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Animi sed deleniti beatae eaque in laudantium placeat quo
+                  sequi nesciunt quis repudiandae atque earum esse, id veniam,
+                  reprehenderit tenetur quidem doloremque.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <!-- <div class="swiper-pagination"></div> -->
+
+          <!-- Navigation buttons -->
+          <!-- <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div> -->
+        </div>
+      </section>
+
+      <!-- Order Section -->
+      <div
+        data-aos="zoom-in"
+        data-aos-duration="2000"
+        id="order"
+        class="w-11/12 lg:w-6/12 mx-auto my-14 shadow-lg p-5 rounded border border-slate-200"
+      >
+        <h1 class="text-3xl lg:text-4xl font-bold text-center mb-10">
+          Order Now
+        </h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center">
+          <!-- product image -->
+          <div class="w-full h-full overflow-hidden">
+            <img
+              class="w-full h-full hover:scale-110 transition-all duration-300 cursor-pointer rounded"
+              src="https://cdn.dribbble.com/userupload/4058887/file/original-179774667e02f4ce746dd8893fc5a409.jpg?resize=1024x768&vertical=center"
+              alt="productImage"
+            />
+          </div>
+          <!-- Order Details -->
+          <div class="">
+            <form class="w-full space-y-3">
+              <div class="flex mb-5 flex-col">
+                <h2 class="text-xl lg:text-2xl font-semibold mb-2">
+                  Title: <span>Beauty Website</span>
+                </h2>
+                <h2 class="text-xl lg:text-2xl font-semibold mb-5">
+                  Price: <span id="productPrice">500</span>tk
+                </h2>
+                <div class="flex items-center gap-4">
+                  <label for="Quantity">Quantity</label>
+                  <input
+                    type="number"
+                    class="w-[100px] outline-none border border-slate-200 p-1"
+                    required
+                    name="quantity"
+                    min="1"
+                    max="10"
+                    id="productQuantity"
+                    value="0"
+                    onchange="getQuantity()"
+                  />
+                </div>
+                <div class="mt-5">
+                  <div>
+                    <input
+                      onchange="getLocation('outside')"
+                      type="radio"
+                      name="location"
+                      value="outside"
+                      required
+                    />
+                    <label for="outSideCity">Outside city (120tk)</label>
+                  </div>
+                  <div>
+                    <input
+                      onchange="getLocation('inside')"
+                      type="radio"
+                      name="location"
+                      value="inside"
+                      required
+                    />
+                    <label for="inside">Inside city (60tk)</label>
+                  </div>
+                </div>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="table text-center border border-slate-100 mb-5">
+                  <thead>
+                    <tr>
+                      <th>Quantity</th>
+                      <th>Price</th>
+                      <th>Charge</th>
+                      <th>Total Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td id="quantityField">0</td>
+                      <td id="singlePriceField">0</td>
+                      <td id="chargeField">0</td>
+                      <td><span id="priceField">0 </span>tk</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="flex items-center flex-col sm:flex-row gap-4">
+                <input
+                  class="w-full border border-slate-300 outline-none p-2 rounded"
+                  type="text"
+                  placeholder="First name"
+                  name="fName"
+                  required
+                />
+                <input
+                  class="w-full border border-slate-300 outline-none p-2 rounded"
+                  type="text"
+                  placeholder="Last name"
+                  name="lName"
+                  required
+                />
+              </div>
+              <div class="flex items-center flex-col sm:flex-row gap-4">
+                <input
+                  class="w-full border border-slate-300 outline-none p-2 rounded"
+                  type="email"
+                  placeholder="Your email"
+                  name="email"
+                />
+                <input
+                  class="w-full border border-slate-300 outline-none p-2 rounded"
+                  type="text"
+                  placeholder="Your phone number"
+                  name="phone"
+                  required
+                />
+              </div>
+              <input
+                class="w-full border border-slate-300 outline-none p-2 rounded"
+                type="text"
+                placeholder="Shipping address"
+                name="address"
+                required
+              />
+              <button
+                type="submit"
+                class="bg-green-700 px-4 py-2 rounded text-white hover:bg-green-800 transition-all duration-200 w-full font-semibold cursor-pointer"
+              >
+                Place Order
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- footer section -->
+    <footer class="text-center bg-slate-900 text-white py-2">
+      <small>&copy; 2025 All rights reserved by Landing Page</small>
+    </footer>
+
+    <script>
+      // aos init
+      AOS.init();
+      // slider script
+      let slideIndex = 0;
+      const slides = document.querySelectorAll(".slide");
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove("active");
+          if (i === index) {
+            slide.classList.add("active");
+          }
+        });
+      }
+      function nextSlide() {
+        slideIndex = (slideIndex + 1) % slides.length;
+        showSlide(slideIndex);
+      }
+      // Start the slideshow
+      showSlide(slideIndex);
+      setInterval(nextSlide, 3000); // Change every 3 seconds
+      // Order details
+      const quantityField = document.getElementById("quantityField");
+      const chargeField = document.getElementById("chargeField");
+      const priceField = document.getElementById("priceField");
+      const singlePriceField = document.getElementById("singlePriceField");
+      const price = parseInt(document.getElementById("productPrice").innerText);
+      let quantity = 0;
+      let address = "";
+      let charge = 0;
+      // get quantity
+      const getQuantity = () => {
+        quantity = parseInt(document.getElementById("productQuantity").value);
+        quantityField.innerText = quantity;
+        singlePriceField.innerText = price * quantity;
+        calculate();
+      };
+      // get location
+      const getLocation = (value) => {
+        address = value;
+
+        if (address === "outside") {
+          charge = 120;
+          chargeField.innerHTML = 120;
+        } else {
+          charge = 60;
+          chargeField.innerHTML = 60;
+        }
+        calculate();
+      };
+      // calculate total
+
+      const calculate = () => {
+        let total = price * quantity + charge;
+        priceField.innerHTML = total;
+      };
+      console.log(quantityField, chargeField, quantityField);
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        loop: true,
+        slidesPerView: 3, // Show 3 slides at once
+        slidesPerGroup: 1, // Move 1 slide per scroll
+        spaceBetween: 20, // Gap between slides (in px)
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          0: {
+            // Mobile
+            slidesPerView: 1,
+          },
+          640: {
+            // Tablet
+            slidesPerView: 2,
+          },
+          1024: {
+            // Desktop
+            slidesPerView: 3,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

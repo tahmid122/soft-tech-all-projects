@@ -1,0 +1,8 @@
+.postTrainingMedia {
+  width: 100%;
+  height: 300px;
+}
+.postTrainingMedia video {
+  width: 100%;
+  height: 100%;
+}
