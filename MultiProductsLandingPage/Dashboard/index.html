@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- daisyUI cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Dashboard</title>
+    <!-- Default styles -->
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+      .button {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-align: center;
+        background-color: #15803d;
+        font-weight: 600;
+        color: white;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .button:hover {
+        background-color: #166534;
+      }
+      .active {
+        background-color: #15803d;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="grid grid-cols-12 gap-5 h-[100vh] max-w-[1600px] mx-auto">
+    <!-- aside section -->
+    <aside class="col-span-2 p-5 h-[100vh] border-r border-r-slate-200">
+      <!-- aside top -->
+      <div class="flex items-center justify-center flex-col gap-2">
+        <img
+          class="h-20 w-20 rounded-full object-cover"
+          src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+          alt="Profile Image"
+        />
+        <div class="text-sm space-y-1 text-center">
+          <p>Shop: SoftTech Technology</p>
+          <p>Email: tahmid@gmail.com</p>
+          <p>Phone: +01318195591</p>
+        </div>
+      </div>
+      <!-- nav links -->
+      <ul class="mt-10 text-base space-y-2">
+        <li
+          onclick="showContent('dashboard')"
+          class="navLink active p-2 cursor-pointer hover:bg-green-700 hover:text-white hover:transition-all hover:duration-200"
+        >
+          <i class="fas fa-chart-line mr-2"></i>Dashboard
+        </li>
+        <li
+          onclick="showContent('editProfile')"
+          class="navLink p-2 cursor-pointer hover:bg-green-700 hover:text-white hover:transition-all hover:duration-200"
+        >
+          <i class="fas fa-user-edit mr-2"></i>Edit Profile
+        </li>
+        <li
+          onclick="showContent('totalOrders')"
+          class="navLink p-2 cursor-pointer hover:bg-green-700 hover:text-white hover:transition-all hover:duration-200"
+        >
+          <i class="fas fa-list-alt mr-2"></i>Total Orders
+        </li>
+        <li
+          onclick="showContent('newOrders')"
+          class="navLink p-2 cursor-pointer hover:bg-green-700 hover:text-white hover:transition-all hover:duration-200"
+        >
+          <i class="fas fa-cart-plus mr-2"></i>New Orders
+        </li>
+        <li
+          onclick="showContent('completedOrders')"
+          class="navLink p-2 cursor-pointer hover:bg-green-700 hover:text-white hover:transition-all hover:duration-200"
+        >
+          <i class="fas fa-check-circle mr-2"></i>Completed Orders
+        </li>
+        <li
+          onclick="showContent('shippedOrders')"
+          class="navLink p-2 cursor-pointer hover:bg-green-700 hover:text-white hover:transition-all hover:duration-200"
+        >
+          <i class="fas fa-truck mr-2"></i>Shipped Orders
+        </li>
+        <li
+          onclick="showContent('cancelledOrders')"
+          class="navLink p-2 cursor-pointer hover:bg-green-700 hover:text-white hover:transition-all hover:duration-200"
+        >
+          <i class="fas fa-times-circle mr-2"></i>Cancelled Orders
+        </li>
+        <li
+          onclick="showContent('returnOrders')"
+          class="navLink p-2 cursor-pointer hover:bg-green-700 hover:text-white hover:transition-all hover:duration-200"
+        >
+          <i class="fas fa-undo mr-2"></i>Return Orders
+        </li>
+        <li
+          onclick="showContent('addProduct')"
+          class="navLink p-2 cursor-pointer hover:bg-green-700 hover:text-white hover:transition-all hover:duration-200"
+        >
+          <i class="fas fa-plus mr-2"></i>Add New Product
+        </li>
+        <li
+          onclick="showContent('allProducts')"
+          class="navLink p-2 cursor-pointer hover:bg-green-700 hover:text-white hover:transition-all hover:duration-200"
+        >
+          <i class="fas fa-box mr-2"></i>All Products
+        </li>
+        <li
+          onclick="showContent('socialMedia')"
+          class="navLink p-2 cursor-pointer hover:bg-green-700 hover:text-white hover:transition-all hover:duration-200"
+        >
+          <i class="fas fa-share-alt mr-2"></i>Social Media
+        </li>
+      </ul>
+    </aside>
+    <!-- main section -->
+    <main class="col-span-10 p-5 h-[100vh] overflow-y-auto">
+      <!-- this section is appear content based on nav links click -->
+      <!-- Dashboard Section -->
+      <section
+        id="dashboard"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6"
+      >
+        <!-- Total Orders -->
+        <div
+          class="bg-white shadow rounded-lg p-5 flex items-center space-x-4 hover:shadow-lg transition"
+        >
+          <div class="p-3 bg-blue-100 text-blue-600 rounded-full">
+            <i class="fas fa-clipboard-list fa-lg"></i>
+          </div>
+          <div>
+            <h4 class="text-gray-500 text-sm font-medium">Total Orders</h4>
+            <p class="text-2xl font-bold">1,245</p>
+          </div>
+        </div>
+
+        <!-- New Orders -->
+        <div
+          class="bg-white shadow rounded-lg p-5 flex items-center space-x-4 hover:shadow-lg transition"
+        >
+          <div class="p-3 bg-green-100 text-green-600 rounded-full">
+            <i class="fas fa-cart-plus fa-lg"></i>
+          </div>
+          <div>
+            <h4 class="text-gray-500 text-sm font-medium">New Orders</h4>
+            <p class="text-2xl font-bold">514</p>
+          </div>
+        </div>
+
+        <!-- Completed Orders -->
+        <div
+          class="bg-white shadow rounded-lg p-5 flex items-center space-x-4 hover:shadow-lg transition"
+        >
+          <div class="p-3 bg-purple-100 text-purple-600 rounded-full">
+            <i class="fas fa-check-circle fa-lg"></i>
+          </div>
+          <div>
+            <h4 class="text-gray-500 text-sm font-medium">Completed Orders</h4>
+            <p class="text-2xl font-bold">1,254</p>
+          </div>
+        </div>
+
+        <!-- Shipped Orders -->
+        <div
+          class="bg-white shadow rounded-lg p-5 flex items-center space-x-4 hover:shadow-lg transition"
+        >
+          <div class="p-3 bg-yellow-100 text-yellow-600 rounded-full">
+            <i class="fas fa-truck fa-lg"></i>
+          </div>
+          <div>
+            <h4 class="text-gray-500 text-sm font-medium">Shipped Orders</h4>
+            <p class="text-2xl font-bold">2,541</p>
+          </div>
+        </div>
+
+        <!-- Cancelled Orders -->
+        <div
+          class="bg-white shadow rounded-lg p-5 flex items-center space-x-4 hover:shadow-lg transition"
+        >
+          <div class="p-3 bg-red-100 text-red-600 rounded-full">
+            <i class="fas fa-times-circle fa-lg"></i>
+          </div>
+          <div>
+            <h4 class="text-gray-500 text-sm font-medium">Cancelled Orders</h4>
+            <p class="text-2xl font-bold">102</p>
+          </div>
+        </div>
+
+        <!-- Returned Orders -->
+        <div
+          class="bg-white shadow rounded-lg p-5 flex items-center space-x-4 hover:shadow-lg transition"
+        >
+          <div class="p-3 bg-orange-100 text-orange-600 rounded-full">
+            <i class="fas fa-undo-alt fa-lg"></i>
+          </div>
+          <div>
+            <h4 class="text-gray-500 text-sm font-medium">Returned Orders</h4>
+            <p class="text-2xl font-bold">45</p>
+          </div>
+        </div>
+
+        <!-- All Products -->
+        <div
+          class="bg-white shadow rounded-lg p-5 flex items-center space-x-4 hover:shadow-lg transition"
+        >
+          <div class="p-3 bg-indigo-100 text-indigo-600 rounded-full">
+            <i class="fas fa-box-open fa-lg"></i>
+          </div>
+          <div>
+            <h4 class="text-gray-500 text-sm font-medium">All Products</h4>
+            <p class="text-2xl font-bold">1</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Edit Profile section -->
+      <section
+        id="editProfile"
+        class="flex items-center gap-10 justify-center"
+        style="display: none"
+      >
+        <form
+          class="w-6/12 mx-auto space-y-3 shadow-md p-5 rounded border border-slate-200"
+        >
+          <h2 class="text-2xl font-semibold text-center">Basic Information</h2>
+          <div class="flex flex-col gap-1 w-full">
+            <label for="shopName">Shop Name</label>
+            <input
+              type="text"
+              name="shopName"
+              required
+              placeholder="Your shop name"
+              class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full"
+            />
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="flex flex-col gap-1 w-full">
+              <label for="ownerName">Owner Name</label>
+              <input
+                type="text"
+                name="ownerName"
+                required
+                placeholder="Shop owner name"
+                class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full"
+              />
+            </div>
+            <div class="flex flex-col gap-1 w-full">
+              <label for="contactNo">Contact No</label>
+              <input
+                type="text"
+                name="contactNo"
+                required
+                placeholder="Contact number"
+                class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full"
+              />
+            </div>
+          </div>
+          <div class="flex flex-col gap-1 w-full">
+            <label for="shopAddress">Address</label>
+            <input
+              type="text"
+              name="shopAddress"
+              required
+              placeholder="Your shop address"
+              class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full"
+            />
+          </div>
+          <div class="flex flex-col gap-1 w-full">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              name="email"
+              placeholder="Your email address"
+              class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full"
+            />
+          </div>
+          <div class="flex flex-col gap-1 w-full">
+            <button class="button">Update</button>
+          </div>
+        </form>
+        <!-- images update section -->
+        <form
+          class="w-6/12 mx-auto space-y-3 shadow-md p-5 rounded border border-slate-200"
+        >
+          <h2 class="text-2xl font-semibold text-center">Images Update</h2>
+          <div class="flex flex-col gap-1 w-full">
+            <label for="logo">Logo</label>
+            <input
+              type="file"
+              name="logo"
+              required
+              placeholder="Your shop name"
+              class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full"
+            />
+          </div>
+          <div class="flex flex-col gap-1 w-full">
+            <label for="banner1">Banner 1</label>
+            <input
+              type="file"
+              name="banner1"
+              required
+              class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full"
+            />
+          </div>
+          <div class="flex flex-col gap-1 w-full">
+            <label for="banner2">Banner 2</label>
+            <input
+              type="file"
+              name="banner2"
+              required
+              class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full"
+            />
+          </div>
+          <div class="flex flex-col gap-1 w-full">
+            <label for="banner3">Banner 3</label>
+            <input
+              type="file"
+              name="banner3"
+              class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full"
+            />
+          </div>
+
+          <div class="flex flex-col gap-1 w-full">
+            <button class="button">Update</button>
+          </div>
+        </form>
+      </section>
+      <!-- Total Orders section -->
+      <section id="totalOrders" style="display: none">
+        <h2 class="text-2xl font-semibold text-center">Total Orders</h2>
+        <!-- total orders table -->
+        <div class="overflow-x-auto mt-10">
+          <table class="table">
+            <!-- head -->
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Customer</th>
+                <th>C. Phone</th>
+                <th>Address</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- row 1 -->
+              <tr>
+                <td>
+                  <div class="flex items-center gap-3">
+                    <div class="avatar">
+                      <div class="h-12 w-12 border border-slate-200">
+                        <img
+                          src="https://cdn.dribbble.com/userupload/4058887/file/original-179774667e02f4ce746dd8893fc5a409.jpg?resize=1024x768&vertical=center"
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div class="font-bold">Beautiful Website</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Tahmid Alam</td>
+                <td>+8801318195591</td>
+                <td>Rangpur, Bangladesh</td>
+                <td>2</td>
+                <td>$1000</td>
+                <td>Completed</td>
+              </tr>
+              <!-- row 1 -->
+              <tr>
+                <td>
+                  <div class="flex items-center gap-3">
+                    <div class="avatar">
+                      <div class="h-12 w-12 border border-slate-200">
+                        <img
+                          src="https://cdn.dribbble.com/userupload/4058887/file/original-179774667e02f4ce746dd8893fc5a409.jpg?resize=1024x768&vertical=center"
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div class="font-bold">Beautiful Website</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Medha</td>
+                <td>+01325152456</td>
+                <td>Jashore, Bangladesh</td>
+                <td>2</td>
+                <td>$ 750</td>
+                <td>Cencelled</td>
+              </tr>
+            </tbody>
+            <!-- foot -->
+          </table>
+        </div>
+      </section>
+      <!-- New Orders section -->
+      <section id="newOrders" style="display: none">
+        <h2 class="text-2xl font-semibold text-center">New Orders</h2>
+        <!-- total orders table -->
+        <div class="overflow-x-auto mt-10">
+          <table class="table">
+            <!-- head -->
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Customer</th>
+                <th>C. Phone</th>
+                <th>Address</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- row 1 -->
+              <tr>
+                <td>
+                  <div class="flex items-center gap-3">
+                    <div class="avatar">
+                      <div class="h-12 w-12 border border-slate-200">
+                        <img
+                          src="https://cdn.dribbble.com/userupload/4058887/file/original-179774667e02f4ce746dd8893fc5a409.jpg?resize=1024x768&vertical=center"
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div class="font-bold">Beautiful Website</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Tahmid Alam</td>
+                <td>+8801318195591</td>
+                <td>Rangpur, Bangladesh</td>
+                <td>2</td>
+                <td>$ 1000</td>
+                <td>
+                  <select
+                    name="orderStatus"
+                    class="border border-slate-200 p-1 outline-none rounded"
+                  >
+                    <option value="" class="hidden">Select</option>
+                    <option value="accept">Accept</option>
+                    <option value="cancel">Cancel</option>
+                    <option value="shipped">Shipped</option>
+                    <option value="completed">Completed</option>
+                    <option value="return">Return</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+            <!-- foot -->
+          </table>
+        </div>
+      </section>
+      <!-- Completed Orders section -->
+      <section id="completedOrders" style="display: none">
+        <h2 class="text-2xl font-semibold text-center">Completed Orders</h2>
+        <!-- total orders table -->
+        <div class="overflow-x-auto mt-10">
+          <table class="table">
+            <!-- head -->
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Customer</th>
+                <th>C. Phone</th>
+                <th>Address</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- row 1 -->
+              <tr>
+                <td>
+                  <div class="flex items-center gap-3">
+                    <div class="avatar">
+                      <div class="h-12 w-12 border border-slate-200">
+                        <img
+                          src="https://cdn.dribbble.com/userupload/4058887/file/original-179774667e02f4ce746dd8893fc5a409.jpg?resize=1024x768&vertical=center"
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div class="font-bold">Beautiful Website</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Tahmid Alam</td>
+                <td>+8801318195591</td>
+                <td>Rangpur, Bangladesh</td>
+                <td>2</td>
+                <td>$ 1000</td>
+                <td>Completed</td>
+              </tr>
+            </tbody>
+            <!-- foot -->
+          </table>
+        </div>
+      </section>
+      <!-- Shipped Orders section -->
+      <section id="shippedOrders" style="display: none">
+        <h2 class="text-2xl font-semibold text-center">Shipped Orders</h2>
+        <!-- total orders table -->
+        <div class="overflow-x-auto mt-10">
+          <table class="table">
+            <!-- head -->
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Customer</th>
+                <th>C. Phone</th>
+                <th>Address</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- row 1 -->
+              <tr>
+                <td>
+                  <div class="flex items-center gap-3">
+                    <div class="avatar">
+                      <div class="h-12 w-12 border border-slate-200">
+                        <img
+                          src="https://cdn.dribbble.com/userupload/4058887/file/original-179774667e02f4ce746dd8893fc5a409.jpg?resize=1024x768&vertical=center"
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div class="font-bold">Beautiful Website</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Tahmid Alam</td>
+                <td>+8801318195591</td>
+                <td>Rangpur, Bangladesh</td>
+                <td>2</td>
+                <td>$ 1000</td>
+                <td>
+                  <select
+                    name="orderStatus"
+                    class="border border-slate-200 p-1 outline-none rounded"
+                  >
+                    <option value="" class="hidden">Select</option>
+                    <option value="accept">Accept</option>
+                    <option value="cancel">Cancel</option>
+                    <option value="shipped">Shipped</option>
+                    <option value="completed">Completed</option>
+                    <option value="return">Return</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+            <!-- foot -->
+          </table>
+        </div>
+      </section>
+      <!-- Cancelled Orders section -->
+      <section id="cancelledOrders" style="display: none">
+        <h2 class="text-2xl font-semibold text-center">Cancelled Orders</h2>
+        <!-- total orders table -->
+        <div class="overflow-x-auto mt-10">
+          <table class="table">
+            <!-- head -->
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Customer</th>
+                <th>C. Phone</th>
+                <th>Address</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- row 1 -->
+              <tr>
+                <td>
+                  <div class="flex items-center gap-3">
+                    <div class="avatar">
+                      <div class="h-12 w-12 border border-slate-200">
+                        <img
+                          src="https://cdn.dribbble.com/userupload/4058887/file/original-179774667e02f4ce746dd8893fc5a409.jpg?resize=1024x768&vertical=center"
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div class="font-bold">Beautiful Website</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Tahmid Alam</td>
+                <td>+8801318195591</td>
+                <td>Rangpur, Bangladesh</td>
+                <td>2</td>
+                <td>$ 1000</td>
+                <td>Cancelled</td>
+              </tr>
+            </tbody>
+            <!-- foot -->
+          </table>
+        </div>
+      </section>
+      <!-- Return Orders section -->
+      <section id="returnOrders" style="display: none">
+        <h2 class="text-2xl font-semibold text-center">Returned Orders</h2>
+        <!-- total orders table -->
+        <div class="overflow-x-auto mt-10">
+          <table class="table">
+            <!-- head -->
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Customer</th>
+                <th>C. Phone</th>
+                <th>Address</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- row 1 -->
+              <tr>
+                <td>
+                  <div class="flex items-center gap-3">
+                    <div class="avatar">
+                      <div class="h-12 w-12 border border-slate-200">
+                        <img
+                          src="https://cdn.dribbble.com/userupload/4058887/file/original-179774667e02f4ce746dd8893fc5a409.jpg?resize=1024x768&vertical=center"
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div class="font-bold">Beautiful Website</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Tahmid Alam</td>
+                <td>+8801318195591</td>
+                <td>Rangpur, Bangladesh</td>
+                <td>2</td>
+                <td>$ 1000</td>
+                <td>Returned</td>
+              </tr>
+            </tbody>
+            <!-- foot -->
+          </table>
+        </div>
+      </section>
+      <!-- Add new Product section -->
+      <section id="addProduct" style="display: none">
+        <form
+          class="w-6/12 mx-auto space-y-3 shadow-md p-5 rounded border border-slate-200"
+        >
+          <h2 class="text-2xl font-semibold text-center">Add Product</h2>
+          <div class="flex flex-col gap-1 w-full">
+            <label for="productName">Product Name</label>
+            <input
+              type="text"
+              name="productName"
+              required
+              placeholder="Product name"
+              class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full"
+            />
+          </div>
+
+          <div class="flex flex-col gap-1 w-full">
+            <label for="productPrice">Product Price</label>
+            <input
+              type="text"
+              name="productPrice"
+              required
+              placeholder="Product price"
+              class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full"
+            />
+          </div>
+          <div class="flex flex-col gap-1 w-full">
+            <label for="productImage">Product Image</label>
+            <input
+              type="file"
+              name="productImage"
+              required
+              class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full"
+            />
+          </div>
+          <div class="flex flex-col gap-1 w-full">
+            <label for="productSourceFile">Product Source File</label>
+            <input
+              type="file"
+              name="productSourceFile"
+              required
+              class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full"
+            />
+          </div>
+          <div class="flex flex-col gap-1 w-full">
+            <label for="productDescription">Product Description</label>
+            <textarea
+              name="productDescription"
+              required
+              placeholder="Product description"
+              class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full resize-none h-[200px]"
+            ></textarea>
+          </div>
+
+          <div class="flex flex-col gap-1 w-full">
+            <button class="button">Update</button>
+          </div>
+        </form>
+      </section>
+      <!-- All Products section -->
+      <section id="allProducts" style="display: none">
+        <h2 class="text-2xl font-semibold text-center">All Products</h2>
+        <!-- all products list -->
+        <div class="grid grid-cols-4 gap-6 mt-10">
+          <!-- single product -->
+          <div class="border border-slate-200 p-5 rounded shadow-md">
+            <img
+              class="w-full h-[190px] object-cover rounded"
+              src="https://cdn.dribbble.com/userupload/4058887/file/original-179774667e02f4ce746dd8893fc5a409.jpg?resize=1024x768&vertical=center"
+              alt="productImage"
+            />
+            <div class="mt-5">
+              <h3 class="font-semibold text-center text-xl">
+                Beautiful Website
+              </h3>
+              <h3 class="font-semibold text-center text-xl">$ 500</h3>
+            </div>
+            <div class="mt-5 flex items-center gap-2">
+              <button class="button w-full">Edit</button>
+              <button class="button w-full" style="background-color: red">
+                Delete
+              </button>
+            </div>
+          </div>
+          <!-- single product -->
+          <div class="border border-slate-200 p-5 rounded shadow-md">
+            <img
+              class="w-full h-[190px] object-cover rounded"
+              src="https://cdn.dribbble.com/userupload/4058887/file/original-179774667e02f4ce746dd8893fc5a409.jpg?resize=1024x768&vertical=center"
+              alt="productImage"
+            />
+            <div class="mt-5">
+              <h3 class="font-semibold text-center text-xl">
+                Beautiful Website
+              </h3>
+              <h3 class="font-semibold text-center text-xl">$ 500</h3>
+            </div>
+            <div class="mt-5 flex items-center gap-2">
+              <button class="button w-full">Edit</button>
+              <button class="button w-full" style="background-color: red">
+                Delete
+              </button>
+            </div>
+          </div>
+          <!-- single product -->
+          <div class="border border-slate-200 p-5 rounded shadow-md">
+            <img
+              class="w-full h-[190px] object-cover rounded"
+              src="https://cdn.dribbble.com/userupload/4058887/file/original-179774667e02f4ce746dd8893fc5a409.jpg?resize=1024x768&vertical=center"
+              alt="productImage"
+            />
+            <div class="mt-5">
+              <h3 class="font-semibold text-center text-xl">
+                Beautiful Website
+              </h3>
+              <h3 class="font-semibold text-center text-xl">$ 500</h3>
+            </div>
+            <div class="mt-5 flex items-center gap-2">
+              <button class="button w-full">Edit</button>
+              <button class="button w-full" style="background-color: red">
+                Delete
+              </button>
+            </div>
+          </div>
+          <!-- single product -->
+          <div class="border border-slate-200 p-5 rounded shadow-md">
+            <img
+              class="w-full h-[190px] object-cover rounded"
+              src="https://cdn.dribbble.com/userupload/4058887/file/original-179774667e02f4ce746dd8893fc5a409.jpg?resize=1024x768&vertical=center"
+              alt="productImage"
+            />
+            <div class="mt-5">
+              <h3 class="font-semibold text-center text-xl">
+                Beautiful Website
+              </h3>
+              <h3 class="font-semibold text-center text-xl">$ 500</h3>
+            </div>
+            <div class="mt-5 flex items-center gap-2">
+              <button class="button w-full">Edit</button>
+              <button class="button w-full" style="background-color: red">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Social media -->
+      <section id="socialMedia" style="display: none">
+        <form
+          class="w-6/12 mx-auto space-y-3 shadow-md p-5 rounded border border-slate-200"
+        >
+          <h2 class="text-2xl font-semibold text-center">
+            Update Social Media
+          </h2>
+          <div class="flex flex-col gap-1 w-full">
+            <label for="facebook">Facebook</label>
+            <input
+              type="text"
+              name="facebook"
+              placeholder="Your facebook link"
+              class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full"
+            />
+          </div>
+          <div class="flex flex-col gap-1 w-full">
+            <label for="youtube">Youtube</label>
+            <input
+              type="text"
+              name="youtube"
+              placeholder="Your youtube chanel link"
+              class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full"
+            />
+          </div>
+          <div class="flex flex-col gap-1 w-full">
+            <label for="instagram">Instagram</label>
+            <input
+              type="text"
+              name="instagram"
+              placeholder="Your instagram link"
+              class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full"
+            />
+          </div>
+          <div class="flex flex-col gap-1 w-full">
+            <label for="TikTok">TikTok</label>
+            <input
+              type="text"
+              name="tikTok"
+              placeholder="Your TikTok link"
+              class="border border-slate-300 rounded text-base py-2 px-4 outline-none w-full"
+            />
+          </div>
+          <div class="flex flex-col gap-1 w-full">
+            <button class="button">Update</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

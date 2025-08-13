@@ -46,24 +46,669 @@
       }
       body {
         font-family: "Hind Siliguri", sans-serif;
+        background-color: #e6f4ec;
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: white;
+      }
+      .swiper-pagination-bullet {
+        background-color: white;
       }
     </style>
   </head>
   <body>
     <!-- Top NavBar -->
-    <section id="topNavBar"></section>
+    <section id="topNavBar" class="bg-green-700">
+      <div
+        class="flex items-center flex-col lg:flex-row justify-between text-sm text-slate-200 w-full xl:w-10/12 2xl:w-8/12 mx-auto p-1"
+      >
+        <div>
+          <span> <i class="fa-regular fa-clock"></i> 09:00 AM - 11:00 PM </span>
+          <span
+            ><i class="fa-solid fa-phone"></i
+            ><a href="tel:+880 1329636890">+880 1329636890</a></span
+          >
+        </div>
+        <div>
+          <a href="#"
+            ><i class="fa-brands fa-facebook-f text-xs text-slate-200"></i
+          ></a>
+          <a href="#"
+            ><i class="fa-brands fa-instagram text-xs text-slate-200"></i
+          ></a>
+          <a href="#"
+            ><i class="fa-brands fa-tiktok text-xs text-slate-200"></i
+          ></a>
+        </div>
+      </div>
+    </section>
     <!-- Main NavBar -->
-    <nav id="mainNavBar"></nav>
+    <section
+      id="mainNavBar"
+      class="bg-white shadow-xs shadow-green-700 h-[80px] flex items-center sticky top-0 left-0 z-50"
+    >
+      <nav
+        class="w-full px-4 lg:px-0 xl:w-10/12 2xl:w-8/12 mx-auto flex items-center justify-between relative"
+      >
+        <div>
+          <span class="lg:hidden cursor-pointer"
+            ><i id="hamburger" class="fa-solid fa-bars text-lg"></i
+            ><i id="closeMark" class="fa-solid fa-xmark text-lg"></i
+          ></span>
+          <ul
+            id="navLinks"
+            class="uppercase hidden lg:flex absolute left-5 items-start bg-white border border-slate-200 lg:border-none gap-2 p-4 lg:p-0 lg:relative flex-col lg:flex-row lg:items-center lg:gap-5 text-sm font-bold"
+          >
+            <li class="navLink">
+              <a
+                href="#"
+                class="hover:text-green-700 transition-all duration-200"
+                >HOME</a
+              >
+            </li>
+            <li class="navLink">
+              <a
+                href="#products"
+                class="hover:text-green-700 transition-all duration-200"
+                >Our products</a
+              >
+            </li>
+            <li class="navLink">
+              <a
+                href="#reviews"
+                class="hover:text-green-700 transition-all duration-200"
+                >Reviews</a
+              >
+            </li>
+            <li class="navLink">
+              <a
+                href="#cart"
+                class="hover:text-green-700 transition-all duration-200"
+                >Cart <span id="cartCount">(0)</span></a
+              >
+            </li>
+            <li class="navLink">
+              <a
+                href="#contact"
+                class="hover:text-green-700 transition-all duration-200"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <a href="#"
+            ><img
+              class="h-20 w-20 object-contain"
+              src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg?ga=GA1.1.1049254487.1752387949&semt=ais_hybrid&w=740&q=80"
+              alt="logo"
+          /></a>
+        </div>
+        <div class="flex items-center gap-2">
+          <a href="./login.html" target="_blank"
+            ><i class="fa-solid fa-user text-lg cursor-pointer"></i
+          ></a>
+        </div>
+      </nav>
+    </section>
+
     <!-- Banner section -->
-    <section id="banner"></section>
+    <section
+      id="banner"
+      class="w-full px-4 lg:px-0 xl:w-10/12 2xl:w-8/12 mx-auto my-5 h-[50vh]"
+    >
+      <div class="swiper mySwiper h-full">
+        <div class="swiper-wrapper">
+          <!-- single banner slide -->
+          <div class="swiper-slide">
+            <img
+              class="w-full h-full object-cover sm:object-fill"
+              src="https://shop.shajgoj.com/_next/image?url=https%3A%2F%2Fbk.shajgoj.com%2Fstorage%2F2025%2F07%2Fhair-care-offer-homepage-website-hmfw.jpg&w=1920&q=75"
+              alt="banner1"
+            />
+          </div>
+
+          <!-- single banner slide -->
+          <div class="swiper-slide">
+            <img
+              class="w-full h-full object-cover sm:object-fill"
+              src="https://shop.shajgoj.com/_next/image?url=https%3A%2F%2Fbk.shajgoj.com%2Fstorage%2F2025%2F06%2Fpost-eid-hero-banner-1920x490-v2.png&w=1920&q=75"
+              alt="banner2"
+            />
+          </div>
+          <!-- single banner slide -->
+          <div class="swiper-slide">
+            <img
+              class="w-full h-full object-cover sm:object-fill"
+              src="https://shop.shajgoj.com/_next/image?url=https%3A%2F%2Fbk.shajgoj.com%2Fstorage%2F2024%2F10%2Fshop-by-concern-web-updated.png&w=1920&q=75"
+              alt="banner3"
+            />
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
     <!-- Products section -->
-    <section id="products"></section>
+    <section
+      id="products"
+      class="w-full px-4 lg:px-0 xl:w-10/12 2xl:w-8/12 mx-auto my-5"
+    >
+      <h1
+        class="uppercase font-bold text-xl pb-1 inline-block border-b-2 border-black"
+      >
+        Our Products
+      </h1>
+      <!-- Product container -->
+      <div
+        class="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+      >
+        <!-- single product card -->
+        <div
+          class="h-[455px] shadow flex flex-col justify-between bg-white cursor-pointer group hover:shadow-lg"
+        >
+          <div class="w-full h-[70%] overflow-hidden relative">
+            <img
+              class="w-full h-[90%] group-hover:scale-110 transition-all duration-500"
+              src="https://shop.shajgoj.com/_next/image?url=https%3A%2F%2Fbk.shajgoj.com%2Fstorage%2F2025%2F04%2Fsimple-kind-to-skin-refreshing-facial-wash-gel-150-ml-poland-1.jpg&w=1920&q=75"
+              alt="product title"
+            />
+            <button
+              class="translate-y-[1000%] group-hover:translate-y-0 transition-all duration-400 uppercase text-sm py-1 font-bold text-white cursor-pointer bg-green-700 w-full"
+            >
+              Quick View
+            </button>
+            <span
+              class="w-10 h-10 absolute right-0 top-0 bg-slate-200 opacity-0 transition-all duration-400 group-hover:opacity-100 flex items-center justify-center"
+              ><i class="fa-regular fa-heart text-lg"></i
+            ></span>
+          </div>
+          <div class="px-4 text-center">
+            <div class="mb-2">
+              <p class="text-sm">Simple Face Wash</p>
+              <h5 class="font-bold">$600</h5>
+            </div>
+            <div class="flex flex-col gap-1">
+              <button
+                onclick="addToCart({id:1,name:'Simple Face Wash', price: 600, quantity:1})"
+                class="uppercase border-2 text-sm py-2 font-bold text-green-700 cursor-pointer border-green-700"
+              >
+                Add to cart
+              </button>
+              <button
+                class="uppercase text-base py-2 font-bold text-white cursor-pointer bg-green-700 hover:bg-green-800 transition-all duration-200"
+              >
+                Order Now
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- single product card -->
+        <div
+          class="h-[455px] shadow flex flex-col justify-between bg-white cursor-pointer group hover:shadow-lg"
+        >
+          <div class="w-full h-[70%] overflow-hidden relative">
+            <img
+              class="w-full h-[90%] group-hover:scale-110 transition-all duration-500"
+              src="https://bk.shajgoj.com/storage/2025/01/prebiotic-refreshing-tonic-drclinic.jpg"
+              alt="product title"
+            />
+            <button
+              class="translate-y-[1000%] group-hover:translate-y-0 transition-all duration-400 uppercase text-sm py-1 font-bold text-white cursor-pointer bg-green-700 w-full"
+            >
+              Quick View
+            </button>
+            <span
+              class="w-10 h-10 absolute right-0 top-0 bg-slate-200 opacity-0 transition-all duration-400 group-hover:opacity-100 flex items-center justify-center"
+              ><i class="fa-regular fa-heart text-lg"></i
+            ></span>
+          </div>
+          <div class="px-4 text-center">
+            <div class="mb-2">
+              <p class="text-sm">Dr. Clinic Prebiotic Refreshing Tonic</p>
+              <h5 class="font-bold">$1280</h5>
+            </div>
+            <div class="flex flex-col gap-1">
+              <button
+                onclick="addToCart({id:2,name:'Dr. Clinic Prebiotic Refreshing Tonic', price: 1280,quantity:1})"
+                class="uppercase border-2 text-sm py-2 font-bold text-green-700 cursor-pointer border-green-700"
+              >
+                Add to cart
+              </button>
+              <button
+                class="uppercase text-base py-2 font-bold text-white cursor-pointer bg-green-700 hover:bg-green-800 transition-all duration-200"
+              >
+                Order Now
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- single product card -->
+        <div
+          class="h-[455px] shadow flex flex-col justify-between bg-white cursor-pointer group hover:shadow-lg"
+        >
+          <div class="w-full h-[70%] overflow-hidden relative">
+            <img
+              class="w-full h-[90%] group-hover:scale-110 transition-all duration-500"
+              src="https://bk.shajgoj.com/storage/2024/12/vatika-naturals-moisture-treatment-shampoo.jpg"
+              alt="product title"
+            />
+            <button
+              class="translate-y-[1000%] group-hover:translate-y-0 transition-all duration-400 uppercase text-sm py-1 font-bold text-white cursor-pointer bg-green-700 w-full"
+            >
+              Quick View
+            </button>
+            <span
+              class="w-10 h-10 absolute right-0 top-0 bg-slate-200 opacity-0 transition-all duration-400 group-hover:opacity-100 flex items-center justify-center"
+              ><i class="fa-regular fa-heart text-lg"></i
+            ></span>
+          </div>
+          <div class="px-4 text-center">
+            <div class="mb-2">
+              <p class="text-sm">Vatika Naturals Shampoo</p>
+              <h5 class="font-bold">$2100</h5>
+            </div>
+            <div class="flex flex-col gap-1">
+              <button
+                onclick="addToCart({id:3,name:'Vatika Naturals Shampoo', price: 2100,quantity:1})"
+                class="uppercase border-2 text-sm py-2 font-bold text-green-700 cursor-pointer border-green-700"
+              >
+                Add to cart
+              </button>
+              <button
+                class="uppercase text-base py-2 font-bold text-white cursor-pointer bg-green-700 hover:bg-green-800 transition-all duration-200"
+              >
+                Order Now
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- single product card -->
+        <div
+          class="h-[455px] shadow flex flex-col justify-between bg-white cursor-pointer group hover:shadow-lg"
+        >
+          <div class="w-full h-[70%] overflow-hidden relative">
+            <img
+              class="w-full h-[90%] group-hover:scale-110 transition-all duration-500"
+              src="https://bk.shajgoj.com/storage/2018/10/Meril-Baby-Soap-75gm.jpg"
+              alt="product title"
+            />
+            <button
+              class="translate-y-[1000%] group-hover:translate-y-0 transition-all duration-400 uppercase text-sm py-1 font-bold text-white cursor-pointer bg-green-700 w-full"
+            >
+              Quick View
+            </button>
+            <span
+              class="w-10 h-10 absolute right-0 top-0 bg-slate-200 opacity-0 transition-all duration-400 group-hover:opacity-100 flex items-center justify-center"
+              ><i class="fa-regular fa-heart text-lg"></i
+            ></span>
+          </div>
+          <div class="px-4 text-center">
+            <div class="mb-2">
+              <p class="text-sm">Meril Baby Soap</p>
+              <h5 class="font-bold">$95</h5>
+            </div>
+            <div class="flex flex-col gap-1">
+              <button
+                onclick="addToCart({id:4,name:'Meril Baby Soap', price: 95,quantity:1})"
+                class="uppercase border-2 text-sm py-2 font-bold text-green-700 cursor-pointer border-green-700"
+              >
+                Add to cart
+              </button>
+              <button
+                class="uppercase text-base py-2 font-bold text-white cursor-pointer bg-green-700 hover:bg-green-800 transition-all duration-200"
+              >
+                Order Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- cart section -->
+    <section
+      id="cart"
+      class="w-full px-4 lg:px-0 xl:w-10/12 2xl:w-8/12 mx-auto my-5"
+    >
+      <h1
+        class="uppercase font-bold text-xl pb-1 inline-block border-b-2 border-black"
+      >
+        Cart
+      </h1>
+
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 gap-5 p-5 my-5 bg-white lg:h-auto 2xl:h-auto"
+      >
+        <!-- Order Details -->
+        <div>
+          <form class="w-full space-y-3">
+            <div class="flex mb-5 flex-col">
+              <h2 class="text-xl lg:text-2xl font-semibold mb-2">
+                Shipping Address
+              </h2>
+            </div>
+
+            <!-- Location -->
+            <div class="mt-5">
+              <h4 class="text-lg font-semibold mb-1">Select Location</h4>
+              <div class="space-y-2">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input
+                    onchange="getLocation('outside')"
+                    type="radio"
+                    name="location"
+                    value="outside"
+                    required
+                  />
+                  <span>Outside city ($120)</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input
+                    onchange="getLocation('inside')"
+                    type="radio"
+                    name="location"
+                    value="inside"
+                    required
+                  />
+                  <span>Inside city ($60)</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Name -->
+            <div class="flex flex-col sm:flex-row gap-4">
+              <input
+                class="w-full border border-slate-300 outline-none p-2 rounded"
+                type="text"
+                placeholder="First name"
+                name="fName"
+                required
+              />
+              <input
+                class="w-full border border-slate-300 outline-none p-2 rounded"
+                type="text"
+                placeholder="Last name"
+                name="lName"
+                required
+              />
+            </div>
+
+            <!-- Email / Phone -->
+            <div class="flex flex-col sm:flex-row gap-4">
+              <input
+                class="w-full border border-slate-300 outline-none p-2 rounded"
+                type="email"
+                placeholder="Your email"
+                name="email"
+              />
+              <input
+                class="w-full border border-slate-300 outline-none p-2 rounded"
+                type="text"
+                placeholder="Your phone number"
+                name="phone"
+                required
+              />
+            </div>
+
+            <!-- Address -->
+            <input
+              class="w-full border border-slate-300 outline-none p-2 rounded"
+              type="text"
+              placeholder="Shipping address"
+              name="address"
+              required
+            />
+
+            <!-- Submit -->
+            <button
+              type="submit"
+              class="bg-green-700 px-4 py-2 rounded text-white hover:bg-green-800 transition-all duration-200 w-full font-semibold cursor-pointer"
+            >
+              Place Order
+            </button>
+          </form>
+        </div>
+
+        <!-- Cart details -->
+        <div class="flex flex-col justify-between">
+          <!-- Products -->
+          <!-- Cart Products -->
+          <div>
+            <h2 class="text-xl lg:text-2xl font-semibold mb-2">
+              Cart Products
+            </h2>
+
+            <div
+              class="rounded-box border w-full border-slate-200"
+              style="max-height: 250px; overflow-y: auto"
+            >
+              <table class="table min-w-[500px] sm:w-full text-sm sm:text-base">
+                <thead class="bg-gray-100 sticky top-0 z-10">
+                  <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="cartBody">
+                  <!-- rows go here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Summary -->
+          <div
+            class="overflow-x-auto rounded-box border w-full border-slate-200 mt-5 sm:mt-10"
+          >
+            <table class="table min-w-[400px] sm:w-full text-sm sm:text-base">
+              <thead class="bg-gray-100">
+                <tr>
+                  <th>Product</th>
+                  <th>Subtotal</th>
+                  <th>Charge</th>
+                  <th>Payable</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="allProQuantity">0</td>
+                  <td id="allProSubtotal">0</td>
+                  <td id="chargeField">0</td>
+                  <td id="payable">0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Reviews section -->
-    <section id="reviews"></section>
-    <!-- Blog section -->
-    <section id="blog"></section>
+    <section
+      id="reviews"
+      class="w-full px-4 lg:px-0 xl:w-10/12 2xl:w-8/12 mx-auto my-5"
+    >
+      <h1
+        class="uppercase font-bold text-xl pb-1 inline-block border-b-2 border-black"
+      >
+        Real Reviews
+      </h1>
+      <div class="h-[370px]">
+        <div class="swiper mySwiper2 h-full mt-5">
+          <div class="swiper-wrapper">
+            <!-- single banner slide -->
+
+            <div class="swiper-slide">
+              <img
+                class="w-full h-full"
+                src="https://i.ibb.co.com/Q7ynk8j7/customer-review-5.jpg"
+                alt="review1"
+              />
+            </div>
+
+            <!-- single banner slide -->
+            <div class="swiper-slide">
+              <img
+                class="w-full h-full"
+                src="https://i.ibb.co.com/Q7ynk8j7/customer-review-5.jpg"
+                alt="review2"
+              />
+            </div>
+            <!-- single banner slide -->
+            <div class="swiper-slide">
+              <img
+                class="w-full h-full"
+                src="https://i.ibb.co.com/Q7ynk8j7/customer-review-5.jpg"
+                alt="review3"
+              />
+            </div>
+            <!-- single banner slide -->
+            <div class="swiper-slide">
+              <img
+                class="w-full h-full"
+                src="https://i.ibb.co.com/Q7ynk8j7/customer-review-5.jpg"
+                alt="review4"
+              />
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer section -->
-    <footer id="footer"></footer>
-    <h1>Hello World</h1>
+    <footer id="contact" class="bg-green-700">
+      <!-- main footer -->
+      <section
+        id="footer"
+        class="w-full px-4 lg:px-0 xl:w-10/12 2xl:w-8/12 mx-auto mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-white py-5"
+      >
+        <div>
+          <h4
+            class="uppercase border-b-2 border-white pb-1 font-bold mb-5 inline-block"
+          >
+            About Us
+          </h4>
+          <ul class="space-y-1">
+            <li class="text-base capitalize">Factory: New York, USA</li>
+            <li class="text-base capitalize">
+              Outlet: Level 13, Block C <br />
+              MTB Building, New York
+            </li>
+            <li class="text-base capitalize">Hotline 09613-4587156</li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            class="uppercase border-b-2 border-white pb-1 font-bold mb-5 inline-block"
+          >
+            Company
+          </h4>
+          <ul class="space-y-1">
+            <li><a href="#" class="text-base capitalize">About us</a></li>
+            <li><a href="#" class="text-base capitalize">Contact us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            class="uppercase border-b-2 border-white pb-1 font-bold mb-5 inline-block"
+          >
+            Information
+          </h4>
+          <ul class="space-y-1">
+            <li><a href="#" class="text-base capitalize">Privacy Policy</a></li>
+            <li>
+              <a href="#" class="text-base capitalize">Terms and Condition</a>
+            </li>
+            <li>
+              <a href="#" class="text-base capitalize"
+                >Refund and Return Policy</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            class="uppercase border-b-2 border-white pb-1 font-bold mb-5 inline-block"
+          >
+            Follow us
+          </h4>
+          <ul class="space-y-1">
+            <li><a href="#" class="text-base capitalize">Facebook</a></li>
+            <li>
+              <a href="#" class="text-base capitalize">Instagram</a>
+            </li>
+            <li>
+              <a href="#" class="text-base capitalize">TikTok</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- lower footer -->
+      <div
+        class="bg-white text-black w-full h-[40px] flex items-center justify-center font-bold text-sm"
+      >
+        &copy; 2025 Multi Product Landing Page
+      </div>
+    </footer>
+
+    <script src="./js/index.js"></script>
+    <!-- swiper js  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      var swiper = new Swiper(".mySwiper2", {
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        loop: true,
+        slidesPerView: 3,
+        spaceBetween: 15,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          0: {
+            // mobile
+            slidesPerView: 1,
+          },
+          640: {
+            // tablet
+            slidesPerView: 2,
+          },
+          1024: {
+            // desktop
+            slidesPerView: 3,
+          },
+        },
+      });
+    </script>
   </body>
 </html>
