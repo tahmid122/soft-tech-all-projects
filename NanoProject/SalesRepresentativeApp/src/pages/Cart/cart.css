@@ -1,6 +1,8 @@
 #cart {
   padding-bottom: 200px;
   overflow-x: auto;
+  width: 80%;
+  margin: 0 auto;
 }
 .cartTop {
   display: flex;
@@ -54,6 +56,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  overflow-x: auto;
 }
 .btnSmall {
   background-color: #228b22;

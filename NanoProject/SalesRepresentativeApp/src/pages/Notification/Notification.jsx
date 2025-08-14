@@ -3,7 +3,7 @@ import "./notification.css";
 import SingleNotification from "./SingleNotification/SingleNotification";
 const Notification = () => {
   return (
-    <div>
+    <div className="mainContainer">
       {/* single notification */}
       <SingleNotification />
       <SingleNotification />

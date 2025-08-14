@@ -4,7 +4,7 @@ import SingleTraining from "./SingleTraining";
 const Training = () => {
   return (
     // video training
-    <div>
+    <div className="mainContainer">
       {/* single training video */}
       <SingleTraining />
       <SingleTraining />

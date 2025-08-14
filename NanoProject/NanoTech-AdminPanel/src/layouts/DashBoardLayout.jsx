@@ -21,7 +21,6 @@ const DashBoardLayout = () => {
   const viewProductsClick = () => {
     setActive("viewProducts");
   };
-  console.log(active);
   return (
     // dashboard layout
     <div id="dashBoardLayout">

@@ -6,7 +6,6 @@
   padding: 0 10px;
 }
 .marketCategory select {
-  width: 100%;
   border: var(---primaryBorder);
   padding: var(---primaryPadding);
   border-radius: var(---primaryBorderRadius);

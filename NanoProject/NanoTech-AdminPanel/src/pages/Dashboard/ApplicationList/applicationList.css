@@ -12,8 +12,12 @@
 #applicationList table td,
 th {
   border: 1px solid #dddddd;
-  text-align: left;
+  text-align: center;
   padding: 8px;
+}
+.status {
+  background-color: #ccecf4;
+  margin: 5px;
 }
 .table-container table td {
   font-size: 14px;

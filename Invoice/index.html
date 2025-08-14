@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Invoice</title>
+  </head>
+  <body>
+    <!-- header -->
+    <!-- invoice -->
+    <section id="invoice">
+      <div class="main">
+        <!-- logo -->
+        <img
+          class="logo"
+          src="https://putulhost.com/wp-content/uploads/2023/04/LOGO-COLOR.png"
+          alt="logo"
+        />
+        <!-- Description -->
+        <div class="description">
+          <h3>Soft-Tech Technology LLC</h3>
+          <p>Jashore Sadar, Jashore 7700</p>
+          <p>Email: sales@soft-tech.com</p>
+          <p>call: 093512465145</p>
+        </div>
+        <!-- Invoice description -->
+        <div class="invoiceDescription">
+          <h2>Invoice ID: 186833</h2>
+          <p>Invoice Date: <span id="invoiceDate"></span></p>
+        </div>
+        <!-- Invoice To -->
+        <div class="invoiceTo">
+          <h3>Invoiced To</h3>
+          <p>Soft-Tech Technology</p>
+          <p>ATTN: Khalid Mahmud</p>
+          <p>MTB Building, Level-13</p>
+          <p>Jashore Software Technology Park</p>
+          <p>Jashore, Khulna-7400</p>
+          <p>Bangladesh</p>
+        </div>
+        <!-- summary table -->
+        <table class="table">
+          <thead style="background-color: rgba(220, 220, 220, 0.26)">
+            <tr>
+              <th>Description</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Domain Registration - online-bg.org - 1 Years</td>
+              <td style="text-align: center">TK 1220.00 BDT</td>
+            </tr>
+            <tr style="font-weight: bold">
+              <td style="text-align: right; font-weight: bold">Sub Total</td>
+              <td style="text-align: center">TK 1220.00 BDT</td>
+            </tr>
+            <tr style="font-weight: bold">
+              <td style="text-align: right; font-weight: bold">Total</td>
+              <td style="text-align: center">TK 1220.00 BDT</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Transactions table -->
+        <div class="transactionTable">
+          <h2>Transactions</h2>
+          <table class="table">
+            <thead style="background-color: rgba(220, 220, 220, 0.26)">
+              <tr>
+                <th>Transaction Date</th>
+                <th>Transaction ID</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>06/08/2025</td>
+                <td>CH68AF99CS</td>
+                <td>TK 1220.00 BDT</td>
+              </tr>
+              <tr style="font-weight: bold">
+                <td colspan="2" style="text-align: right">Balance</td>
+                <td>TK 0.00 BDT</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Date -->
+        <p style="text-align: center">
+          PDF Generated on <span id="date"></span>
+        </p>
+      </div>
+
+      <!-- badge -->
+      <div class="paid">PAID</div>
+    </section>
+    <div style="text-align: center">
+      <button class="btn" onclick="printDiv('invoice')">print</button>
+    </div>
+
+    <!-- footer -->
+    <script>
+      function printDiv(divId) {
+        let printContents = document.getElementById(divId).innerHTML;
+        let originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+      }
+      const date = new Date();
+      const formattedDate = date.toLocaleString("en-US", {
+        timeZone: "Europe/London",
+      });
+      document.getElementById("date").innerText = formattedDate.split(",")[0];
+      document.getElementById("invoiceDate").innerText =
+        formattedDate.split(",")[0];
+    </script>
+  </body>
+</html>

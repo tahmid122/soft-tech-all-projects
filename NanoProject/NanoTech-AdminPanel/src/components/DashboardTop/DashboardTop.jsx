@@ -4,6 +4,11 @@ import { FaXmark } from "react-icons/fa6";
 import { FaBars } from "react-icons/fa";
 const DashboardTop = ({ setIsTrue }) => {
   const [formattedDate, setFormattedDate] = useState("");
+  const today = new Date();
+  const day = String(today.getDate()).padStart(2, "0");
+  const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are 0-based
+  const year = today.getFullYear();
+  const formattedDate2 = `${day}-${month}-${year}`;
   useEffect(() => {
     const interVal = setInterval(() => {
       setFormattedDate(new Date().toLocaleString().split(","));
@@ -27,7 +32,7 @@ const DashboardTop = ({ setIsTrue }) => {
       {/* time, date and logout button */}
       <div className="flex">
         <div className="flex">
-          <p>Date: {formattedDate[0]}</p>
+          <p>Date: {formattedDate2}</p>
           <p>Time: {formattedDate[1]}</p>
         </div>
         <button className="btn">Logout</button>

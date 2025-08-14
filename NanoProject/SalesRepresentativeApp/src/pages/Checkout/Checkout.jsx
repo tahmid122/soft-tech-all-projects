@@ -3,20 +3,75 @@ import "./checkout.css";
 import useCart from "../../hooks/useCart";
 
 const Checkout = () => {
-  const [currentStep, setCurrentStep] = useState(0);
-  const { cartItems, setCartItems } = useCart();
+  const [currentStep, setCurrentStep] = useState("Customer Info");
+  const { cartItems } = useCart();
   const [isInstallment, setIsInstallment] = useState(false);
-
-  const steps = ["Customer Info", "Payment Info", "Review & Confirm"];
-  const nextStep = () => {
-    setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1));
+  const [totalPayableAmount, setTotalPayableAmount] = useState(0);
+  const [totalDueAmount, setTotalDueAmount] = useState(0);
+  const [customerInfo, setCustomerInfo] = useState({
+    customerName: "",
+    customerMobile: "",
+    customerPhoto: "",
+    customerNIDfront: "",
+    customerNIDback: "",
+    customerCheckNo: "",
+    customerFilledCheckPhoto: "",
+  });
+  const [guarantorInfo, setGuarantorInfo] = useState({
+    guarantorName: "",
+    guarantorMobile: "",
+    guarantorPhoto: "",
+    guarantorNIDfront: "",
+    guarantorNIDback: "",
+  });
+  const steps = isInstallment
+    ? ["Customer Info", "Guarantor Info", "Confirm"]
+    : ["Customer Info", "Confirm"];
+  const nextStep = (step) => {
+    setCurrentStep(step);
   };
-  const prevStep = () => {
-    setCurrentStep((prev) => Math.max(prev - 1, 0));
+  const prevStep = (step) => {
+    setCurrentStep(step);
   };
 
-  useEffect(() => {}, [cartItems]);
+  useEffect(() => {
+    cartItems.forEach((cart) => {
+      if (cart?.paymentType === "installment") {
+        setIsInstallment(true);
+      }
+    });
 
+    const total = cartItems.reduce(
+      (sum, item) => sum + Number(item?.payableAmount),
+      0
+    );
+    setTotalPayableAmount(total);
+    const due = cartItems.reduce(
+      (sum, item) => sum + Number(item?.dueAmount),
+      0
+    );
+    setTotalDueAmount(due);
+  }, [cartItems]);
+
+  const handleCustomerInfo = (e) => {
+    const name = e.target.name;
+    setCustomerInfo((prev) => {
+      return { ...prev, [name]: e.target.value };
+    });
+  };
+  const handleGuarantorInfo = (e) => {
+    setGuarantorInfo((prev) => {
+      return { ...prev, [e.target.name]: e.target.value };
+    });
+  };
+  const handleSubmit = () => {
+    console.log([
+      { customerInfo },
+      { guarantorInfo },
+      { totalPayableAmount },
+      { totalDueAmount },
+    ]);
+  };
   return (
     <div
       style={{ maxWidth: 500, margin: "auto", fontFamily: "Arial, sans-serif" }}
@@ -36,13 +91,13 @@ const Checkout = () => {
               flex: 1,
               padding: "10px 5px",
               borderBottom:
-                index === currentStep ? "3px solid #228b22" : "1px solid #ccc",
-              color: index === currentStep ? "#228b22" : "#555",
-              fontWeight: index === currentStep ? "bold" : "normal",
+                step === currentStep ? "3px solid #228b22" : "1px solid #ccc",
+              color: step === currentStep ? "#228b22" : "#555",
+              fontWeight: step === currentStep ? "bold" : "normal",
               textAlign: "center",
               cursor: "pointer",
             }}
-            onClick={() => setCurrentStep(index)}
+            onClick={() => setCurrentStep(step)}
           >
             {step}
           </div>
@@ -50,222 +105,216 @@ const Checkout = () => {
       </div>
 
       {/* Step Content */}
-      {currentStep === 0 && (
+      {/* customer info */}
+      {currentStep === "Customer Info" && (
         <div>
           <>
-            <form class="checkout-form">
+            <div className="checkout-form">
               <h3>Customer Information</h3>
-              <div class="form-group">
+              <div className="form-group">
                 <label>Customer Name</label>
-                <input type="text" placeholder="John Doe" required />
+                <input
+                  onChange={handleCustomerInfo}
+                  value={customerInfo.customerName}
+                  name="customerName"
+                  type="text"
+                  placeholder="John Doe"
+                  required
+                />
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <label>Mobile</label>
-                <input type="text" placeholder="+8801xxxxxxx" />
+                <input
+                  onChange={handleCustomerInfo}
+                  value={customerInfo.customerMobile}
+                  name="customerMobile"
+                  type="text"
+                  placeholder="+8801xxxxxxx"
+                />
               </div>
-              <div class="form-group">
-                <label>Photo</label>
-                <input type="file" required />
-              </div>
-              <div class="form-group">
-                <label>NID Front</label>
-                <input type="file" required />
-              </div>
-              <div class="form-group">
-                <label>NID Back</label>
-                <input type="file" required />
-              </div>
-              <div class="form-group">
-                <label>Check No</label>
-                <input type="text" placeholder="xxxxxxxxxxxx" />
-              </div>
-              <div class="form-group">
-                <label>Filled Check Photo</label>
-                <input type="file" required />
-              </div>
-            </form>
+              {isInstallment && (
+                <>
+                  <div className="form-group">
+                    <label>Photo</label>
+                    <input
+                      onChange={handleCustomerInfo}
+                      value={customerInfo.customerPhoto}
+                      name="customerPhoto"
+                      type="file"
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>NID Front</label>
+                    <input
+                      onChange={handleCustomerInfo}
+                      value={customerInfo.customerNIDfront}
+                      name="customerNIDfront"
+                      type="file"
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>NID Back</label>
+                    <input
+                      onChange={handleCustomerInfo}
+                      value={customerInfo.customerNIDback}
+                      name="customerNIDback"
+                      type="file"
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Check No</label>
+                    <input
+                      onChange={handleCustomerInfo}
+                      value={customerInfo.customerCheckNo}
+                      name="customerCheckNo"
+                      type="text"
+                      placeholder="xxxxxxxxxxxx"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Filled Check Photo</label>
+                    <input
+                      onChange={handleCustomerInfo}
+                      value={customerInfo.customerFilledCheckPhoto}
+                      name="customerFilledCheckPhoto"
+                      type="file"
+                      required
+                    />
+                  </div>
+                </>
+              )}
+            </div>
           </>
           <button
             style={{ width: "100%" }}
             className="btn cbtnRadius"
-            onClick={nextStep}
+            onClick={() =>
+              nextStep(isInstallment ? "Guarantor Info" : "Confirm")
+            }
           >
             Next
           </button>
         </div>
       )}
+      {/* Guarantor info */}
+      {isInstallment && (
+        <>
+          {currentStep === "Guarantor Info" && (
+            <div>
+              <>
+                <div className="checkout-form">
+                  <h3>Guarantor Information</h3>
+                  <div className="form-group">
+                    <label>Guarantor Name</label>
+                    <input
+                      onChange={handleGuarantorInfo}
+                      value={guarantorInfo.guarantorName}
+                      name="guarantorName"
+                      type="text"
+                      placeholder="John Doe"
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Guarantor Mobile</label>
+                    <input
+                      onChange={handleGuarantorInfo}
+                      value={guarantorInfo.guarantorMobile}
+                      name="guarantorMobile"
+                      type="text"
+                      placeholder="+8801xxxxxxx"
+                    />
+                  </div>
 
-      {currentStep === 1 && (
-        <div>
-          <>
-            <form class="checkout-form">
-              <h3>Pro Information</h3>
-              <div class="form-group">
-                <label>Customer Name</label>
-                <input type="text" placeholder="John Doe" required />
-              </div>
-              <div class="form-group">
-                <label>Mobile</label>
-                <input type="text" placeholder="+8801xxxxxxx" />
-              </div>
-              <div class="form-group">
-                <label>Address / Village</label>
-                <input type="text" placeholder="123 Main St" required />
-              </div>
-              <div class="form-group">
-                <label>City</label>
-                <input type="text" placeholder="Dhaka" required />
-              </div>
-
-              <h3>Payment Details</h3>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "15px",
-                  marginBottom: "15px",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "5px",
-                  }}
-                >
-                  <input type="radio" name="paymentType" />
-                  <label style={{ marginBottom: "0px" }} htmlFor="installment">
-                    Installment
-                  </label>
+                  <div className="form-group">
+                    <label>Guarantor Photo</label>
+                    <input
+                      onChange={handleGuarantorInfo}
+                      value={guarantorInfo.guarantorPhoto}
+                      name="guarantorPhoto"
+                      type="file"
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>NID Front</label>
+                    <input
+                      onChange={handleGuarantorInfo}
+                      value={guarantorInfo.guarantorNIDfront}
+                      name="guarantorNIDfront"
+                      type="file"
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>NID Back</label>
+                    <input
+                      onChange={handleGuarantorInfo}
+                      value={guarantorInfo.guarantorNIDback}
+                      name="guarantorNIDback"
+                      type="file"
+                      required
+                    />
+                  </div>
                 </div>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "5px",
-                  }}
+              </>
+              <div style={{ display: "flex" }}>
+                <button
+                  className="btn btnRadius"
+                  onClick={() => prevStep("Customer Info")}
+                  style={{ marginRight: 10, width: "100%" }}
                 >
-                  <input type="radio" name="paymentType" />
-                  <label style={{ marginBottom: "0px" }} htmlFor="installment">
-                    Cash
-                  </label>
-                </div>
+                  Back
+                </button>
+                <button
+                  style={{ width: "100%" }}
+                  className="btn cbtnRadius"
+                  onClick={() => nextStep("Confirm")}
+                >
+                  Next
+                </button>{" "}
               </div>
-
-              <h3>Order Summary</h3>
-              <div class="order-summary">
-                <p>
-                  Product A x1 <span>$50</span>
-                </p>
-                <p>
-                  Product B x2 <span>$80</span>
-                </p>
-                <hr />
-                <p class="total">
-                  Total: <span>$130</span>
-                </p>
-              </div>
-            </form>
-          </>
-          <div style={{ display: "flex" }}>
-            <button
-              className="btn btnRadius"
-              onClick={prevStep}
-              style={{ marginRight: 10, width: "100%" }}
-            >
-              Back
-            </button>
-            <button
-              style={{ width: "100%" }}
-              className="btn btnRadius"
-              onClick={nextStep}
-            >
-              Next
-            </button>
-          </div>
-        </div>
+            </div>
+          )}
+        </>
       )}
-
-      {currentStep === 2 && (
+      {/* confirm */}
+      {currentStep === "Confirm" && (
         <div>
           <>
-            <form class="checkout-form">
-              <h3>Customer Information</h3>
-              <div class="form-group">
-                <label>Customer Name</label>
-                <input type="text" placeholder="John Doe" required />
-              </div>
-              <div class="form-group">
-                <label>Mobile</label>
-                <input type="text" placeholder="+8801xxxxxxx" />
-              </div>
-              <div class="form-group">
-                <label>Address / Village</label>
-                <input type="text" placeholder="123 Main St" required />
-              </div>
-              <div class="form-group">
-                <label>City</label>
-                <input type="text" placeholder="Dhaka" required />
-              </div>
-
-              <h3>Payment Details</h3>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "15px",
-                  marginBottom: "15px",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "5px",
-                  }}
-                >
-                  <input type="radio" name="paymentType" />
-                  <label style={{ marginBottom: "0px" }} htmlFor="installment">
-                    Installment
-                  </label>
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "5px",
-                  }}
-                >
-                  <input type="radio" name="paymentType" />
-                  <label style={{ marginBottom: "0px" }} htmlFor="installment">
-                    Cash
-                  </label>
-                </div>
-              </div>
-
+            <div className="checkout-form">
               <h3>Order Summary</h3>
-              <div class="order-summary">
-                <p>
-                  Product A x1 <span>$50</span>
-                </p>
-                <p>
-                  Product B x2 <span>$80</span>
-                </p>
+              <div className="order-summary">
+                {cartItems?.map((item) => (
+                  <p key={item.id}>
+                    {item.name} <span>${item.payableAmount}</span>
+                  </p>
+                ))}
                 <hr />
-                <p class="total">
-                  Total: <span>$130</span>
+                <p className="total">
+                  Total: <span>${totalPayableAmount}</span>
+                </p>
+                <p className="total">
+                  Due: <span>${totalDueAmount}</span>
                 </p>
               </div>
-              <button className="">Place Order</button>
-            </form>
+              <button
+                className="btn"
+                onClick={handleSubmit}
+                style={{ marginTop: "10px", width: "100%" }}
+              >
+                Place Order
+              </button>
+            </div>
           </>
           <button
             className="btn btnRadius"
-            onClick={prevStep}
+            onClick={() =>
+              prevStep(isInstallment ? "Guarantor Info" : "Customer Info")
+            }
             style={{ marginRight: 10, width: "100%" }}
           >
             Back

@@ -74,16 +74,31 @@ section {
   cursor: pointer;
   font-size: 16px;
 }
+
 @media only screen and (min-width: 728px) {
-  #mainContainer {
+  .mainContainer {
     width: 80%;
     margin: 0 auto;
   }
 }
 @media only screen and (min-width: 992px) {
-  #mainContainer {
-    /* width: 40%; */
-    width: 70%;
+  .mainContainer {
+    width: 40%;
+    /* width: 70%; */
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .mainContainer {
+    width: 50%;
+    /* width: 70%; */
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .mainContainer {
+    width: 40%;
+    /* width: 70%; */
     margin: 0 auto;
   }
 }

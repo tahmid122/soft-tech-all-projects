@@ -1,6 +1,6 @@
 #singleProduct {
   padding: 50px;
-  width: 100%;
+  width: 70%;
   margin: 0 auto;
 }
 .productIntro {
@@ -116,9 +116,11 @@
 }
 .specificationTable table {
   width: 100%;
+  border-collapse: collapse;
 }
 .specificationTable table td {
   padding: 8px;
+  border: var(---primaryBorder);
 }
 .specificationTable table tr td {
   font-size: 15px;

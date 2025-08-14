@@ -69,7 +69,6 @@ const Cart = () => {
       </div>
       <BottomSticky>
         <>
-          {" "}
           <div className="cartSummary">
             <table className="summaryTable">
               <tbody>
@@ -77,9 +76,7 @@ const Cart = () => {
                   className="upperRow"
                   style={{ backgroundColor: "#245824ff", color: "white" }}
                 >
-                  <th rowSpan={2} s>
-                    Total:
-                  </th>
+                  <th rowSpan={2}>Total:</th>
                   <th>Main</th>
                   <th>Discount</th>
                   <th>Payable</th>
@@ -100,7 +97,11 @@ const Cart = () => {
             <Link
               to={"/checkout"}
               className="btn"
-              style={{ display: "inline-block" }}
+              style={{
+                display: "inline-block",
+                width: "200px",
+                margin: "0 auto",
+              }}
             >
               Sell Now
             </Link>

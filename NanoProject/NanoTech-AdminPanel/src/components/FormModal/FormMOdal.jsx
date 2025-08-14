@@ -33,8 +33,7 @@ const FormMOdal = ({ submittedData = [], closeModal }) => {
   const formatAddress = (data) => {
     return data?.split("|")[1];
   };
-  console.log(date);
-  console.log(ability);
+
   return (
     // form modal
     <div onClick={() => closeModal()} className="modal-container">

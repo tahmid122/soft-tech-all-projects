@@ -61,7 +61,7 @@ const ApplicationList = ({ closeModal: closeMApplicationListModal }) => {
         {/* application search box */}
         {/* application table */}
         <div className="table-container">
-          <table>
+          <table style={{ textAlign: "center" }}>
             <thead>
               <tr>
                 <th>Apply Id</th>
@@ -82,7 +82,7 @@ const ApplicationList = ({ closeModal: closeMApplicationListModal }) => {
                 <td>ধাপেরহাট</td>
                 <td>মুনছিফা রুহানী</td>
                 <td>৫২১</td>
-                <td>Approve</td>
+                <td className="status">Pending</td>
                 {/* action buttons */}
                 <td className="table-icons-container">
                   <div
@@ -90,20 +90,24 @@ const ApplicationList = ({ closeModal: closeMApplicationListModal }) => {
                     className="table-icon"
                     title="View"
                   >
-                    <FaEye size={20} />
+                    <FaEye style={{ color: "orange" }} size={20} />
                   </div>
                   <div className="table-icon" title="Edit">
-                    <FaEdit size={20} />
+                    <FaEdit style={{ color: "blue" }} size={20} />
                   </div>
                   <div
                     onClick={() => handleEdit()}
                     className="table-icon"
                     title="Reject"
                   >
-                    <MdCancel size={20} />
+                    <MdCancel style={{ color: "red" }} size={20} />
                   </div>
                   <div className="table-icon" title="Approve">
-                    <FaCheckCircle onClick={() => setIsOpen(true)} size={20} />
+                    <FaCheckCircle
+                      style={{ color: "#228b22" }}
+                      onClick={() => setIsOpen(true)}
+                      size={20}
+                    />
                   </div>
                 </td>
                 {/* action buttons */}

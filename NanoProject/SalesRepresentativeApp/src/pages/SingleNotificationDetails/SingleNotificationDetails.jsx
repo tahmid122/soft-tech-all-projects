@@ -3,7 +3,7 @@ import "./singleNotificationDetails.css";
 const SingleNotificationDetails = () => {
   return (
     // this details should be dynamic
-    <div id="singlePost" className="marginBottom">
+    <div id="singlePost" className="marginBottom mainContainer">
       <div className="postTop marginBottom">
         <div className="ptImage">
           <img src="/logo.png" alt="post company image" />

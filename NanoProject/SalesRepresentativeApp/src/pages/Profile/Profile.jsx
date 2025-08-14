@@ -3,7 +3,7 @@ import "./profile.css";
 const Profile = () => {
   return (
     // profile
-    <div id="profile" style={{ marginTop: "-15px" }}>
+    <div id="profile" style={{ marginTop: "-15px" }} className="mainContainer">
       <div className="profileTop">
         <img
           className="coverImage"

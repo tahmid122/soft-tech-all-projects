@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import "./dashBoardSideBar.css";
 import { Link, NavLink } from "react-router";
 import { FaTachometerAlt, FaListAlt } from "react-icons/fa";
-import { MdDashboard, MdInventory } from "react-icons/md";
+import {
+  MdDashboard,
+  MdInventory,
+  MdPointOfSale,
+  MdStore,
+} from "react-icons/md";
 import { FaList, FaUserShield } from "react-icons/fa6";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 const DashBoardSideBar = ({
@@ -11,6 +16,8 @@ const DashBoardSideBar = ({
   viewProductsClick,
 }) => {
   const [isInnerLinkShow, setIsInnerLinkShow] = useState(false);
+  const [isInnerLinkShow2, setIsInnerLinkShow2] = useState(false);
+  const [isInnerLinkShow3, setIsInnerLinkShow3] = useState(false);
   return (
     // dashboard sidebar
     <div>
@@ -38,8 +45,8 @@ const DashBoardSideBar = ({
           </li>
           {/* Nav link */}
           <li onClick={() => setIsInnerLinkShow(!isInnerLinkShow)}>
-            <NavLink to={"/inventory"}>
-              <MdInventory size={18} /> Inventory{" "}
+            <NavLink to={"e-commerce"}>
+              <MdPointOfSale size={18} /> E-commerce
               <>{isInnerLinkShow ? <IoIosArrowUp /> : <IoIosArrowDown />}</>
             </NavLink>
             <ul
@@ -52,7 +59,7 @@ const DashBoardSideBar = ({
                   addProductClick();
                 }}
               >
-                <NavLink to={"/inventory"}> Add Products</NavLink>
+                <NavLink to={"e-commerce"}> Add Products</NavLink>
               </li>
               <li
                 onClick={(e) => {
@@ -60,13 +67,66 @@ const DashBoardSideBar = ({
                   viewProductsClick();
                 }}
               >
-                <NavLink to={"/inventory"}> View Products</NavLink>
+                <NavLink to={"e-commerce"}> View Products</NavLink>
+              </li>
+            </ul>
+          </li>
+          {/* Nav link */}
+          {/* Pending works */}
+          <li onClick={() => setIsInnerLinkShow2(!isInnerLinkShow2)}>
+            <NavLink to={"productManagement"}>
+              <MdInventory size={18} /> Inventory
+              <>{isInnerLinkShow2 ? <IoIosArrowUp /> : <IoIosArrowDown />}</>
+            </NavLink>
+            <ul
+              style={{ display: `${isInnerLinkShow2 ? "block" : "none"}` }}
+              className="inventoryInnerLinks"
+            >
+              <li
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              >
+                <NavLink to={"productManagement"}> Product Management</NavLink>
+              </li>
+              <li
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              >
+                <NavLink to={"productQrCode"}> Product QR Code</NavLink>
+              </li>
+            </ul>
+          </li>
+          {/* Nav link */}
+          <li onClick={() => setIsInnerLinkShow3(!isInnerLinkShow3)}>
+            <NavLink to={"salesReport"}>
+              <MdStore size={18} /> Sales Points
+              <>{isInnerLinkShow3 ? <IoIosArrowUp /> : <IoIosArrowDown />}</>
+            </NavLink>
+            <ul
+              style={{ display: `${isInnerLinkShow3 ? "block" : "none"}` }}
+              className="inventoryInnerLinks"
+            >
+              <li
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              >
+                <NavLink to={"salesReport"}> Sales Report</NavLink>
+              </li>
+              <li
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              >
+                <NavLink to={"lowStockAlerts"}> Low Stock Alert</NavLink>
               </li>
             </ul>
           </li>
           {/* Nav link */}
           <li>
-            <NavLink to={"/createRole"}>
+            <NavLink to={"createRole"}>
               <FaUserShield size={20} /> Create Role
             </NavLink>
           </li>

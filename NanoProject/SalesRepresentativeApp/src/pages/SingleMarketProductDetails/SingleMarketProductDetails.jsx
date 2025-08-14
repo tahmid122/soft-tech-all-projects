@@ -26,31 +26,6 @@ const SingleMarketProductDetails = () => {
             <div className="productImage">
               <img src={product?.image} alt={product?.name} />
             </div>
-            {/* product main image- changeable */}
-            {/* product image previews - while clicking main image will change */}
-            {/* <div className="imagePreview">
-              <img
-                onClick={() => setMainImage("/products/oven.png")}
-                src="/products/oven.png"
-                alt="productImage"
-              />
-              <img
-                onClick={() => setMainImage("/products/bat.jpg")}
-                src="/products/bat.jpg"
-                alt="productImage"
-              />
-              <img
-                onClick={() => setMainImage("/products/geyser.png")}
-                src="/products/geyser.png"
-                alt="productImage"
-              />
-              <img
-                onClick={() => setMainImage("/products/hairdryer.jpg")}
-                src="/products/hairdryer.jpg"
-                alt="productImage"
-              />
-            </div> */}
-            {/* product image previews */}
           </div>
           {/* product image container */}
           {/* product intro description */}

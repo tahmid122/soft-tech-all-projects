@@ -53,7 +53,7 @@ const Market = () => {
   }, []);
 
   return (
-    <div>
+    <div className="mainContainer">
       {/* market category */}
 
       <div className="marketCategory marginBottom">

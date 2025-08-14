@@ -1,0 +1,53 @@
+.salesPointContainer {
+  margin-top: 20px;
+}
+.salesPointTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.salesPointTop form {
+  display: flex;
+  align-items: center;
+}
+.salesPointTop form input {
+  padding: 8px 10px;
+  border: none;
+  outline: none;
+  border: 1px solid gainsboro;
+  font-size: 15px;
+  height: 40px;
+}
+.salesPointTop form button {
+  height: 40px;
+  padding: 7px 10px;
+  border: none;
+  background-color: #228b22;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+#salesPointTableContainer {
+  margin-top: 20px;
+  width: 100%;
+  overflow-x: auto;
+}
+#salesPointTableContainer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#salesPointTableContainer table td,
+th {
+  text-align: center;
+  font-size: 15px;
+  padding: 8px !important;
+}
+.salesPointSummary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.salesPointSummary select {
+  width: 200px;
+}
