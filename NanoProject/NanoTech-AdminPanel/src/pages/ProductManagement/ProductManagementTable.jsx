@@ -1,97 +1,6 @@
 import React, { useEffect, useState } from "react";
 // this is dummy data. Its should be fetched from database
-const lowStockData = [
-  {
-    sellerId: "S001",
-    shopName: "Tech World",
-    shopLocation: "Dhaka",
-    productName: "Wireless Mouse",
-    providedQty: 100,
-    soldQty: 92,
-    remainingQty: 8,
-  },
-  {
-    sellerId: "S001",
-    shopName: "Tech World",
-    shopLocation: "Dhaka",
-    productName: "Mechanical Keyboard",
-    providedQty: 50,
-    soldQty: 45,
-    remainingQty: 5,
-  },
-  {
-    sellerId: "S002",
-    shopName: "Home Essentials",
-    shopLocation: "Chittagong",
-    productName: "Electric Kettle",
-    providedQty: 60,
-    soldQty: 52,
-    remainingQty: 8,
-  },
-  {
-    sellerId: "S002",
-    shopName: "Home Essentials",
-    shopLocation: "Chittagong",
-    productName: "Rice Cooker",
-    providedQty: 70,
-    soldQty: 65,
-    remainingQty: 5,
-  },
-  {
-    sellerId: "S003",
-    shopName: "Fashion Hub",
-    shopLocation: "Sylhet",
-    productName: "Leather Wallet",
-    providedQty: 80,
-    soldQty: 75,
-    remainingQty: 5,
-  },
-  {
-    sellerId: "S003",
-    shopName: "Fashion Hub",
-    shopLocation: "Sylhet",
-    productName: "Sneakers",
-    providedQty: 40,
-    soldQty: 37,
-    remainingQty: 3,
-  },
-  {
-    sellerId: "S004",
-    shopName: "Gadget Arena",
-    shopLocation: "Rajshahi",
-    productName: "Smartwatch",
-    providedQty: 60,
-    soldQty: 59,
-    remainingQty: 1,
-  },
-  {
-    sellerId: "S004",
-    shopName: "Gadget Arena",
-    shopLocation: "Rajshahi",
-    productName: "Bluetooth Speaker",
-    providedQty: 30,
-    soldQty: 28,
-    remainingQty: 2,
-  },
-  {
-    sellerId: "S005",
-    shopName: "Kitchen King",
-    shopLocation: "Khulna",
-    productName: "Non-stick Pan",
-    providedQty: 40,
-    soldQty: 36,
-    remainingQty: 4,
-  },
-  {
-    sellerId: "S005",
-    shopName: "Kitchen King",
-    shopLocation: "Khulna",
-    productName: "Pressure Cooker",
-    providedQty: 25,
-    soldQty: 22,
-    remainingQty: 3,
-  },
-];
+
 const assignProducts = [
   {
     shopId: "SHOP-1",
@@ -133,7 +42,7 @@ const assignProducts = [
 const ProductManagementTable = () => {
   // handle search functionality
   const [searchQuery, setSearchQuery] = useState("");
-  const [salesPoint, setSalesPoint] = useState([]);
+  const [salesPoint, setSalesPoint] = useState(assignProducts);
   const [shopData, setShopData] = useState({ shopName: "", shopLocation: "" });
   const handleSearch = (e) => {
     e.preventDefault();

@@ -4,15 +4,26 @@ import { FaXmark } from "react-icons/fa6";
 import ProductManagementTable from "./ProductManagementTable";
 // these are dummy data. These should come from database
 const shops = ["SHOP-1", "SHOP-2", "SHOP-3"];
-const products = [
-  { id: 1, productName: "Rice Cooker", available: ["ID-1", "ID-2", "ID-3"] },
-  { id: 2, productName: "Curry Cooker", available: ["ID-4", "ID-5", "ID-6"] },
+const Allproducts = [
+  {
+    id: 1,
+    productName: "Rice Cooker",
+    category: "riceCooker",
+    available: ["ID-1", "ID-2", "ID-3"],
+  },
+  {
+    id: 2,
+    productName: "Curry Cooker",
+    category: "curryCooker",
+    available: ["ID-4", "ID-5", "ID-6"],
+  },
 ];
 
 const ProductManagement = () => {
   const [availableIds, setAvailableIds] = useState([]);
   const [selectedIds, setSelectedIds] = useState([]);
   const [productQuantity, setProductQuantity] = useState(0);
+  const [products, setProducts] = useState(Allproducts);
 
   const handleAvailableIds = (e) => {
     const value = e.target.value.split(",")[0];
@@ -44,6 +55,13 @@ const ProductManagement = () => {
     const details = { ...data, selectedIds };
     console.log(details);
   };
+  const handleCategoryProduct = (e) => {
+    const category = e.target.value;
+    const filteredProducts = Allproducts.filter(
+      (product) => product.category === category
+    );
+    setProducts(filteredProducts);
+  };
   return (
     <section id="productManagement">
       <h2>Product Management</h2>
@@ -66,7 +84,19 @@ const ProductManagement = () => {
               ))}
             </select>
           </div>
-
+          <div className="formElement">
+            <label htmlFor="product">
+              Category <span style={{ color: "red" }}>*</span>
+            </label>
+            <select onChange={handleCategoryProduct} name="category" required>
+              <option value="" style={{ display: "none" }}>
+                Select Product Category
+              </option>
+              {/* These categories should fetch from database */}
+              <option value="riceCooker">Rice Cooker</option>
+              <option value="curryCooker">Blender</option>
+            </select>
+          </div>
           <div className="formElement">
             <label htmlFor="product">
               Product <span style={{ color: "red" }}>*</span>

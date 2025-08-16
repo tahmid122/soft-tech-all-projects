@@ -8,7 +8,7 @@ import {
   MdPointOfSale,
   MdStore,
 } from "react-icons/md";
-import { FaList, FaUserShield } from "react-icons/fa6";
+import { FaList, FaUserShield, FaWarehouse } from "react-icons/fa6";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 const DashBoardSideBar = ({
   openModal,
@@ -33,19 +33,19 @@ const DashBoardSideBar = ({
         <ul>
           {/* Nav link */}
           <li>
-            <NavLink>
-              <MdDashboard /> Dashboard
+            <NavLink to={"/dashboard"} end>
+              <MdDashboard end /> Dashboard
             </NavLink>
           </li>
           {/* Nav link */}
           <li onClick={() => openModal()}>
-            <NavLink>
+            <a style={{ cursor: "pointer" }}>
               <FaList /> Application List
-            </NavLink>
+            </a>
           </li>
           {/* Nav link */}
           <li onClick={() => setIsInnerLinkShow(!isInnerLinkShow)}>
-            <NavLink to={"e-commerce"}>
+            <NavLink to={"e-commerce"} end>
               <MdPointOfSale size={18} /> E-commerce
               <>{isInnerLinkShow ? <IoIosArrowUp /> : <IoIosArrowDown />}</>
             </NavLink>
@@ -59,7 +59,9 @@ const DashBoardSideBar = ({
                   addProductClick();
                 }}
               >
-                <NavLink to={"e-commerce"}> Add Products</NavLink>
+                <NavLink to={"e-commerce"} end>
+                  Add Products
+                </NavLink>
               </li>
               <li
                 onClick={(e) => {
@@ -67,7 +69,20 @@ const DashBoardSideBar = ({
                   viewProductsClick();
                 }}
               >
-                <NavLink to={"e-commerce"}> View Products</NavLink>
+                <NavLink to={"e-commerce"} end>
+                  {" "}
+                  View Products
+                </NavLink>
+              </li>
+              <li
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              >
+                <NavLink to={"Orders"} end>
+                  {" "}
+                  Orders
+                </NavLink>
               </li>
             </ul>
           </li>
@@ -128,6 +143,13 @@ const DashBoardSideBar = ({
           <li>
             <NavLink to={"createRole"}>
               <FaUserShield size={20} /> Create Role
+            </NavLink>
+          </li>
+          {/* Nav link */}
+          <li>
+            <NavLink to={"warehouse"}>
+              <FaWarehouse size={20} />
+              Warehouse
             </NavLink>
           </li>
         </ul>

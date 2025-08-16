@@ -8,6 +8,8 @@ import ProductQrCode from "../pages/ProductQrCode/ProductQrCode";
 import SalesReport from "../pages/SalesReport/SalesReport";
 import LowStockAlert from "../pages/LowStockAlert/LowStockAlert";
 import Login from "../pages/Login/Login";
+import Orders from "../pages/Orders/Orders";
+import CreateWarehouse from "../pages/CreateWarehouse/CreateWarehouse";
 // all routes
 export const router = createBrowserRouter([
   {
@@ -20,7 +22,9 @@ export const router = createBrowserRouter([
     children: [
       { index: true, Component: Dashboard },
       { path: "e-commerce", Component: Inventory },
+      { path: "orders", Component: Orders },
       { path: "createRole", Component: CreateRole },
+      { path: "warehouse", Component: CreateWarehouse },
       { path: "productManagement", Component: ProductManagement },
       { path: "productQrCode", Component: ProductQrCode },
       { path: "salesReport", Component: SalesReport },

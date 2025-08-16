@@ -187,7 +187,7 @@ const salesData = [
 const SalesReport = () => {
   // handle search functionality
   const [searchQuery, setSearchQuery] = useState("");
-  const [salesPoint, setSalesPoint] = useState([]);
+  const [salesPoint, setSalesPoint] = useState(salesData);
   const [shopData, setShopData] = useState({ shopName: "", shopLocation: "" });
   const [totalSales, setTotalSales] = useState(0);
   const handleSearch = (e) => {

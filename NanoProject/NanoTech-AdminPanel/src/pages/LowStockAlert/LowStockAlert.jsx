@@ -97,7 +97,7 @@ const lowStockData = [
 const LowStockAlert = () => {
   // handle search functionality
   const [searchQuery, setSearchQuery] = useState("");
-  const [salesPoint, setSalesPoint] = useState([]);
+  const [salesPoint, setSalesPoint] = useState(lowStockData);
   const [shopData, setShopData] = useState({ shopName: "", shopLocation: "" });
   const handleSearch = (e) => {
     e.preventDefault();

@@ -1,0 +1,12 @@
+#warehouse {
+  margin-top: -100px;
+}
+.warehouseContainer {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+.warehouseContainer select {
+  width: auto;
+}

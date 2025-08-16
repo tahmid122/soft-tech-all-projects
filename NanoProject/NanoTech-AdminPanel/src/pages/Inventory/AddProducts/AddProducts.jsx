@@ -100,9 +100,69 @@ const AddProducts = ({ setActive }) => {
             </div>
             {/* form element */}
             <div className="formElementFlex">
+              {/* warehouse dropdown */}
+              <div className="productFormElement">
+                <label htmlFor="warehouseName">
+                  Warehouse Name<span style={{ color: "red" }}>*</span>
+                </label>
+                {/* these should come from database */}
+                <select name="warehouseName" required>
+                  <option value="" style={{ display: "nne" }}>
+                    Select a warehouse
+                  </option>
+                  <option value="warehouse01">Warehouse 01</option>
+                  <option value="warehouse02">Warehouse 02</option>
+                  <option value="warehouse03">Warehouse 03</option>
+                </select>
+              </div>
+              <div className="productFormElement">
+                <label htmlFor="warehouseAddress">
+                  Warehouse Address<span style={{ color: "red" }}>*</span>
+                </label>
+                {/* these should come from database */}
+                <select name="warehouseAddress" required>
+                  <option value="" style={{ display: "nne" }}>
+                    Select a warehouse
+                  </option>
+                  <option value="warehouse01">Banani, Dhaka</option>
+                  <option value="warehouse02">Mirpur, Dhaka</option>
+                  <option value="warehouse03">JhumJhumpur, Jashore</option>
+                </select>
+              </div>
+
+              {/* product category dropdown */}
+            </div>
+            <div className="formElementFlex">
+              {/* form element */}
+              <div className="productFormElement">
+                <label htmlFor="sectionName">
+                  Section Name <span style={{ color: "red" }}>*</span>
+                </label>
+                <input
+                  type="text"
+                  name="sectionName"
+                  required
+                  placeholder="Enter section name"
+                />
+              </div>
+              {/* form element */}
+              <div className="productFormElement">
+                <label htmlFor="subSection">
+                  Sub Section <span style={{ color: "red" }}>*</span>
+                </label>
+                <input
+                  type="text"
+                  name="subSection"
+                  required
+                  placeholder="Enter subsection name"
+                />
+              </div>
+            </div>
+            {/* form element */}
+            <div className="formElementFlex">
               <div className="productFormElement">
                 <label htmlFor="productImage">
-                  Product Model <span style={{ color: "red" }}>*</span>
+                  Product Image <span style={{ color: "red" }}>*</span>
                 </label>
                 <input
                   type="file"
