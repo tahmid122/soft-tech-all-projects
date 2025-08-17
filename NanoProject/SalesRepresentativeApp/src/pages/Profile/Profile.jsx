@@ -1,5 +1,6 @@
 import React from "react";
 import "./profile.css";
+import { Link } from "react-router";
 const Profile = () => {
   return (
     // profile
@@ -13,7 +14,7 @@ const Profile = () => {
         <div className="profileDescription">
           <img
             className="profileDescriptionImage"
-            src="https://scontent.fjsr6-1.fna.fbcdn.net/v/t39.30808-6/362918150_181948424882166_2378319334321616290_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=H8EUuHGbJc4Q7kNvwFjyWlp&_nc_oc=AdnQgUQ0_WdfwsGUIWqdHThbZkrFUygqKoIO1T8SreLw8WiTNLdfgT_Vb2VMI6paOgo&_nc_zt=23&_nc_ht=scontent.fjsr6-1.fna&_nc_gid=uw4iWiR0H-Sppev7Yms4qQ&oh=00_AfX716wPZus2hKe6nsmrlRkUR1JgyqM8PcbE2gVmBaGYow&oe=689CEBB4"
+            src="https://i.ibb.co.com/zTL9ZmK8/362918150-181948424882166-2378319334321616290-n-1.jpg"
             alt="profileDescriptionImage"
           />
           <h2>Tahmid Alam</h2>
@@ -21,47 +22,52 @@ const Profile = () => {
         </div>
       </div>
       <div className="profileMain">
-        <h1>Dashboard</h1>
+        <div style={{ textAlign: "center" }}>
+          <h1>Dashboard</h1>
+          <Link
+            style={{ display: "inline-block" }}
+            to={"/salesReport"}
+            className="btn"
+          >
+            Sales Report
+          </Link>
+        </div>
         <div className="detailsCards">
+          {/* these data will fetch from database */}
           {/* single details card */}
           <div className="detailsCard">
-            <h4>৫০০০ টাকা</h4>
+            <h4>৫০০০০ টাকা</h4>
             <h3>মোট বিক্রয়</h3>
           </div>
           {/* single details card */}
           <div className="detailsCard">
-            <h4>৫০০০ টাকা</h4>
-            <h3>মোট বিক্রয়</h3>
+            <h4>৪৫৭০ টাকা</h4>
+            <h3>এ মাসে বিক্রয়</h3>
           </div>
           {/* single details card */}
           <div className="detailsCard">
-            <h4>৫০০০ টাকা</h4>
-            <h3>মোট বিক্রয়</h3>
+            <h4>৭৪৫০ টাকা</h4>
+            <h3>কিস্তি পাওনা</h3>
           </div>
           {/* single details card */}
           <div className="detailsCard">
-            <h4>৫০০০ টাকা</h4>
-            <h3>মোট বিক্রয়</h3>
+            <h4>১২৪৫ টাকা</h4>
+            <h3>কিস্তি আদায়</h3>
           </div>
           {/* single details card */}
           <div className="detailsCard">
-            <h4>৫০০০ টাকা</h4>
-            <h3>মোট বিক্রয়</h3>
+            <h4>৭৫১২ টাকা</h4>
+            <h3>লাভ</h3>
           </div>
           {/* single details card */}
           <div className="detailsCard">
-            <h4>৫০০০ টাকা</h4>
-            <h3>মোট বিক্রয়</h3>
+            <h4>৬৩২১ পিস</h4>
+            <h3>মোট পণ্য বিক্রয়</h3>
           </div>
           {/* single details card */}
           <div className="detailsCard">
-            <h4>৫০০০ টাকা</h4>
-            <h3>মোট বিক্রয়</h3>
-          </div>
-          {/* single details card */}
-          <div className="detailsCard">
-            <h4>৫০০০ টাকা</h4>
-            <h3>মোট বিক্রয়</h3>
+            <h4>১২৫০০ পিস</h4>
+            <h3>পণ্য স্টক</h3>
           </div>
         </div>
       </div>

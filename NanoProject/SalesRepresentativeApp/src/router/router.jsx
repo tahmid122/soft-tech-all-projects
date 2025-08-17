@@ -9,6 +9,7 @@ import SingleMarketProductDetails from "../pages/SingleMarketProductDetails/Sing
 import SingleNotificationDetails from "../pages/SingleNotificationDetails/SingleNotificationDetails";
 import Cart from "../pages/Cart/Cart";
 import Checkout from "../pages/Checkout/Checkout";
+import SalesReport from "../pages/SalesReport/SalesReport";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ export const router = createBrowserRouter([
       { path: "notification/:id", Component: SingleNotificationDetails },
       { path: "training", Component: Training },
       { path: "profile", Component: Profile },
+      { path: "salesReport", Component: SalesReport },
       { path: "cart", Component: Cart },
       { path: "checkout", Component: Checkout },
     ],

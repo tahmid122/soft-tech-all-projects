@@ -1,0 +1,68 @@
+#salesReport {
+  width: 70%;
+  margin: 0 auto;
+}
+.salesReportMainContainer {
+  margin-top: 20px;
+  width: 100%;
+}
+.salesReportMainContainer select,
+.salesReportMainContainer input {
+  padding: var(---primaryPadding);
+  border: var(---primaryBorder);
+  border-radius: var(---primaryBorderRadius);
+  outline: none;
+}
+.filterContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+.singleFilter {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: start;
+}
+.range {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.range input {
+  margin-left: 10px;
+}
+.filterBtn {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#filterTableTable {
+  margin-top: 20px;
+  width: 100%;
+}
+.filterTableTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#filterTableTable {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background-color: white;
+}
+#filterTableTable th,
+td {
+  border: var(---primaryBorder);
+  padding: 8px;
+  text-align: center;
+}
+.contentRef {
+  padding: 10px;
+  width: 100%;
+}
