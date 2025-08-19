@@ -8,27 +8,27 @@ const Success = () => {
   const lang = language === "bangla";
   const cards = [
     {
-      count: lang ? "৪.৩" : 4.3,
-      unit: "K",
-      tag: lang ? "পন্যসমূহ" : "Products",
+      count: lang ? "৪৩০০" : 4300,
+      // unit: "K",
+      tag: lang ? "মোট পন্য" : "Total Products",
       color: "green",
     },
     {
-      count: lang ? "৩.৭" : 3.7,
-      unit: "K",
-      tag: lang ? "বিক্রয় পয়েন্ট" : "Sales Points",
+      count: lang ? "৩৭০০" : 3700,
+      // unit: "K",
+      tag: lang ? "মোট বিক্রয় পয়েন্ট" : "Total Sales Points",
       color: "red",
     },
     {
-      count: lang ? "৪.৮" : 4.8,
-      unit: "M",
-      tag: lang ? "মোট বিক্রয়" : "Total Sales",
+      count: lang ? "৪৮০০" : 4800,
+      // unit: "M",
+      tag: lang ? "মোট বিক্রিত পন্য" : "Total Products Sold",
       color: "orange",
     },
     {
-      count: lang ? "২.৯" : 2.9,
-      unit: "K",
-      tag: lang ? "খুশি গ্রাহকরা" : "Happy Customers",
+      count: lang ? "৯৯%" : "99%",
+      // unit: "K",
+      tag: lang ? "গ্রাহক সন্তুষ্টি" : "Customer Satisfaction",
       color: "#F6339A",
     },
   ];
@@ -57,9 +57,9 @@ const Success = () => {
             <div className="success-card" key={index}>
               <h1>{card.count}</h1>
               <div>
-                <h1 className="count" style={{ color: card.color }}>
+                {/* <h1 className="count" style={{ color: card.color }}>
                   {card.unit}
-                </h1>
+                </h1> */}
                 <p style={{ color: card.color }}>{card.tag}</p>
               </div>
             </div>

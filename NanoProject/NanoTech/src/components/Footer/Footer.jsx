@@ -53,7 +53,7 @@ const Footer = () => {
           {/* footer part 2 */}
           {/* footer part 3 */}
           <div>
-            <h3 className="footer-title">Resources</h3>
+            <h3 className="footer-title">{lang ? "অন্যান্য" : "Resources"}</h3>
             <ul className="footer-menu">
               <li>
                 <Link to={"/sales-representative"}>
@@ -88,7 +88,12 @@ const Footer = () => {
               </p>
               <p style={{ color: "white" }}>
                 <FaEnvelope />
-                contact@sift-techtechnologyllc.com
+                <a
+                  style={{ color: "white" }}
+                  href="mailto:contact@nano-techbd.com"
+                >
+                  contact@nano-techbd.com
+                </a>
               </p>
               <p style={{ color: "white" }}>
                 <FaPhone /> {lang ? "+৮৮০ ১৩২৯৬৩৬৮৯০" : "+880 1329636890"}

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useRef, useState } from "react";
 import "./salesRepresentative.css";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
@@ -13,6 +14,7 @@ const SalesRepresentative = () => {
   const [district, setDistrict] = useState([]);
   const [upazillas, setUpazillas] = useState([]);
   const [unions, setUnions] = useState([]);
+  const [photo, setPhoto] = useState(null);
   // application form submit
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -105,6 +107,11 @@ const SalesRepresentative = () => {
       console.log(error);
     }
   }, []);
+  // photo upload
+  const photoRef = useRef(null);
+  const handlePhotoUpload = () => {
+    photoRef.current.click();
+  };
   return (
     // Sales representative section
     <section id="salesRepresentative" className="sr-bg">
@@ -120,7 +127,30 @@ const SalesRepresentative = () => {
           <form onSubmit={handleSubmit} className="sp-form">
             {/* Form element */}
             <div>
-              <h4>আবেদনকারীর তথ্যঃ</h4>
+              <div className="fileUploadContainer">
+                <h4>আবেদনকারীর তথ্যঃ</h4>
+                <div className="fileUpload">
+                  <img
+                    onClick={handlePhotoUpload}
+                    src={photo ? photo : "/uploadImage.png"}
+                    alt="file upload"
+                  />
+                  ছবি
+                  <input
+                    ref={photoRef}
+                    style={{ opacity: "0" }}
+                    type="file"
+                    required
+                    name="applicantPhoto"
+                    onChange={(e) => {
+                      const photoURL = URL.createObjectURL(e.target.files[0]);
+                      setPhoto(photoURL);
+                    }}
+                    accept="image/*"
+                  />
+                </div>
+              </div>
+
               <div className="form-element">
                 <div className="inner-input">
                   <label htmlFor="applicantSalesPointName">

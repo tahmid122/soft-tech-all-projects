@@ -45,7 +45,9 @@ const Contact = () => {
                     </p>
                     <p>
                       <FaEnvelope />
-                      contact@sift-techtechnologyllc.com
+                      <a href="mailto:contact@nano-techbd.com">
+                        contact@nano-techbd.com
+                      </a>
                     </p>
                   </div>
                 </div>
