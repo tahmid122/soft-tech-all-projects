@@ -40,13 +40,8 @@ const Success = () => {
         <SectionTitle
           title={
             lang
-              ? "সংখ্যায় ন্যানো-টেক উৎপাদন প্রযুক্তি"
-              : "Nano-Tech Production Technology in Numbers"
-          }
-          description={
-            lang
-              ? "বিভিন্ন শিল্পের ব্যবসার দ্বারা বিশ্বস্ত - দেখুন আমরা কতদূর এসেছি।"
-              : "Trusted by businesses across industries — see how far we've come."
+              ? "এক নজরে ন্যানো-টেক প্রডাকশন টেকনোলজি"
+              : "Nano-Tech Production Technology at a glance"
           }
         />
         {/* section title */}
@@ -56,12 +51,11 @@ const Success = () => {
             // single cards
             <div className="success-card" key={index}>
               <h1>{card.count}</h1>
-              <div>
-                {/* <h1 className="count" style={{ color: card.color }}>
+
+              {/* <h1 className="count" style={{ color: card.color }}>
                   {card.unit}
                 </h1> */}
-                <p style={{ color: card.color }}>{card.tag}</p>
-              </div>
+              <p style={{ color: card.color }}>{card.tag}</p>
             </div>
             // single cards
           ))}

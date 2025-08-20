@@ -11,11 +11,12 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  align-items: center;
+  align-items: start;
   padding-right: 20px;
   border-right: 1px solid rgba(0, 0, 0, 0.459);
   width: 200px;
 }
+
 .count {
   font-size: 3rem !important;
 }
@@ -50,6 +51,7 @@
     border: none;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
   .count {
     font-size: 2rem !important;
