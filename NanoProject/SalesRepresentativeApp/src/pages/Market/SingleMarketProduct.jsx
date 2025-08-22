@@ -14,7 +14,10 @@ const SingleMarketProduct = ({ product, setCartItems }) => {
         paymentType: "",
       },
     ]);
-    toast.success("Added to cart");
+    toast.success("Added to cart", {
+      id: "cart-toast", // unique ID
+      duration: 1000, // optional
+    });
   };
   return (
     // link url need to  make dynamic

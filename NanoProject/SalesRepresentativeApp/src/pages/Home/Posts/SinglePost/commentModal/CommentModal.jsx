@@ -1,5 +1,6 @@
 import React from "react";
-import { FaXmark } from "react-icons/fa6";
+import { FaEdit } from "react-icons/fa";
+import { FaTrash, FaXmark } from "react-icons/fa6";
 import { IoSend } from "react-icons/io5";
 
 const CommentModal = ({ isOpen, setIsOpen }) => {
@@ -38,7 +39,20 @@ const CommentModal = ({ isOpen, setIsOpen }) => {
               />
             </div>
             <div className="userComment">
-              <h3>Tahmid Alam</h3>
+              <div className="commentActionsContainer">
+                <div className="commentTopName">
+                  <h3>Tahmid Alam</h3>
+                  <span>ID: 4158</span>
+                </div>
+                <div className="commentActions">
+                  <span className="actionBtn">
+                    <FaEdit size={17} />
+                  </span>
+                  <span className="actionBtn">
+                    <FaTrash />
+                  </span>
+                </div>
+              </div>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptatibus sed molestias similique pariatur rerum doloribus
@@ -57,7 +71,20 @@ const CommentModal = ({ isOpen, setIsOpen }) => {
               />
             </div>
             <div className="userComment">
-              <h3>Tahmid Alam</h3>
+              <div className="commentActionsContainer">
+                <div className="commentTopName">
+                  <h3>Tahmid Alam</h3>
+                  <span>ID: 4158</span>
+                </div>
+                <div className="commentActions">
+                  <span className="actionBtn">
+                    <FaEdit size={17} />
+                  </span>
+                  <span className="actionBtn">
+                    <FaTrash />
+                  </span>
+                </div>
+              </div>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptatibus sed molestias similique pariatur rerum doloribus
@@ -76,64 +103,20 @@ const CommentModal = ({ isOpen, setIsOpen }) => {
               />
             </div>
             <div className="userComment">
-              <h3>Tahmid Alam</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptatibus sed molestias similique pariatur rerum doloribus
-                perspiciatis, itaque eveniet omnis dolorem accusamus natus
-                exercitationem sunt, ipsum, corporis magnam veniam officia
-                incidunt!
-              </p>
-            </div>
-          </div>
-          {/* single comments */}
-          <div className="singleComment">
-            <div className="userImage">
-              <img
-                src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
-                alt=""
-              />
-            </div>
-            <div className="userComment">
-              <h3>Tahmid Alam</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptatibus sed molestias similique pariatur rerum doloribus
-                perspiciatis, itaque eveniet omnis dolorem accusamus natus
-                exercitationem sunt, ipsum, corporis magnam veniam officia
-                incidunt!
-              </p>
-            </div>
-          </div>
-          {/* single comments */}
-          <div className="singleComment">
-            <div className="userImage">
-              <img
-                src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
-                alt=""
-              />
-            </div>
-            <div className="userComment">
-              <h3>Tahmid Alam</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptatibus sed molestias similique pariatur rerum doloribus
-                perspiciatis, itaque eveniet omnis dolorem accusamus natus
-                exercitationem sunt, ipsum, corporis magnam veniam officia
-                incidunt!
-              </p>
-            </div>
-          </div>
-          {/* single comments */}
-          <div className="singleComment">
-            <div className="userImage">
-              <img
-                src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
-                alt=""
-              />
-            </div>
-            <div className="userComment">
-              <h3>Tahmid Alam</h3>
+              <div className="commentActionsContainer">
+                <div className="commentTopName">
+                  <h3>Tahmid Alam</h3>
+                  <span>ID: 4158</span>
+                </div>
+                <div className="commentActions">
+                  <span className="actionBtn">
+                    <FaEdit size={17} />
+                  </span>
+                  <span className="actionBtn">
+                    <FaTrash />
+                  </span>
+                </div>
+              </div>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptatibus sed molestias similique pariatur rerum doloribus

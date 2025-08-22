@@ -70,6 +70,40 @@
   background: none;
   border: var(---primaryBorder);
 }
+.commentActionsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.commentActions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.actionBtn {
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 5px;
+  transition: all 0.2s;
+}
+.actionBtn:first-child:hover {
+  color: #228b22;
+}
+.actionBtn:last-child:hover {
+  color: red;
+}
+.postLimit {
+  text-align: center;
+  background-color: white;
+  padding: 5px;
+}
+.commentTopName {
+  line-height: 15px;
+}
+.commentTopName span {
+  font-weight: bold;
+}
 .totalPostComment {
   text-align: right;
   font-size: 15px;

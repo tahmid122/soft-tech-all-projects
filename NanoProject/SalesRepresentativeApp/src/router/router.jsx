@@ -10,7 +10,6 @@ import SingleNotificationDetails from "../pages/SingleNotificationDetails/Single
 import Cart from "../pages/Cart/Cart";
 import Checkout from "../pages/Checkout/Checkout";
 import SalesReport from "../pages/SalesReport/SalesReport";
-
 export const router = createBrowserRouter([
   {
     path: "/",

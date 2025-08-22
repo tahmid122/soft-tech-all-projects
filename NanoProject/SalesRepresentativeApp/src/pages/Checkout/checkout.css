@@ -55,3 +55,30 @@ input[type="radio"] {
 .btnRadius {
   border-radius: var(---primaryBorderRadius);
 }
+.flexCheckout {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+.flexCheckout button {
+  width: 100%;
+}
+
+.stepContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 80vh;
+}
+.detailsContainer table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+.detailsContainer table th,
+td {
+  border: 1px solid gainsboro;
+  padding: 5px;
+}

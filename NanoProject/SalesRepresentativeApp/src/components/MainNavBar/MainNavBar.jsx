@@ -7,7 +7,10 @@ import { FaBell } from "react-icons/fa";
 import { MdOndemandVideo, MdVideoLibrary } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { FaShop } from "react-icons/fa6";
+import useCart from "../../hooks/useCart";
 const MainNavBar = () => {
+  const { cartItems } = useCart();
+
   return (
     <nav id="mainNavBar" className="marginBottom">
       {/* navbar links */}
@@ -35,10 +38,11 @@ const MainNavBar = () => {
             <MdVideoLibrary size={25} />
           </NavLink>
         </li>
-        <li>
+        <li className="cartIcon">
           <NavLink to={"/cart"}>
             <FaCartPlus size={25} />
           </NavLink>
+          <div>{cartItems.length}</div>
         </li>
       </ul>
       <Link to={"/profile"} className="profileNav">

@@ -11,6 +11,9 @@ const Posts = () => {
       <SinglePost />
       <SinglePost />
       <SinglePost />
+      <div className="postLimit">
+        <p>No more posts..</p>
+      </div>
     </section>
   );
 };

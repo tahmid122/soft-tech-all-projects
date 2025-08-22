@@ -66,7 +66,7 @@ const ProductManagement = () => {
     <section id="productManagement">
       <h2>Product Management</h2>
       {/* assign product form */}
-      <main style={{ marginTop: "-100px" }}>
+      <main>
         <form onSubmit={handleSubmit}>
           <h3>Assign Product</h3>
           <div className="formElement">

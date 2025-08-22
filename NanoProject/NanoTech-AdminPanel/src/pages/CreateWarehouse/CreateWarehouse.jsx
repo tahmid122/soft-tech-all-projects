@@ -124,14 +124,13 @@ const CreateWarehouse = () => {
       <main>
         <form>
           <h3>Create Warehouse</h3>
-
           <div class="formElement">
             <label for="warehouseName">
               Warehouse Name <span style={{ color: "red" }}>*</span>
             </label>
             <input
               required
-              type="email"
+              type="text"
               name="warehouseName"
               placeholder="Enter warehouse name"
             />
@@ -183,7 +182,7 @@ const CreateWarehouse = () => {
           </thead>
           <tbody>
             {warehouses?.map((details, index) => (
-              <tr id="index">
+              <tr key={index}>
                 <td>{details?.warehouseName}</td>
                 <td>{details?.warehouseSection}</td>
                 <td>{details?.warehouseSubSection}</td>

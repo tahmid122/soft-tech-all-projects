@@ -10,7 +10,7 @@ const Cart = () => {
   const [rawTotalProducts, setRawTotalProducts] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [discountAmount, setDiscountAmount] = useState(0);
-
+  const [dueAmount, setDueAmount] = useState(0);
   useEffect(() => {
     const total = cartItems.reduce(
       (sum, item) => sum + Number(item?.payableAmount),
@@ -31,6 +31,11 @@ const Cart = () => {
     );
     console.log("discount", total);
     setDiscountAmount(total);
+  }, [cartItems]);
+  useEffect(() => {
+    const total = cartItems.reduce((sum, item) => sum + item?.dueAmount, 0);
+    console.log("discount", total);
+    setDueAmount(total);
   }, [cartItems]);
 
   return (
@@ -77,7 +82,7 @@ const Cart = () => {
                   style={{ backgroundColor: "#245824ff", color: "white" }}
                 >
                   <th rowSpan={2}>Total:</th>
-                  <th>Main</th>
+                  <th>Subtotal</th>
                   <th>Discount</th>
                   <th>Payable</th>
                   <th>Due</th>
@@ -86,16 +91,12 @@ const Cart = () => {
                   <td>{rawTotalProducts}</td>
                   <td>{isNaN(discountAmount) ? 0 : discountAmount}</td>
                   <td>{isNaN(totalPrice) ? 0 : totalPrice}</td>
-                  <td>
-                    {isNaN(totalPrice) || isNaN(discountAmount)
-                      ? 0
-                      : totalPrice - discountAmount}
-                  </td>
+                  <td>{isNaN(dueAmount) ? 0 : dueAmount}</td>
                 </tr>
               </tbody>
             </table>
             <Link
-              to={"/checkout"}
+              to={`${cartItems.length > 0 ? "/checkout" : "/cart"}`}
               className="btn"
               style={{
                 display: "inline-block",

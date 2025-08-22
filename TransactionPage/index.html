@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transactions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      xintegrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-white text-gray-800 font-sans w-full sm:w-[80%] mx-auto">
+    <!-- Top Bar -->
+    <div
+      class="flex flex-wrap items-center justify-between px-4 sm:px-6 py-4 border-b bg-white"
+    >
+      <div
+        class="flex items-center gap-2 w-full sm:w-auto mb-2 sm:mb-0 relative"
+      >
+        <input
+          type="text"
+          placeholder="Search"
+          class="rounded-lg pl-8 px-3 py-2 text-sm sm:w-64 outline-none bg-gray-100 text-black placeholder:text-gray-500"
+        />
+        <span class="absolute left-2"
+          ><i class="fa-solid fa-magnifying-glass"></i
+        ></span>
+      </div>
+      <div class="flex items-center gap-1 sm:gap-3">
+        <button class="p-2 hover:bg-gray-100 rounded-lg">
+          <i class="fa-solid fa-table-cells-large text-lg"></i>
+        </button>
+        <button class="p-2 hover:bg-gray-100 rounded-lg">
+          <i class="fa-regular fa-circle-question"></i>
+        </button>
+        <button class="p-2 hover:bg-gray-100 rounded-lg">
+          <i class="fa-regular fa-bell"></i>
+        </button>
+        <button class="p-2 hover:bg-gray-100 rounded-lg">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+        <button class="p-2 hover:bg-gray-100 rounded-lg">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <button
+          class="p-2 bg-gray-50 rounded-full text-black border border-slate-300 ml-1 px-3 py-2 text-sm"
+        >
+          Setup guide <i class="fa-solid fa-circle-notch text-[#675dff]"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="p-4 sm:p-6">
+      <div class="flex items-center justify-between flex-wrap md:flex-nowrap">
+        <h1 class="text-2xl font-semibold mb-2">Transactions</h1>
+        <div>
+          <button
+            class="p-2 bg-[#675dff] text-white rounded-lg px-3 py-2 text-sm font-semibold"
+          >
+            <i class="fa-solid fa-plus"></i>
+            Create payment
+          </button>
+          <button
+            class="p-2 bg-white text-black border border-slate-300 ml-1 font-semibold rounded-lg px-3 py-2 text-sm"
+          >
+            <i class="fa-solid fa-chart-simple"></i>
+            Analyze
+          </button>
+        </div>
+      </div>
+      <!-- Tabs -->
+      <div class="flex gap-4 overflow-x-auto border-b mb-4 text-sm">
+        <button
+          class="border-b-2 border-[#675dff] text-[#675dff] py-2 font-semibold"
+        >
+          Payments
+        </button>
+        <button class="py-2 text-gray-600 hover:text-[#675dff] font-semibold">
+          Payouts
+        </button>
+        <button class="py-2 text-gray-600 hover:text-[#675dff] font-semibold">
+          Top-ups
+        </button>
+        <button class="py-2 text-gray-600 hover:text-[#675dff] font-semibold">
+          All activity
+        </button>
+      </div>
+
+      <!-- Filters -->
+      <div
+        class="flex items-center justify-between overflow-x-auto gap-3 mb-4 text-sm pb-2"
+      >
+        <button
+          class="px-3 text-left py-3 w-full border rounded-lg bg-[#675dff]/5 text-[#675dff] text-base"
+        >
+          All
+        </button>
+        <button class="px-3 text-left py-3 w-full border rounded-lg text-base">
+          Succeeded
+        </button>
+        <button class="px-3 text-left py-3 w-full border rounded-lg text-base">
+          Refunded
+        </button>
+        <button class="px-3 text-left py-3 w-full border rounded-lg text-base">
+          Disputed
+        </button>
+        <button class="px-3 text-left py-3 w-full border rounded-lg text-base">
+          Failed
+        </button>
+        <button class="px-3 text-left py-3 w-full border rounded-lg text-base">
+          Uncaptured
+        </button>
+      </div>
+
+      <!-- More Filters -->
+      <div class="flex flex-wrap gap-2 mb-4 text-sm">
+        <button
+          class="pl-1 pr-3 py-1 border border-dashed font-semibold rounded-full flex"
+        >
+          <span
+            class="rounded-full border border-gray-200 mr-1 flex items-center w-5 h-5 justify-center"
+            ><i class="fa-solid fa-plus text-[10px]"></i> </span
+          >Date and time
+        </button>
+        <button
+          class="pl-1 pr-3 py-1 border border-dashed font-semibold rounded-full flex"
+        >
+          <span
+            class="rounded-full border border-gray-200 mr-1 flex items-center w-5 h-5 justify-center"
+            ><i class="fa-solid fa-plus text-[10px]"></i> </span
+          >Amount
+        </button>
+        <button
+          class="pl-1 pr-3 py-1 border border-dashed font-semibold rounded-full flex"
+        >
+          <span
+            class="rounded-full border border-gray-200 mr-1 flex items-center w-5 h-5 justify-center"
+            ><i class="fa-solid fa-plus text-[10px]"></i> </span
+          >Currency
+        </button>
+        <button
+          class="pl-1 pr-3 py-1 border border-dashed font-semibold rounded-full flex"
+        >
+          <span
+            class="rounded-full border border-gray-200 mr-1 flex items-center w-5 h-5 justify-center"
+            ><i class="fa-solid fa-plus text-[10px]"></i> </span
+          >Status
+        </button>
+        <button
+          class="pl-1 pr-3 py-1 border border-dashed font-semibold rounded-full flex"
+        >
+          <span
+            class="rounded-full border border-gray-200 mr-1 flex items-center w-5 h-5 justify-center"
+            ><i class="fa-solid fa-plus text-[10px]"></i>
+          </span>
+          Payment method
+        </button>
+        <button
+          class="pl-1 pr-3 py-1 border border-dashed font-semibold rounded-full flex"
+        >
+          <span
+            class="rounded-full border border-gray-200 mr-1 flex items-center w-5 h-5 justify-center"
+            ><i class="fa-solid fa-plus text-[10px]"></i> </span
+          >More filters
+        </button>
+        <div class="flex gap-2 w-full sm:w-auto mt-2 sm:mt-0 sm:ml-auto">
+          <button
+            class="px-3 py-1 border rounded-lg w-full sm:w-auto font-semibold"
+          >
+            <i class="fa-solid fa-file-export"></i>
+            Export
+          </button>
+          <button
+            class="px-3 py-1 border rounded-lg w-full sm:w-auto font-semibold"
+          >
+            <i class="fa-solid fa-gear text-sm"></i>
+            Edit columns
+          </button>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div
+        class="border rounded-lg overflow-x-auto max-h-[500px] overflow-y-auto relative"
+      >
+        <table class="w-full text-sm min-w-[900px]">
+          <thead class="bg-gray-50 border-b sticky top-0 left-0">
+            <tr>
+              <th class="px-4 py-2 text-left"><input type="checkbox" /></th>
+              <th class="px-4 py-2 text-left">Amount</th>
+              <th class="px-4 py-2 text-left">Payment method</th>
+              <th class="px-4 py-2 text-left">Date</th>
+              <th class="px-4 py-2 text-left">Refunded date</th>
+              <th class="px-4 py-2 text-left">Decline reason</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $150.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 8157
+              </td>
+              <td class="px-4 py-2">Aug 20, 9:01 AM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right"
+                  >$750.00 <span class="font-normal mx-1">USD</span></span
+                >
+
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 3121
+              </td>
+              <td class="px-4 py-2">Aug 20, 9:30 AM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right"
+                  >$750.00 <span class="font-normal mx-1">USD</span></span
+                >
+
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <img class="h-4" src="./mastercard.png" alt="mastercard_logo" />
+                •••• 5632
+              </td>
+              <td class="px-4 py-2">Aug 20, 9:30 AM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right"
+                  >$150.00 <span class="font-normal mx-1">USD</span></span
+                >
+
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 7089
+              </td>
+              <td class="px-4 py-2">Aug 20, 9:48 AM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $1080.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 0029
+              </td>
+              <td class="px-4 py-2">Aug 20, 10:15 AM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $320.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <img class="h-4" src="./mastercard.png" alt="mastercard_logo" />
+
+                •••• 1170
+              </td>
+              <td class="px-4 py-2">Aug 20, 10:22 AM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $750.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 2378
+              </td>
+              <td class="px-4 py-2">Aug 20, 10:28 AM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $750.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 4440
+              </td>
+              <td class="px-4 py-2">Aug 20, 11:00 AM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $750.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 5882
+              </td>
+              <td class="px-4 py-2">Aug 20, 11:08 AM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $150.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <img class="h-4" src="./mastercard.png" alt="mastercard_logo" />
+                •••• 0612
+              </td>
+              <td class="px-4 py-2">Aug 20, 11:16 AM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $320.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 7410
+              </td>
+              <td class="px-4 py-2">Aug 20, 11:30 AM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $1080.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 6982
+              </td>
+              <td class="px-4 py-2">Aug 20, 11:31 AM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $1080.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 0062
+              </td>
+              <td class="px-4 py-2">Aug 20, 11:42 AM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $750.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <img class="h-4" src="./mastercard.png" alt="mastercard_logo" />
+                •••• 1995
+              </td>
+              <td class="px-4 py-2">Aug 20, 11:50 AM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $750.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 3388
+              </td>
+              <td class="px-4 py-2">Aug 20, 11:52 AM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $750.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <img class="h-4" src="./mastercard.png" alt="mastercard_logo" />
+
+                •••• 2226
+              </td>
+              <td class="px-4 py-2">Aug 20, 11:55 AM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $750.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 1026
+              </td>
+              <td class="px-4 py-2">Aug 20, 11:58 AM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $750.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 4477
+              </td>
+              <td class="px-4 py-2">Aug 20, 12:05 PM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $320.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <img class="h-4" src="./mastercard.png" alt="mastercard_logo" />
+                •••• 8007
+              </td>
+              <td class="px-4 py-2">Aug 20, 12:31 PM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $320.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <img class="h-4" src="./mastercard.png" alt="mastercard_logo" />
+                •••• 0423
+              </td>
+              <td class="px-4 py-2">Aug 20, 12:43 PM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $150.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 1405
+              </td>
+              <td class="px-4 py-2">Aug 20, 12:43 PM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $1080.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <img class="h-4" src="./mastercard.png" alt="mastercard_logo" />
+
+                •••• 4170
+              </td>
+              <td class="px-4 py-2">Aug 20, 12:46 PM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $150.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 3360
+              </td>
+              <td class="px-4 py-2">Aug 20, 12:48 PM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $150.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 7199
+              </td>
+              <td class="px-4 py-2">Aug 20, 01:02 PM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $750.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 6189
+              </td>
+              <td class="px-4 py-2">Aug 20, 01:28 PM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $1080.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 4988
+              </td>
+              <td class="px-4 py-2">Aug 20, 01:42 PM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $320.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <img class="h-4" src="./mastercard.png" alt="mastercard_logo" />
+                •••• 7501
+              </td>
+              <td class="px-4 py-2">Aug 20, 01:48 PM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="px-4 py-2"><input type="checkbox" /></td>
+              <td class="px-4 py-2 font-medium">
+                <span class="inline-block w-[100px] text-right">
+                  $320.00 <span class="font-normal mx-1">USD</span></span
+                >
+                <span
+                  class="px-2 py-1 text-xs rounded-md bg-[#E9FEDC] border border-slate-300 text-green-700"
+                  >Succeeded <i class="fa-solid fa-check"></i
+                ></span>
+              </td>
+              <td class="px-4 py-2 flex flex-wrap items-center gap-2">
+                <i class="fa-brands fa-cc-visa text-2xl text-[#00579F]"></i>
+                •••• 0083
+              </td>
+              <td class="px-4 py-2">Aug 20, 02:00 PM</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2">—</td>
+              <td class="px-4 py-2 text-gray-500">•••</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-sm text-gray-500 mt-2">28 results</p>
+    </div>
+  </body>
+</html>

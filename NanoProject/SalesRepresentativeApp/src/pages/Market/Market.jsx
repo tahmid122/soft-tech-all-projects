@@ -30,7 +30,7 @@ const categories = [
 const Market = () => {
   const [allProducts, setAllProducts] = useState([]);
   const [displayedProducts, setDisplayedProducts] = useState([]);
-  const { cartItems, setCartItems } = useCart();
+  const { setCartItems } = useCart();
   const handleCategoryProducts = (e) => {
     const value = e.target.value;
     if (value === "All") {

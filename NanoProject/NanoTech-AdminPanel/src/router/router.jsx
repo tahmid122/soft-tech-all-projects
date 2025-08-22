@@ -10,6 +10,9 @@ import LowStockAlert from "../pages/LowStockAlert/LowStockAlert";
 import Login from "../pages/Login/Login";
 import Orders from "../pages/Orders/Orders";
 import CreateWarehouse from "../pages/CreateWarehouse/CreateWarehouse";
+import CreatePost from "../pages/CreatePost/CreatePost";
+import CreateReel from "../pages/CreateReel/CreateReel";
+import Comments from "../pages/Comments/Comments";
 // all routes
 export const router = createBrowserRouter([
   {
@@ -29,6 +32,18 @@ export const router = createBrowserRouter([
       { path: "productQrCode", Component: ProductQrCode },
       { path: "salesReport", Component: SalesReport },
       { path: "lowStockAlerts", Component: LowStockAlert },
+      {
+        path: "createPost",
+        Component: CreatePost,
+      },
+      {
+        path: "createReel",
+        Component: CreateReel,
+      },
+      {
+        path: "comments",
+        Component: Comments,
+      },
     ],
   },
 ]);

@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import "./dashBoardSideBar.css";
 import { Link, NavLink } from "react-router";
 import { FaTachometerAlt, FaListAlt } from "react-icons/fa";
+import { FaPenFancy, FaVideo, FaComments } from "react-icons/fa";
+
 import {
   MdDashboard,
   MdInventory,
   MdPointOfSale,
+  MdPostAdd,
   MdStore,
 } from "react-icons/md";
 import { FaList, FaUserShield, FaWarehouse } from "react-icons/fa6";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { AiOutlineFileText } from "react-icons/ai";
 const DashBoardSideBar = ({
   openModal,
   addProductClick,
@@ -32,20 +36,20 @@ const DashBoardSideBar = ({
       <div className="menu">
         <ul>
           {/* Nav link */}
-          <li>
+          <li style={{ fontWeight: "bold" }}>
             <NavLink to={"/dashboard"} end>
-              <MdDashboard end /> Dashboard
+              <MdDashboard /> Dashboard
             </NavLink>
           </li>
           {/* Nav link */}
-          <li onClick={() => openModal()}>
+          <li style={{ fontWeight: "bold" }} onClick={() => openModal()}>
             <a style={{ cursor: "pointer" }}>
               <FaList /> Application List
             </a>
           </li>
           {/* Nav link */}
           <li onClick={() => setIsInnerLinkShow(!isInnerLinkShow)}>
-            <NavLink to={"e-commerce"} end>
+            <NavLink to={"e-commerce"} end style={{ fontWeight: "bold" }}>
               <MdPointOfSale size={18} /> E-commerce
               <>{isInnerLinkShow ? <IoIosArrowUp /> : <IoIosArrowDown />}</>
             </NavLink>
@@ -89,7 +93,7 @@ const DashBoardSideBar = ({
           {/* Nav link */}
           {/* Pending works */}
           <li onClick={() => setIsInnerLinkShow2(!isInnerLinkShow2)}>
-            <NavLink to={"productManagement"}>
+            <NavLink style={{ fontWeight: "bold" }} to={"productManagement"}>
               <MdInventory size={18} /> Inventory
               <>{isInnerLinkShow2 ? <IoIosArrowUp /> : <IoIosArrowDown />}</>
             </NavLink>
@@ -115,7 +119,7 @@ const DashBoardSideBar = ({
           </li>
           {/* Nav link */}
           <li onClick={() => setIsInnerLinkShow3(!isInnerLinkShow3)}>
-            <NavLink to={"salesReport"}>
+            <NavLink style={{ fontWeight: "bold" }} to={"salesReport"}>
               <MdStore size={18} /> Sales Points
               <>{isInnerLinkShow3 ? <IoIosArrowUp /> : <IoIosArrowDown />}</>
             </NavLink>
@@ -140,17 +144,43 @@ const DashBoardSideBar = ({
             </ul>
           </li>
           {/* Nav link */}
-          <li>
+          <li style={{ fontWeight: "bold" }}>
             <NavLink to={"createRole"}>
               <FaUserShield size={20} /> Create Role
             </NavLink>
           </li>
           {/* Nav link */}
-          <li>
+          <li style={{ fontWeight: "bold" }}>
             <NavLink to={"warehouse"}>
-              <FaWarehouse size={20} />
+              <FaWarehouse size={18} />
               Warehouse
             </NavLink>
+          </li>
+          <li>
+            <a style={{ fontWeight: "bold" }}>
+              <MdPostAdd size={20} />
+              Posts
+            </a>
+            <ul style={{ marginLeft: "25px" }}>
+              <li>
+                <NavLink to={"createPost"}>
+                  <FaPenFancy />
+                  Create Post
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to={"createReel"}>
+                  <FaVideo />
+                  Create Reel
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to={"comments"}>
+                  <FaComments />
+                  Comments
+                </NavLink>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
