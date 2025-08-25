@@ -60,7 +60,7 @@ const ApplicationList = ({ closeModal: closeMApplicationListModal }) => {
         </div>
         {/* application search box */}
         {/* application table */}
-        <div className="table-container">
+        <div id="salesPointTableContainer" className="table-container">
           <table style={{ textAlign: "center" }}>
             <thead>
               <tr>
@@ -75,6 +75,44 @@ const ApplicationList = ({ closeModal: closeMApplicationListModal }) => {
               </tr>
             </thead>
             <tbody>
+              {/* these data will fetch from database */}
+              <tr>
+                <td>101</td>
+                <td>তাহমিদ আলম</td>
+                <td>+৮৮০ ১৩১৮১৯৫৫৯১</td>
+                <td>ধাপেরহাট</td>
+                <td>মুনছিফা রুহানী</td>
+                <td>৫২১</td>
+                <td className="status">Pending</td>
+                {/* action buttons */}
+                <td className="table-icons-container">
+                  <div
+                    onClick={() => setIsModal(true)}
+                    className="table-icon"
+                    title="View"
+                  >
+                    <FaEye style={{ color: "orange" }} size={20} />
+                  </div>
+                  <div className="table-icon" title="Edit">
+                    <FaEdit style={{ color: "blue" }} size={20} />
+                  </div>
+                  <div
+                    onClick={() => handleEdit()}
+                    className="table-icon"
+                    title="Reject"
+                  >
+                    <MdCancel style={{ color: "red" }} size={20} />
+                  </div>
+                  <div className="table-icon" title="Approve">
+                    <FaCheckCircle
+                      style={{ color: "#228b22" }}
+                      onClick={() => setIsOpen(true)}
+                      size={20}
+                    />
+                  </div>
+                </td>
+                {/* action buttons */}
+              </tr>
               <tr>
                 <td>101</td>
                 <td>তাহমিদ আলম</td>

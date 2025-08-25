@@ -161,7 +161,7 @@ const CreatePost = () => {
       </main>
       {/* posts table */}
       <div id="salesPointTableContainer">
-        <table>
+        <table id="createPostTable">
           <thead>
             <tr>
               <th>Serial</th>
@@ -184,9 +184,14 @@ const CreatePost = () => {
                       setSelectedPost(post);
                       setIsOpen(true);
                     }}
-                    style={{ color: "#228b22", cursor: "pointer" }}
+                    style={{
+                      color: "#228b22",
+                      cursor: "pointer",
+                      fontWeight: "bold",
+                      fontSize: "12px",
+                    }}
                   >
-                    View more...
+                    Full view
                   </span>
                 </td>
                 <td>{post.dateTime}</td>

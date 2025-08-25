@@ -148,9 +148,14 @@ const CreateReel = () => {
                       setSelectedReel(reel);
                       setIsOpen(true);
                     }}
-                    style={{ color: "#228b22", cursor: "pointer" }}
+                    style={{
+                      color: "#228b22",
+                      cursor: "pointer",
+                      fontWeight: "bold",
+                      fontSize: "12px",
+                    }}
                   >
-                    View media...
+                    Full media
                   </span>
                 </td>
                 <td>{reel.timeDate}</td>

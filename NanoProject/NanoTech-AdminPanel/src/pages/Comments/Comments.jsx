@@ -116,7 +116,7 @@ const commentsData = [
 const Comments = () => {
   return (
     // All Comments
-    <div id="salesPointTableContainer" className="allComments">
+    <div className="allComments">
       {/* single post comments */}
       <CommentTable
         commentsData={commentsData}
